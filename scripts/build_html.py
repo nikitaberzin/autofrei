@@ -9,6 +9,7 @@ die Artifact-CSP blockiert jeden fremden Host (Fonts, Skripte, Bilder).
 """
 
 import json
+import math
 import os
 import sys
 from datetime import date
@@ -103,6 +104,84 @@ def render_event(ev, gruppen_monat=None):
          esc(LAND_NAME.get(land, land)), neu)
 
 
+OUTLINE_PATH = os.path.join(BASE, "data", "outline.json")
+
+
+def _mercator_y(lat):
+    """Web-Mercator-Y, damit die Mini-Karte zur Leaflet-Karte passt."""
+    rad = math.radians(max(-85.0, min(85.0, lat)))
+    return math.log(math.tan(math.pi / 4 + rad / 2))
+
+
+def build_minimap(events, breite=760, hoehe=380, rand=8):
+    """Inline-SVG-Karte fuer das Artifact.
+
+    Kartenkacheln sind unter der Artifact-CSP nicht ladbar (jeder externe Host
+    ist blockiert). Selbst gezeichnete Vektoren dagegen schon - deshalb hier
+    grobe Laenderumrisse (Natural Earth 110m) plus ein Punkt je Termin.
+    """
+    punkte = [e for e in events if e.get("lat") is not None]
+    if not punkte:
+        return ""
+
+    try:
+        with open(OUTLINE_PATH, encoding="utf-8") as fh:
+            umrisse = json.load(fh)
+    except OSError:
+        umrisse = []
+
+    lngs = [e["lng"] for e in punkte]
+    lats = [e["lat"] for e in punkte]
+    lng0, lng1 = min(lngs) - 0.9, max(lngs) + 0.9
+    lat0, lat1 = min(lats) - 0.7, max(lats) + 0.7
+
+    # X muss wie Y im Bogenmass gerechnet werden - sonst stimmt das
+    # Seitenverhaeltnis nicht (Grad und Mercator-Y sind nicht vergleichbar).
+    x0, x1 = math.radians(lng0), math.radians(lng1)
+    # In Mercator ist Norden der GROESSERE Y-Wert, auf dem Bildschirm aber oben.
+    y_nord, y_sued = _mercator_y(lat1), _mercator_y(lat0)
+
+    spanne_x = x1 - x0
+    spanne_y = y_nord - y_sued  # positiv
+
+    skala = min((breite - 2 * rand) / spanne_x, (hoehe - 2 * rand) / spanne_y)
+    off_x = (breite - spanne_x * skala) / 2
+    off_y = (hoehe - spanne_y * skala) / 2
+
+    def px(lng, lat):
+        return (off_x + (math.radians(lng) - x0) * skala,
+                off_y + (y_nord - _mercator_y(lat)) * skala)
+
+    pfade = []
+    for ring in umrisse:
+        d = []
+        for i, (lng, lat) in enumerate(ring["ring"]):
+            x, y = px(lng, lat)
+            d.append("%s%.1f %.1f" % ("M" if i == 0 else "L", x, y))
+        pfade.append('<path d="%sZ"/>' % "".join(d))
+
+    heute = date.today().isoformat()
+    kreise = []
+    for e in punkte:
+        x, y = px(e["lng"], e["lat"])
+        kommend = bool(e["dateStart"] and e["dateStart"] >= heute)
+        kreise.append(
+            '<circle class="pt %s" data-c="%s" cx="%.1f" cy="%.1f" r="%s"><title>%s</title></circle>'
+            % ("kommend" if kommend else "vorbei", e["country"], x, y,
+               "4.2" if kommend else "3",
+               esc("%s — %s" % (e["name"], datum_kurz(e))))
+        )
+
+    return (
+        '<a class="mini" href="%s/karte.html" target="_blank" rel="noopener noreferrer">'
+        '<svg viewBox="0 0 %d %d" role="img" '
+        'aria-label="Übersichtskarte aller Termine">'
+        '<g class="land">%s</g><g class="pts">%s</g></svg>'
+        '<span class="mini-h">Interaktive Karte öffnen &rarr;</span></a>'
+        % (PAGES_BASE, breite, hoehe, "".join(pfade), "".join(kreise))
+    )
+
+
 def gruppiere_nach_monat(events):
     """[(label, monatsnummer, [event, ...]), ...] - chronologische Reihenfolge."""
     gruppen = []
@@ -191,6 +270,28 @@ h1 { margin:0; font-size:1.45rem; line-height:1.2; letter-spacing:-.015em;
           font-variant-numeric:tabular-nums; display:flex; flex-wrap:wrap;
           gap:.5rem; align-items:center; }
 
+.mini {
+  display:block; margin-bottom:1.4rem; padding:.5rem .5rem .1rem;
+  background:var(--surface); border:1px solid var(--line);
+  border-radius:var(--r); text-decoration:none; position:relative;
+}
+.mini:hover { border-color:var(--accent); }
+.mini svg { display:block; width:100%; height:auto; }
+.mini .land path {
+  fill:var(--bg); stroke:var(--line); stroke-width:.8;
+  stroke-linejoin:round; vector-effect:non-scaling-stroke;
+}
+.mini .pt { stroke:var(--surface); stroke-width:1.2; }
+.mini .pt.vorbei { opacity:.28; }
+.mini .pt[data-c="it"] { fill:var(--it); }
+.mini .pt[data-c="at"] { fill:var(--at); }
+.mini .pt[data-c="fr"] { fill:var(--fr); }
+.mini .pt[data-c="ch"] { fill:var(--ch); }
+.mini .pt.hide { display:none; }
+.mini-h {
+  display:block; padding:.35rem .3rem .5rem; text-align:right;
+  font-family:var(--mono); font-size:.72rem; color:var(--accent);
+}
 .fil { display:flex; flex-wrap:wrap; gap:.4rem; margin-bottom:1.6rem; }
 .fil button {
   font:inherit; font-family:var(--mono); font-size:.76rem; letter-spacing:.02em;
@@ -298,6 +399,8 @@ a.n:hover { color:var(--accent); text-decoration:underline;
 
   $next_block
 
+  $minimap
+
   <nav class="fil" id="fil" aria-label="Nach Land filtern">
     $filter_buttons
   </nav>
@@ -338,6 +441,11 @@ a.n:hover { color:var(--accent); text-decoration:underline;
 
     document.querySelectorAll('.ev').forEach(function (ev) {
       ev.classList.toggle('hide', land !== 'all' && ev.dataset.c !== land);
+    });
+
+    // Kartenpunkte demselben Filter unterwerfen
+    document.querySelectorAll('.mini .pt').forEach(function (pt) {
+      pt.classList.toggle('hide', land !== 'all' && pt.dataset.c !== land);
     });
 
     // Monatsgruppen ohne sichtbare Eintraege ausblenden.
@@ -438,6 +546,7 @@ def build_html(data):
         filter_buttons="\n    ".join(knoepfe),
         upcoming=render_gruppen(gruppiere_nach_monat(kommend)) or
                  '<p class="empty">Keine kommenden Termine.</p>',
+        minimap=build_minimap(events),
         past_block=past_block,
         pages=PAGES_BASE,
     )
