@@ -163,7 +163,9 @@ def build_html(data):
 (function () {
   var DATA = %(payload)s;
 
-  var map = L.map('map', { scrollWheelZoom: true });
+  // Startausschnitt sofort setzen: schlaegt das spaetere fitBounds fehl,
+  // sieht der Nutzer trotzdem den Alpenraum statt eines Maximalzooms.
+  var map = L.map('map', { scrollWheelZoom: true }).setView([46.3, 8.5], 6);
 
   // ACHTUNG: Esri nutzt {z}/{y}/{x}. Mit {z}/{x}/{y} bleibt die Karte leer.
   var esri = 'https://services.arcgisonline.com/ArcGIS/rest/services/';
@@ -248,14 +250,24 @@ def build_html(data):
     if (!nutzerHatBewegt) { einpassen(); }
   });
 
+  // ResizeObserver statt window.resize: er feuert auch, wenn der Container
+  // seine Groesse aendert, ohne dass das Fenster ein resize-Event schickt
+  // (Vorschau-Pane, das erst aufgeht; vh-Aenderung durch Browser-Chrome;
+  // Tab, der aus dem Hintergrund kommt). Genau dieser Fall liess die Karte
+  // auf Zoom 17 haengen.
   var timer;
-  window.addEventListener('resize', function () {
+  function nachziehen() {
     clearTimeout(timer);
     timer = setTimeout(function () {
-      map.invalidateSize({ animate: false });
       if (!nutzerHatBewegt) { einpassen(); }
-    }, 150);
-  });
+      else { map.invalidateSize({ animate: false }); }
+    }, 120);
+  }
+
+  if (window.ResizeObserver) {
+    new ResizeObserver(nachziehen).observe(map.getContainer());
+  }
+  window.addEventListener('resize', nachziehen);
 })();
 </script>
 </body>
