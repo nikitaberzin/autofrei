@@ -1,0 +1,1943 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.209570435918364,
+          46.41722723284474
+        ]
+      },
+      "properties": {
+        "name": "MendelRace",
+        "country": "it",
+        "date": "2026-04-11",
+        "dateEnd": "2026-04-11",
+        "dateRaw": "11. April",
+        "url": "https://www.mendelrace.it",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.948298293576048,
+          46.74946141277398
+        ]
+      },
+      "properties": {
+        "name": "Flüelapass",
+        "country": "ch",
+        "date": "2026-04-21",
+        "dateEnd": "2026-04-21",
+        "dateRaw": "21. April",
+        "url": "https://www.graubuenden.ch/de/freipass/flueelapass",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.111857147761514,
+          46.52977283709695
+        ]
+      },
+      "properties": {
+        "name": "Edelrot Trophäe (Gampenpass)",
+        "country": "it",
+        "date": "2026-05-09",
+        "dateEnd": "2026-05-09",
+        "dateRaw": "9. Mai",
+        "url": "https://www.bergcup.it/deutsch/die-bergcup-rennen/edelrot-trophäe-gampenpass/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.826363921946735,
+          46.271993311899124
+        ]
+      },
+      "properties": {
+        "name": "Moosalp",
+        "country": "ch",
+        "date": "2026-05-17",
+        "dateEnd": "2026-05-17",
+        "dateRaw": "17. Mai",
+        "url": "https://ridethealps.ch/de/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.80022779,
+          45.867660712
+        ]
+      },
+      "properties": {
+        "name": "Monte Grappa Bike Day",
+        "country": "it",
+        "date": "2026-05-23",
+        "dateEnd": "2026-05-23",
+        "dateRaw": "23. Mai",
+        "url": "https://ciclista.net/autofrei-termine-2026/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.92920581899636,
+          46.3024111000709
+        ]
+      },
+      "properties": {
+        "name": "Campo Moro",
+        "country": "it",
+        "date": "2026-05-24",
+        "dateEnd": "2026-05-24",
+        "dateRaw": "24. Mai",
+        "url": "https://ciclista.net/autofrei-termine-2026/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.121781100360117,
+          44.184473615764475
+        ]
+      },
+      "properties": {
+        "name": "Nove Colli",
+        "country": "it",
+        "date": "2026-05-24",
+        "dateEnd": "2026-05-24",
+        "dateRaw": "24. Mai",
+        "url": "https://www.novecolli.it/de-DE",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.540486216028826,
+          45.074356253544
+        ]
+      },
+      "properties": {
+        "name": "GFNY Villard de Lans",
+        "country": "fr",
+        "date": "2026-05-24",
+        "dateEnd": "2026-05-24",
+        "dateRaw": "24. Mai",
+        "url": "https://villarddelans.gfny.com",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.6244966751277,
+          46.0461017890569
+        ]
+      },
+      "properties": {
+        "name": "Passo San Marco",
+        "country": "it",
+        "date": "2026-05-30",
+        "dateEnd": "2026-05-30",
+        "dateRaw": "30. Mai",
+        "url": "https://ciclista.net/autofrei-termine-2026/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.067,
+          45.083
+        ]
+      },
+      "properties": {
+        "name": "Alpe d'Huez",
+        "country": "fr",
+        "date": "2026-06-01",
+        "dateEnd": "2026-06-05",
+        "dateRaw": "1.-5. Juni",
+        "url": "https://uk.bike-oisans.com/agenda/alpe-dhuzes/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.06,
+          45.03
+        ]
+      },
+      "properties": {
+        "name": "Alpe d'Huez (Alpe d'Huez Charity Event)",
+        "country": "fr",
+        "date": "2026-06-04",
+        "dateEnd": "2026-06-04",
+        "dateRaw": "4. Juni",
+        "url": "https://www.opgevenisgeenoptie.nl",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.27924489334604,
+          44.1736621114143
+        ]
+      },
+      "properties": {
+        "name": "Granfondo Mont Ventoux",
+        "country": "fr",
+        "date": "2026-06-06",
+        "dateEnd": "2026-06-06",
+        "dateRaw": "6. Juni",
+        "url": "https://gfmontventoux.com/en/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.809057755038467,
+          46.54994026869288
+        ]
+      },
+      "properties": {
+        "name": "Sellaronda Bike Day",
+        "country": "it",
+        "date": "2026-06-06",
+        "dateEnd": "2026-06-06",
+        "dateRaw": "6. Juni",
+        "url": "http://www.sellarondabikeday.com",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.408052656145833,
+          45.063991877910766
+        ]
+      },
+      "properties": {
+        "name": "Rando La Mauriennaise",
+        "country": "fr",
+        "date": "2026-06-06",
+        "dateEnd": "2026-06-06",
+        "dateRaw": "6. Juni",
+        "url": "https://www.galibier-challenge.com/rando",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.14740168306926807,
+          42.90754002047737
+        ]
+      },
+      "properties": {
+        "name": "Tourmalet",
+        "country": "fr",
+        "date": "2026-06-06",
+        "dateEnd": "2026-06-06",
+        "dateRaw": "6. Juni",
+        "url": "https://www.tourmaletpicdumidi.com/temps-fort/la-montee-du-geant/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.452091212224458,
+          46.529580950480764
+        ]
+      },
+      "properties": {
+        "name": "Stilfser Joch",
+        "country": "it",
+        "date": "2026-06-06",
+        "dateEnd": "2026-06-06",
+        "dateRaw": "6. Juni",
+        "url": "https://www.bergcup.it/deutsch/die-bergcup-rennen/prad-stilfser-joch/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.4,
+          45.06
+        ]
+      },
+      "properties": {
+        "name": "La Cyclosportive",
+        "country": "fr",
+        "date": "2026-06-07",
+        "dateEnd": "2026-06-07",
+        "dateRaw": "7. Juni",
+        "url": "https://www.galibier-challenge.com/cyclosportive",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.08903679467475,
+          48.1358029808431
+        ]
+      },
+      "properties": {
+        "name": "Col du Calvaire & Col du Louschbach (Elsass)",
+        "country": "fr",
+        "date": "2026-06-07",
+        "dateEnd": "2026-06-07",
+        "dateRaw": "7. Juni",
+        "url": "https://www.visit.alsace/de/230112334-colattitude-lac-blanc-col-du-calvaire-col-du-louschbach/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.825229826167512,
+          46.54126691640682
+        ]
+      },
+      "properties": {
+        "name": "FreiPass Lukmanier",
+        "country": "ch",
+        "date": "2026-06-07",
+        "dateEnd": "2026-06-07",
+        "dateRaw": "7. Juni",
+        "url": "https://freipass.ch/index.php",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.83,
+          47.05
+        ]
+      },
+      "properties": {
+        "name": "Glocknerkönig",
+        "country": "at",
+        "date": "2026-06-07",
+        "dateEnd": "2026-06-07",
+        "dateRaw": "7. Juni",
+        "url": "https://www.glocknerkoenig.com/de",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.408,
+          45.064
+        ]
+      },
+      "properties": {
+        "name": "Galibier",
+        "country": "fr",
+        "date": "2026-06-07",
+        "dateEnd": "2026-06-07",
+        "dateRaw": "7. Juni",
+        "url": "https://www.galibier-challenge.com/la-grimpee",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.3167349054061,
+          46.5145524094193
+        ]
+      },
+      "properties": {
+        "name": "Laghi di Cancano",
+        "country": "it",
+        "date": "2026-06-08",
+        "dateEnd": "2026-06-08",
+        "dateRaw": "8. Juni",
+        "url": "https://ciclista.net/autofrei-termine-2026/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.627515020006214,
+          45.08621511272015
+        ]
+      },
+      "properties": {
+        "name": "L'Ardéchoise",
+        "country": "fr",
+        "date": "2026-06-09",
+        "dateEnd": "2026-06-13",
+        "dateRaw": "9.-13. Juni",
+        "url": "https://www.ardechoise.com",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.7598902680046296,
+          45.90568846881875
+        ]
+      },
+      "properties": {
+        "name": "Col du Grand Colombier",
+        "country": "fr",
+        "date": "2026-06-13",
+        "dateEnd": "2026-06-13",
+        "dateRaw": "13. Juni",
+        "url": "https://ciclista.net/autofrei-termine-2026/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.913662182526373,
+          46.501166033635684
+        ]
+      },
+      "properties": {
+        "name": "Super Giro Dolomiti",
+        "country": "it",
+        "date": "2026-06-14",
+        "dateEnd": "2026-06-14",
+        "dateRaw": "14. Juni",
+        "url": "https://www.dolomitensport.at/de/events/supergirodolomiti.html",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.278229006113623,
+          44.17308403603018
+        ]
+      },
+      "properties": {
+        "name": "Mont Ventoux, Tour du ALS",
+        "country": "fr",
+        "date": "2026-06-18",
+        "dateEnd": "2026-06-18",
+        "dateRaw": "18. Juni",
+        "url": "https://www.tourduals.nl",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.874467380232696,
+          46.5498439444957
+        ]
+      },
+      "properties": {
+        "name": "Dolomites Bike Day",
+        "country": "it",
+        "date": "2026-06-20",
+        "dateEnd": "2026-06-20",
+        "dateRaw": "20. Juni",
+        "url": "https://www.bikehotels.it/de/suedtirol-wir/events/74-dolomites-bike-day-2023.html",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.031677408216728,
+          45.41692935900052
+        ]
+      },
+      "properties": {
+        "name": "Col de L'Iseran",
+        "country": "fr",
+        "date": "2026-06-21",
+        "dateEnd": "2026-06-21",
+        "dateRaw": "21. Juni",
+        "url": "https://www.valdisere.com/en/events-entertainment-calendar/iserane-val-disere-en-4157467/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.890458459690098,
+          46.025800799666015
+        ]
+      },
+      "properties": {
+        "name": "Sportful Dolomiti Race",
+        "country": "it",
+        "date": "2026-06-21",
+        "dateEnd": "2026-06-21",
+        "dateRaw": "21. Juni",
+        "url": "https://www.sportfuldolomitirace.it/en/home/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.286453107520061,
+          46.332558620462756
+        ]
+      },
+      "properties": {
+        "name": "Ride the Alps Sanetsch",
+        "country": "ch",
+        "date": "2026-06-26",
+        "dateEnd": "2026-06-26",
+        "dateRaw": "26. Juni",
+        "url": "https://ridethealps.ch/de/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.45,
+          46.53
+        ]
+      },
+      "properties": {
+        "name": "Stelvio Night",
+        "country": "it",
+        "date": "2026-06-26",
+        "dateEnd": "2026-06-26",
+        "dateRaw": "26. Juni",
+        "url": "https://www.stelvionight.com/de/home.html",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.571841846583548,
+          46.13944650882431
+        ]
+      },
+      "properties": {
+        "name": "Ride the Alps Moiry",
+        "country": "ch",
+        "date": "2026-06-27",
+        "dateEnd": "2026-06-27",
+        "dateRaw": "27. Juni",
+        "url": "https://ridethealps.ch/de/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.433185430567263,
+          46.344159339327774
+        ]
+      },
+      "properties": {
+        "name": "Ride the Alps Tseuzier",
+        "country": "ch",
+        "date": "2026-06-28",
+        "dateEnd": "2026-06-28",
+        "dateRaw": "28. Juni",
+        "url": "https://ridethealps.ch/de/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.329936802332087,
+          46.507031824462125
+        ]
+      },
+      "properties": {
+        "name": "FreiPass Splügenpass",
+        "country": "ch",
+        "date": "2026-06-28",
+        "dateEnd": "2026-06-28",
+        "dateRaw": "28. Juni",
+        "url": "https://freipass.ch/index.php",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0672,
+          45.0838
+        ]
+      },
+      "properties": {
+        "name": "Marmotte Granfondo",
+        "country": "fr",
+        "date": "2026-06-28",
+        "dateEnd": "2026-06-28",
+        "dateRaw": "28. Juni",
+        "url": "https://uk.bike-oisans.com/agenda/lepape-marmotte-granfondo/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.00819461,
+          47.03672532
+        ]
+      },
+      "properties": {
+        "name": "Slow Sundays Klöntal",
+        "country": "ch",
+        "date": "2026-06-28",
+        "dateEnd": "2026-06-28",
+        "dateRaw": "28. Juni",
+        "url": "https://www.glarus.ch/verwaltung/bau-und-versorgung/parkraumbewirtschaftung/slow-sundays-kloental.html/8403",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.351022116520614,
+          48.85084895749407
+        ]
+      },
+      "properties": {
+        "name": "Loosthal (Elsass)",
+        "country": "fr",
+        "date": "2026-06-28",
+        "dateEnd": "2026-06-28",
+        "dateRaw": "28. Juni",
+        "url": "https://www.massif-des-vosges.fr/experiences/colattitude/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.41144419604186,
+          45.07073567276491
+        ]
+      },
+      "properties": {
+        "name": "Galibier",
+        "country": "fr",
+        "date": "2026-06-29",
+        "dateEnd": "2026-06-29",
+        "dateRaw": "29. Juni",
+        "url": "https://lequeyras.com/agenda/la-tournee-des-grands-cols/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.203196129337221,
+          45.22744400625951
+        ]
+      },
+      "properties": {
+        "name": "Col de la Croix de Fer",
+        "country": "fr",
+        "date": "2026-06-30",
+        "dateEnd": "2026-06-30",
+        "dateRaw": "30. Juni",
+        "url": "https://ciclista.net/autofrei-termine-2026/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.59504,
+          44.96408
+        ]
+      },
+      "properties": {
+        "name": "Col du Granon",
+        "country": "fr",
+        "date": "2026-06-30",
+        "dateEnd": "2026-06-30",
+        "dateRaw": "30. Juni",
+        "url": "https://lequeyras.com/agenda/la-tournee-des-grands-cols/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.65741919526316,
+          45.025613798265404
+        ]
+      },
+      "properties": {
+        "name": "Col de l'Èchelle",
+        "country": "fr",
+        "date": "2026-07-01",
+        "dateEnd": "2026-07-01",
+        "dateRaw": "1. Juli",
+        "url": "https://lequeyras.com/agenda/la-tournee-des-grands-cols/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.732820564957628,
+          44.80184648618121
+        ]
+      },
+      "properties": {
+        "name": "Col d'Izoard",
+        "country": "fr",
+        "date": "2026-07-02",
+        "dateEnd": "2026-07-02",
+        "dateRaw": "2. Juli",
+        "url": "https://lequeyras.com/agenda/la-tournee-des-grands-cols/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.9797,
+          44.68392
+        ]
+      },
+      "properties": {
+        "name": "Col d'Agnel",
+        "country": "fr",
+        "date": "2026-07-03",
+        "dateEnd": "2026-07-03",
+        "dateRaw": "3. Juli",
+        "url": "https://lequeyras.com/en/agenda/reserved-passes-col-agnel-molines-en-queyras-en-3261727/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.24654532889509,
+          44.7578801760319
+        ]
+      },
+      "properties": {
+        "name": "Rucas / Col Montoso",
+        "country": "it",
+        "date": "2026-07-04",
+        "dateEnd": "2026-07-04",
+        "dateRaw": "4. Juli",
+        "url": "https://lequeyras.com/agenda/la-tournee-des-grands-cols/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.11981763326525,
+          44.5488701450471
+        ]
+      },
+      "properties": {
+        "name": "Strada die Cannoni",
+        "country": "fr",
+        "date": "2026-07-05",
+        "dateEnd": "2026-07-05",
+        "dateRaw": "5. Juli",
+        "url": "https://lequeyras.com/agenda/la-tournee-des-grands-cols/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.4838538830305,
+          46.3430311491142
+        ]
+      },
+      "properties": {
+        "name": "Gavia",
+        "country": "it",
+        "date": "2026-07-05",
+        "dateEnd": "2026-07-05",
+        "dateRaw": "5. Juli",
+        "url": "https://www.valtellina.it/de/gavia-gesperrt",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.879948202022868,
+          46.49980241686604
+        ]
+      },
+      "properties": {
+        "name": "Maratona dles Dolomites",
+        "country": "it",
+        "date": "2026-07-05",
+        "dateEnd": "2026-07-05",
+        "dateRaw": "5. Juli",
+        "url": "https://www.maratona.it/de/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.83462,
+          47.0548
+        ]
+      },
+      "properties": {
+        "name": "Grossglockner Bike Challenge",
+        "country": "at",
+        "date": "2026-07-05",
+        "dateEnd": "2026-07-05",
+        "dateRaw": "5. Juli",
+        "url": "https://www.granfondoguide.com/Events/Index/7165/grossglockner-bike-challenge",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.778221288767581,
+          47.772771765679025
+        ]
+      },
+      "properties": {
+        "name": "Planche des Belles Filles (Elsass)",
+        "country": "fr",
+        "date": "2026-07-05",
+        "dateEnd": "2026-07-05",
+        "dateRaw": "5. Juli",
+        "url": "https://www.massif-des-vosges.fr/experiences/colattitude/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.12011206338922,
+          44.5508502049724
+        ]
+      },
+      "properties": {
+        "name": "Col Sampeyre",
+        "country": "it",
+        "date": "2026-07-06",
+        "dateEnd": "2026-07-06",
+        "dateRaw": "6. Juli",
+        "url": "https://lequeyras.com/agenda/la-tournee-des-grands-cols/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.09610833053602,
+          44.7008508578017
+        ]
+      },
+      "properties": {
+        "name": "Col Pian del Re",
+        "country": "it",
+        "date": "2026-07-07",
+        "dateEnd": "2026-07-07",
+        "dateRaw": "7. Juli",
+        "url": "https://lequeyras.com/agenda/la-tournee-des-grands-cols/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.06,
+          45.04
+        ]
+      },
+      "properties": {
+        "name": "Alpe d'Huez",
+        "country": "fr",
+        "date": "2026-07-07",
+        "dateEnd": "2026-07-07",
+        "dateRaw": "7. Juli",
+        "url": "https://ciclista.net/autofrei-termine-2026/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.10588103312275,
+          44.231397314891296
+        ]
+      },
+      "properties": {
+        "name": "S. Anna Vinadio",
+        "country": "it",
+        "date": "2026-07-08",
+        "dateEnd": "2026-07-08",
+        "dateRaw": "8. Juli",
+        "url": "https://lequeyras.com/agenda/la-tournee-des-grands-cols/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2979645174309,
+          46.2472724248184
+        ]
+      },
+      "properties": {
+        "name": "Mortirolo",
+        "country": "it",
+        "date": "2026-07-09",
+        "dateEnd": "2026-07-09",
+        "dateRaw": "9. Juli",
+        "url": "https://www.valtellina.it/de/mortirolo-gesperrt",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.12019205239409,
+          44.3857023449681
+        ]
+      },
+      "properties": {
+        "name": "Col Fauniera",
+        "country": "it",
+        "date": "2026-07-09",
+        "dateEnd": "2026-07-09",
+        "dateRaw": "9. Juli",
+        "url": "https://lequeyras.com/agenda/la-tournee-des-grands-cols/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.37611230030924,
+          44.4362063133189
+        ]
+      },
+      "properties": {
+        "name": "Col Montemale",
+        "country": "it",
+        "date": "2026-07-10",
+        "dateEnd": "2026-07-10",
+        "dateRaw": "10. Juli",
+        "url": "https://lequeyras.com/agenda/la-tournee-des-grands-cols/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.7869,
+          45.867
+        ]
+      },
+      "properties": {
+        "name": "Col du Grand Colombier",
+        "country": "fr",
+        "date": "2026-07-11",
+        "dateEnd": "2026-07-11",
+        "dateRaw": "11. Juli",
+        "url": "https://ciclista.net/autofrei-termine-2026/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.316,
+          46.514
+        ]
+      },
+      "properties": {
+        "name": "Laghi di Cancano",
+        "country": "it",
+        "date": "2026-07-11",
+        "dateEnd": "2026-07-11",
+        "dateRaw": "11. Juli",
+        "url": "https://ciclista.net/autofrei-termine-2026/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.454945198992855,
+          46.5304223555758
+        ]
+      },
+      "properties": {
+        "name": "Re Stelvio Mapei",
+        "country": "it",
+        "date": "2026-07-12",
+        "dateEnd": "2026-07-12",
+        "dateRaw": "12. Juli",
+        "url": "https://www.valtellina.it/de/geschehen/bormio/re-stelvio-mapei-de",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.5853277357414,
+          46.4547533315661
+        ]
+      },
+      "properties": {
+        "name": "Giro delle Dolomiti, Nigerpass",
+        "country": "it",
+        "date": "2026-07-13",
+        "dateEnd": "2026-07-13",
+        "dateRaw": "13. Juli",
+        "url": "https://www.girodolomiti.com/it/giro-2026",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.06,
+          45.08
+        ]
+      },
+      "properties": {
+        "name": "Alpe d'Huez",
+        "country": "fr",
+        "date": "2026-07-14",
+        "dateEnd": "2026-07-14",
+        "dateRaw": "14. Juli",
+        "url": "https://ciclista.net/autofrei-termine-2026/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.8101736491102,
+          46.55079605764
+        ]
+      },
+      "properties": {
+        "name": "Giro delle Dolomiti, Passo Gardena",
+        "country": "it",
+        "date": "2026-07-14",
+        "dateEnd": "2026-07-14",
+        "dateRaw": "14. Juli",
+        "url": "https://www.girodolomiti.com/it/giro-2026",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.451215456856,
+          46.5258268976155
+        ]
+      },
+      "properties": {
+        "name": "Giro delle Dolomiti, Weber im Moos",
+        "country": "it",
+        "date": "2026-07-15",
+        "dateEnd": "2026-07-15",
+        "dateRaw": "15. Juli",
+        "url": "https://www.girodolomiti.com/it/giro-2026",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.7916144571142,
+          46.3385351434749
+        ]
+      },
+      "properties": {
+        "name": "Giro delle Dolomiti, Passo Valles",
+        "country": "it",
+        "date": "2026-07-16",
+        "dateEnd": "2026-07-16",
+        "dateRaw": "16. Juli",
+        "url": "https://www.girodolomiti.com/it/giro-2026",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.2640442566716,
+          46.5614590260181
+        ]
+      },
+      "properties": {
+        "name": "Giro delle Dolomiti, Frassineto",
+        "country": "it",
+        "date": "2026-07-17",
+        "dateEnd": "2026-07-17",
+        "dateRaw": "17. Juli",
+        "url": "https://www.girodolomiti.com/it/giro-2026",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.311508765448615,
+          45.04660458314771
+        ]
+      },
+      "properties": {
+        "name": "La Grave",
+        "country": "fr",
+        "date": "2026-07-19",
+        "dateEnd": "2026-07-19",
+        "dateRaw": "19. Juli",
+        "url": "https://uk.bike-oisans.com/agenda/etape-du-tour-amateurs-passage-a-la-grave/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.315885930606241,
+          48.58943561450808
+        ]
+      },
+      "properties": {
+        "name": "Col des Pandours (Elsass)",
+        "country": "fr",
+        "date": "2026-07-19",
+        "dateEnd": "2026-07-19",
+        "dateRaw": "19. Juli",
+        "url": "https://www.massif-des-vosges.fr/experiences/colattitude/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.06,
+          45.05
+        ]
+      },
+      "properties": {
+        "name": "Alpe d'Huez",
+        "country": "fr",
+        "date": "2026-07-21",
+        "dateEnd": "2026-07-21",
+        "dateRaw": "21. Juli",
+        "url": "https://ciclista.net/autofrei-termine-2026/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.00819461,
+          47.03672532
+        ]
+      },
+      "properties": {
+        "name": "Slow Sundays Klöntal",
+        "country": "ch",
+        "date": "2026-07-26",
+        "dateEnd": "2026-07-26",
+        "dateRaw": "26. Juli",
+        "url": "https://www.glarus.ch/verwaltung/bau-und-versorgung/parkraumbewirtschaftung/slow-sundays-kloental.html/8403",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.06,
+          45.06
+        ]
+      },
+      "properties": {
+        "name": "Alpe d'Huez",
+        "country": "fr",
+        "date": "2026-07-28",
+        "dateEnd": "2026-07-28",
+        "dateRaw": "28. Juli",
+        "url": "https://ciclista.net/autofrei-termine-2026/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.93,
+          46.3
+        ]
+      },
+      "properties": {
+        "name": "Campo Moro",
+        "country": "it",
+        "date": "2026-08-01",
+        "dateEnd": "2026-08-01",
+        "dateRaw": "1. August",
+        "url": "https://ciclista.net/autofrei-termine-2026/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.06,
+          45.07
+        ]
+      },
+      "properties": {
+        "name": "Alpe d'Huez",
+        "country": "fr",
+        "date": "2026-08-04",
+        "dateEnd": "2026-08-04",
+        "dateRaw": "4. August",
+        "url": "https://ciclista.net/autofrei-termine-2026/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.442127222501238,
+          46.81880973224379
+        ]
+      },
+      "properties": {
+        "name": "Penser Joch",
+        "country": "it",
+        "date": "2026-08-04",
+        "dateEnd": "2026-08-04",
+        "dateRaw": "4. August",
+        "url": "https://ciclista.net/autofrei-termine-2026/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.984617709539513,
+          44.69234048822916
+        ]
+      },
+      "properties": {
+        "name": "Col du Noyer",
+        "country": "fr",
+        "date": "2026-08-07",
+        "dateEnd": "2026-08-07",
+        "dateRaw": "7. August",
+        "url": "https://www.ledevoluy.com/ete/offres/montee-cycliste-du-col-du-noyer-poligny-fr-ete-5019584/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.79,
+          45.87
+        ]
+      },
+      "properties": {
+        "name": "Col du Grand Colombier",
+        "country": "fr",
+        "date": "2026-08-08",
+        "dateEnd": "2026-08-08",
+        "dateRaw": "8. August",
+        "url": "https://ciclista.net/autofrei-termine-2026/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.091476328804239,
+          47.904759562991444
+        ]
+      },
+      "properties": {
+        "name": "Col du Haag (Elsass)",
+        "country": "fr",
+        "date": "2026-08-09",
+        "dateEnd": "2026-08-09",
+        "dateRaw": "9. August",
+        "url": "https://www.massif-des-vosges.fr/experiences/colattitude/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.06,
+          45.09
+        ]
+      },
+      "properties": {
+        "name": "Alpe d'Huez",
+        "country": "fr",
+        "date": "2026-08-11",
+        "dateEnd": "2026-08-11",
+        "dateRaw": "11. August",
+        "url": "https://ciclista.net/autofrei-termine-2026/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.186283559465174,
+          47.99915781152347
+        ]
+      },
+      "properties": {
+        "name": "Col du Firstplan (Elsass)",
+        "country": "fr",
+        "date": "2026-08-16",
+        "dateEnd": "2026-08-16",
+        "dateRaw": "16. August",
+        "url": "https://www.massif-des-vosges.fr/experiences/colattitude/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.06,
+          45.1
+        ]
+      },
+      "properties": {
+        "name": "Alpe d'Huez",
+        "country": "fr",
+        "date": "2026-08-20",
+        "dateEnd": "2026-08-22",
+        "dateRaw": "20.-22. August",
+        "url": "https://uk.bike-oisans.com/agenda/climbing-for-life/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.203,
+          45.227
+        ]
+      },
+      "properties": {
+        "name": "Triathlon Madeleine (u. a. Chaussy, Croix de Fer)",
+        "country": "fr",
+        "date": "2026-08-22",
+        "dateEnd": "2026-08-22",
+        "dateRaw": "22. August",
+        "url": "https://triathlon-madeleine.fr",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.588442011849473,
+          46.532407316264894
+        ]
+      },
+      "properties": {
+        "name": "Granfondo San Gottardo (nur Tremola ist autofrei)",
+        "country": "ch",
+        "date": "2026-08-23",
+        "dateEnd": "2026-08-23",
+        "dateRaw": "23. August",
+        "url": "https://www.granfondosangottardo.com",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.840889876285645,
+          47.819335809667876
+        ]
+      },
+      "properties": {
+        "name": "Col du Ballon d'Alsace (Elsass)",
+        "country": "fr",
+        "date": "2026-08-23",
+        "dateEnd": "2026-08-23",
+        "dateRaw": "23. August",
+        "url": "https://www.massif-des-vosges.fr/experiences/colattitude/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.06,
+          45.11
+        ]
+      },
+      "properties": {
+        "name": "Alpe d'Huez",
+        "country": "fr",
+        "date": "2026-08-25",
+        "dateEnd": "2026-08-27",
+        "dateRaw": "25.-27. August",
+        "url": "https://uk.bike-oisans.com/agenda/haute-route-alpes/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.316,
+          46.514
+        ]
+      },
+      "properties": {
+        "name": "Laghi di Cancano",
+        "country": "it",
+        "date": "2026-08-27",
+        "dateEnd": "2026-08-27",
+        "dateRaw": "27. August",
+        "url": "https://ciclista.net/autofrei-termine-2026/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.298,
+          46.247
+        ]
+      },
+      "properties": {
+        "name": "Mortirolo",
+        "country": "it",
+        "date": "2026-08-28",
+        "dateEnd": "2026-08-28",
+        "dateRaw": "28. August",
+        "url": "https://www.valtellina.it/de/mortirolo-gesperrt",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.437964124452474,
+          46.534076030070544
+        ]
+      },
+      "properties": {
+        "name": "Stelvio Bike (Umbrail ebenfalls motorfahzeugfrei)",
+        "country": "it",
+        "date": "2026-08-29",
+        "dateEnd": "2026-08-29",
+        "dateRaw": "29. August",
+        "url": "https://www.nationalpark-stelvio.it/de/erleben/radfahren-mountainbiken/radtag-stilfserjoch.html",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.48,
+          46.34
+        ]
+      },
+      "properties": {
+        "name": "Gavia",
+        "country": "it",
+        "date": "2026-08-30",
+        "dateEnd": "2026-08-30",
+        "dateRaw": "30. August",
+        "url": "https://www.valtellina.it/de/gavia-gesperrt",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.00819461,
+          47.03672532
+        ]
+      },
+      "properties": {
+        "name": "Slow Sundays Klöntal",
+        "country": "ch",
+        "date": "2026-08-30",
+        "dateEnd": "2026-08-30",
+        "dateRaw": "30. August",
+        "url": "https://www.glarus.ch/verwaltung/bau-und-versorgung/parkraumbewirtschaftung/slow-sundays-kloental.html/8403",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.612860585394288,
+          48.97871353812813
+        ]
+      },
+      "properties": {
+        "name": "Col du Wintersberg (Elsass)",
+        "country": "fr",
+        "date": "2026-08-30",
+        "dateEnd": "2026-08-30",
+        "dateRaw": "30. August",
+        "url": "https://www.massif-des-vosges.fr/experiences/colattitude/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.148510844039097,
+          47.85803213051896
+        ]
+      },
+      "properties": {
+        "name": "Hartmannswillerkopf (Elsass)",
+        "country": "fr",
+        "date": "2026-09-05",
+        "dateEnd": "2026-09-05",
+        "dateRaw": "5. September",
+        "url": "https://www.massif-des-vosges.fr/experiences/colattitude/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.9797409712881455,
+          44.683923848235295
+        ]
+      },
+      "properties": {
+        "name": "Col d'Agnel",
+        "country": "fr",
+        "date": "2026-09-06",
+        "dateEnd": "2026-09-06",
+        "dateRaw": "6. September",
+        "url": "https://lequeyras.com/en/agenda/reserved-passes-col-agnel-molines-en-queyras-en-3261727/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.843841005164437,
+          46.58361502378158
+        ]
+      },
+      "properties": {
+        "name": "Slowup Mountain Albula",
+        "country": "ch",
+        "date": "2026-09-06",
+        "dateEnd": "2026-09-06",
+        "dateRaw": "6. September",
+        "url": "https://www.slowup.ch/albula/de.html",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.77,
+          45.84
+        ]
+      },
+      "properties": {
+        "name": "Col du Grand Colombier",
+        "country": "fr",
+        "date": "2026-09-12",
+        "dateEnd": "2026-09-12",
+        "dateRaw": "12. September",
+        "url": "https://ciclista.net/autofrei-termine-2026/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.7736,
+          46.5057
+        ]
+      },
+      "properties": {
+        "name": "Sellaronda Bikeday",
+        "country": "it",
+        "date": "2026-09-12",
+        "dateEnd": "2026-09-12",
+        "dateRaw": "12. September",
+        "url": "https://www.bikehotels.it/de/suedtirol-wir/news/363-autofreie-paesse-die-termine-in-suedtirol-2026.html",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.854186537804292,
+          46.868010155269666
+        ]
+      },
+      "properties": {
+        "name": "Klausen Monument",
+        "country": "ch",
+        "date": "2026-09-13",
+        "dateEnd": "2026-09-13",
+        "dateRaw": "13. September",
+        "url": "https://www.klausen-monument.ch",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.127836923423973,
+          47.87489088281555
+        ]
+      },
+      "properties": {
+        "name": "Col Amic (Elsass)",
+        "country": "fr",
+        "date": "2026-09-13",
+        "dateEnd": "2026-09-13",
+        "dateRaw": "13. September",
+        "url": "https://www.massif-des-vosges.fr/experiences/colattitude/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.20167392981504,
+          46.4186629806719
+        ]
+      },
+      "properties": {
+        "name": "Radtag am Mendelpass",
+        "country": "it",
+        "date": "2026-09-19",
+        "dateEnd": "2026-09-19",
+        "dateRaw": "19. September",
+        "url": "https://www.bikehotels.it/de/suedtirol-wir/news/363-autofreie-paesse-die-termine-in-suedtirol-2026.html",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.44,
+          46.53
+        ]
+      },
+      "properties": {
+        "name": "Stilfserjoch / Stelvio",
+        "country": "it",
+        "date": "2026-09-19",
+        "dateEnd": "2026-09-19",
+        "dateRaw": "19. September",
+        "url": "https://ciclista.net/autofrei-termine-2026/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.585,
+          46.454
+        ]
+      },
+      "properties": {
+        "name": "Nigerpass (Eggental)",
+        "country": "it",
+        "date": "2026-09-21",
+        "dateEnd": "2026-09-21",
+        "dateRaw": "21. September",
+        "url": "https://www.bikehotels.it/de/suedtirol-wir/news/363-autofreie-paesse-die-termine-in-suedtirol-2026.html",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.584,
+          46.455
+        ]
+      },
+      "properties": {
+        "name": "Nigerpass-Karerpass",
+        "country": "it",
+        "date": "2026-09-22",
+        "dateEnd": "2026-09-22",
+        "dateRaw": "22. September",
+        "url": "https://www.bikehotels.it/de/suedtirol-wir/news/363-autofreie-paesse-die-termine-in-suedtirol-2026.html",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.34104449560363,
+          46.0027324379895
+        ]
+      },
+      "properties": {
+        "name": "Ride the Alps Mauvoisin",
+        "country": "ch",
+        "date": "2026-09-26",
+        "dateEnd": "2026-09-26",
+        "dateRaw": "26. September",
+        "url": "https://ridethealps.ch/de/",
+        "isNew": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.120369548210228,
+          47.984621156700854
+        ]
+      },
+      "properties": {
+        "name": "Col du Petit Ballon (Elsass)",
+        "country": "fr",
+        "date": "2026-09-27",
+        "dateEnd": "2026-09-27",
+        "dateRaw": "27. September",
+        "url": "https://www.massif-des-vosges.fr/experiences/colattitude/",
+        "isNew": false
+      }
+    }
+  ]
+}

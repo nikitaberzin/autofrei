@@ -1,0 +1,238 @@
+<title>Autofreie Bike-Tage 2026</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --bg:#f2f5f4; --surface:#ffffff; --ink:#16211f; --ink2:#5d6f6c;
+  --line:#dde4e3; --accent:#0e6e6b; --accent-soft:#e0efee; --accent-ink:#0a5350;
+  --it:#00803f; --at:#c96a00; --fr:#0055a4; --ch:#c8241a;
+  --r:10px;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:#0f1514; --surface:#18211f; --ink:#e7edec; --ink2:#8fa39f;
+    --line:#26322f; --accent:#4fd1c7; --accent-soft:#123230; --accent-ink:#7fe3db;
+    --it:#2bb673; --at:#f0a03c; --fr:#5f9de8; --ch:#f2594c;
+  }
+}
+:root[data-theme="light"] {
+  --bg:#f2f5f4; --surface:#ffffff; --ink:#16211f; --ink2:#5d6f6c;
+  --line:#dde4e3; --accent:#0e6e6b; --accent-soft:#e0efee; --accent-ink:#0a5350;
+  --it:#00803f; --at:#c96a00; --fr:#0055a4; --ch:#c8241a;
+}
+:root[data-theme="dark"] {
+  --bg:#0f1514; --surface:#18211f; --ink:#e7edec; --ink2:#8fa39f;
+  --line:#26322f; --accent:#4fd1c7; --accent-soft:#123230; --accent-ink:#7fe3db;
+  --it:#2bb673; --at:#f0a03c; --fr:#5f9de8; --ch:#f2594c;
+}
+
+* { box-sizing:border-box; }
+body {
+  margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.55 var(--sans);
+  -webkit-text-size-adjust:100%;
+}
+.wrap { max-width:47rem; margin:0 auto; padding:1.5rem 1.1rem 4rem; }
+
+.hd { display:flex; flex-direction:column; gap:.3rem; margin-bottom:1.5rem; }
+h1 { margin:0; font-size:1.45rem; line-height:1.2; letter-spacing:-.015em;
+     font-weight:640; text-wrap:balance; }
+.sub { font-family:var(--mono); font-size:.76rem; letter-spacing:.02em;
+       color:var(--ink2); font-variant-numeric:tabular-nums; }
+.sub a { color:var(--accent); text-decoration:none; border-bottom:1px solid var(--line); }
+.sub a:hover { border-color:var(--accent); }
+
+.next {
+  background:var(--surface); border:1px solid var(--line);
+  border-radius:var(--r); padding:1rem 1.1rem; margin-bottom:1.4rem;
+  display:flex; flex-direction:column; gap:.45rem;
+  box-shadow:0 1px 2px rgba(0,0,0,.04);
+}
+.next-l { font-family:var(--mono); font-size:.68rem; text-transform:uppercase;
+          letter-spacing:.14em; color:var(--accent); }
+.next-t { font-size:1.12rem; font-weight:620; line-height:1.3; text-wrap:balance; }
+.next-t a { color:inherit; text-decoration:none; }
+.next-t a:hover { color:var(--accent); }
+.next-m { font-family:var(--mono); font-size:.8rem; color:var(--ink2);
+          font-variant-numeric:tabular-nums; display:flex; flex-wrap:wrap;
+          gap:.5rem; align-items:center; }
+
+.fil { display:flex; flex-wrap:wrap; gap:.4rem; margin-bottom:1.6rem; }
+.fil button {
+  font:inherit; font-family:var(--mono); font-size:.76rem; letter-spacing:.02em;
+  padding:.34rem .68rem; border-radius:99px; cursor:pointer;
+  background:transparent; color:var(--ink2);
+  border:1px solid var(--line); transition:.14s;
+  font-variant-numeric:tabular-nums;
+}
+.fil button:hover { color:var(--ink); border-color:var(--ink2); }
+.fil button[aria-pressed="true"] {
+  background:var(--accent-soft); color:var(--accent-ink);
+  border-color:var(--accent);
+}
+.fil button:focus-visible, .lnk:focus-visible, .n:focus-visible,
+summary:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+
+.mo { margin-bottom:1.7rem; }
+.mo-h {
+  margin:0 0 .55rem; font-family:var(--mono); font-weight:500;
+  font-size:.7rem; text-transform:uppercase; letter-spacing:.16em;
+  color:var(--ink2); display:flex; align-items:center; gap:.55rem;
+  padding-bottom:.4rem; border-bottom:1px solid var(--line);
+}
+.mo-n { margin-left:auto; font-variant-numeric:tabular-nums; opacity:.75; }
+
+.lst { list-style:none; margin:0; padding:0; display:flex;
+       flex-direction:column; gap:.15rem; }
+.ev {
+  display:grid; grid-template-columns:3.7rem 1fr; gap:.15rem .8rem;
+  padding:.6rem .7rem; border-radius:8px; align-items:baseline;
+}
+.ev:hover { background:var(--surface); }
+.d { display:flex; flex-direction:column; gap:.05rem; }
+.wd { font-family:var(--mono); font-size:.66rem; text-transform:uppercase;
+      letter-spacing:.1em; color:var(--ink2); }
+/* Kein nowrap: monatsuebergreifende Bereiche ("30. Mai–2. Juni") behalten
+   den Volltext und sollen umbrechen statt in die Nachbarspalte zu laufen. */
+.dm { font-family:var(--mono); font-size:.82rem; color:var(--ink);
+      font-variant-numeric:tabular-nums; overflow-wrap:break-word; }
+.b { display:flex; flex-direction:column; gap:.18rem; min-width:0; }
+.n { font-size:.97rem; font-weight:530; color:var(--ink);
+     text-decoration:none; overflow-wrap:anywhere; }
+a.n:hover { color:var(--accent); text-decoration:underline;
+            text-underline-offset:2px; }
+.m { display:flex; flex-wrap:wrap; gap:.4rem; align-items:center; }
+.c { font-family:var(--mono); font-size:.68rem; letter-spacing:.05em;
+     color:var(--ink2); display:inline-flex; align-items:center; gap:.3rem; }
+.c::before { content:""; width:7px; height:7px; border-radius:50%;
+             background:currentColor; flex:none; }
+.c-it { color:var(--it); } .c-at { color:var(--at); }
+.c-fr { color:var(--fr); } .c-ch { color:var(--ch); }
+.neu {
+  font-family:var(--mono); font-size:.62rem; text-transform:uppercase;
+  letter-spacing:.1em; padding:.1rem .35rem; border-radius:3px;
+  background:var(--accent-soft); color:var(--accent-ink); font-weight:600;
+}
+
+.past { margin-top:2.2rem; border-top:1px solid var(--line); padding-top:1rem; }
+.past summary {
+  cursor:pointer; font-family:var(--mono); font-size:.76rem;
+  color:var(--ink2); list-style:none; padding:.3rem 0;
+  font-variant-numeric:tabular-nums;
+}
+.past summary::-webkit-details-marker { display:none; }
+.past summary::before { content:"\25B8  "; display:inline-block;
+                        transition:transform .15s; }
+.past[open] summary::before { transform:rotate(90deg); }
+.past summary:hover { color:var(--ink); }
+.past[open] .mo { opacity:.62; }
+
+.ft { margin-top:2.6rem; padding-top:1.2rem; border-top:1px solid var(--line);
+      display:flex; flex-direction:column; gap:.55rem;
+      font-family:var(--mono); font-size:.76rem; color:var(--ink2); }
+.lnk { color:var(--accent); text-decoration:none;
+       border-bottom:1px solid var(--line); }
+.lnk:hover { border-color:var(--accent); }
+.empty { padding:2rem .7rem; color:var(--ink2); font-family:var(--mono);
+         font-size:.82rem; }
+.hide { display:none !important; }
+
+@media (max-width:29rem) {
+  .ev { grid-template-columns:1fr; gap:.15rem; padding:.55rem .5rem; }
+  .d { flex-direction:row; gap:.45rem; align-items:baseline; }
+}
+/* Touch-Ziele >= 44px. pointer:coarse trifft Finger-Bedienung, nicht bloss
+   schmale Fenster - ein kleines Desktop-Fenster braucht das nicht. */
+@media (pointer: coarse) {
+  .fil button { min-height:44px; padding:.6rem .9rem; }
+  .past summary { min-height:44px; display:flex; align-items:center; }
+  .ft { gap:.9rem; }
+  .ft .lnk { display:inline-block; padding:.32rem 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition:none !important; animation:none !important; }
+}
+</style>
+
+<div class="wrap">
+  <header class="hd">
+    <h1>Autofreie Bike-Tage 2026</h1>
+    <p class="sub">102 Termine &middot; Stand 2026-08-09 &middot; Quelle
+      <a href="https://www.freipass.ch/" target="_blank" rel="noopener noreferrer">freipass.ch</a>
+    </p>
+  </header>
+
+  <div class="next"><span class="next-l">Als Nächstes</span><span class="next-t"><a href="https://www.massif-des-vosges.fr/experiences/colattitude/" target="_blank" rel="noopener noreferrer">Col du Haag (Elsass)</a></span><span class="next-m"><span>9. August</span><span class="c c-fr">Frankreich</span><span id="cd" data-date="2026-08-09"></span></span></div>
+
+  <nav class="fil" id="fil" aria-label="Nach Land filtern">
+    <button type="button" data-land="all" aria-pressed="true">Alle 27</button>
+    <button type="button" data-land="it" aria-pressed="false">Italien 9</button>
+    <button type="button" data-land="fr" aria-pressed="false">Frankreich 13</button>
+    <button type="button" data-land="ch" aria-pressed="false">Schweiz 5</button>
+  </nav>
+
+  <main id="upcoming">
+    <section class="mo"><h3 class="mo-h">August 2026<span class="mo-n">14</span></h3><ul class="lst"><li class="ev" data-c="fr"><div class="d"><span class="wd">So</span><span class="dm">9.</span></div><div class="b"><a class="n" href="https://www.massif-des-vosges.fr/experiences/colattitude/" target="_blank" rel="noopener noreferrer">Col du Haag (Elsass)</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">Di</span><span class="dm">11.</span></div><div class="b"><a class="n" href="https://ciclista.net/autofrei-termine-2026/" target="_blank" rel="noopener noreferrer">Alpe d&#39;Huez</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">So</span><span class="dm">16.</span></div><div class="b"><a class="n" href="https://www.massif-des-vosges.fr/experiences/colattitude/" target="_blank" rel="noopener noreferrer">Col du Firstplan (Elsass)</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">Do</span><span class="dm">20.–22.</span></div><div class="b"><a class="n" href="https://uk.bike-oisans.com/agenda/climbing-for-life/" target="_blank" rel="noopener noreferrer">Alpe d&#39;Huez</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">Sa</span><span class="dm">22.</span></div><div class="b"><a class="n" href="https://triathlon-madeleine.fr" target="_blank" rel="noopener noreferrer">Triathlon Madeleine (u. a. Chaussy, Croix de Fer)</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="ch"><div class="d"><span class="wd">So</span><span class="dm">23.</span></div><div class="b"><a class="n" href="https://www.granfondosangottardo.com" target="_blank" rel="noopener noreferrer">Granfondo San Gottardo (nur Tremola ist autofrei)</a><div class="m"><span class="c c-ch">Schweiz</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">So</span><span class="dm">23.</span></div><div class="b"><a class="n" href="https://www.massif-des-vosges.fr/experiences/colattitude/" target="_blank" rel="noopener noreferrer">Col du Ballon d&#39;Alsace (Elsass)</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">Di</span><span class="dm">25.–27.</span></div><div class="b"><a class="n" href="https://uk.bike-oisans.com/agenda/haute-route-alpes/" target="_blank" rel="noopener noreferrer">Alpe d&#39;Huez</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">Do</span><span class="dm">27.</span></div><div class="b"><a class="n" href="https://ciclista.net/autofrei-termine-2026/" target="_blank" rel="noopener noreferrer">Laghi di Cancano</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">Fr</span><span class="dm">28.</span></div><div class="b"><a class="n" href="https://www.valtellina.it/de/mortirolo-gesperrt" target="_blank" rel="noopener noreferrer">Mortirolo</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">Sa</span><span class="dm">29.</span></div><div class="b"><a class="n" href="https://www.nationalpark-stelvio.it/de/erleben/radfahren-mountainbiken/radtag-stilfserjoch.html" target="_blank" rel="noopener noreferrer">Stelvio Bike (Umbrail ebenfalls motorfahzeugfrei)</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">So</span><span class="dm">30.</span></div><div class="b"><a class="n" href="https://www.valtellina.it/de/gavia-gesperrt" target="_blank" rel="noopener noreferrer">Gavia</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="ch"><div class="d"><span class="wd">So</span><span class="dm">30.</span></div><div class="b"><a class="n" href="https://www.glarus.ch/verwaltung/bau-und-versorgung/parkraumbewirtschaftung/slow-sundays-kloental.html/8403" target="_blank" rel="noopener noreferrer">Slow Sundays Klöntal</a><div class="m"><span class="c c-ch">Schweiz</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">So</span><span class="dm">30.</span></div><div class="b"><a class="n" href="https://www.massif-des-vosges.fr/experiences/colattitude/" target="_blank" rel="noopener noreferrer">Col du Wintersberg (Elsass)</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li></ul></section><section class="mo"><h3 class="mo-h">September 2026<span class="mo-n">13</span></h3><ul class="lst"><li class="ev" data-c="fr"><div class="d"><span class="wd">Sa</span><span class="dm">5.</span></div><div class="b"><a class="n" href="https://www.massif-des-vosges.fr/experiences/colattitude/" target="_blank" rel="noopener noreferrer">Hartmannswillerkopf (Elsass)</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">So</span><span class="dm">6.</span></div><div class="b"><a class="n" href="https://lequeyras.com/en/agenda/reserved-passes-col-agnel-molines-en-queyras-en-3261727/" target="_blank" rel="noopener noreferrer">Col d&#39;Agnel</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="ch"><div class="d"><span class="wd">So</span><span class="dm">6.</span></div><div class="b"><a class="n" href="https://www.slowup.ch/albula/de.html" target="_blank" rel="noopener noreferrer">Slowup Mountain Albula</a><div class="m"><span class="c c-ch">Schweiz</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">Sa</span><span class="dm">12.</span></div><div class="b"><a class="n" href="https://ciclista.net/autofrei-termine-2026/" target="_blank" rel="noopener noreferrer">Col du Grand Colombier</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">Sa</span><span class="dm">12.</span></div><div class="b"><a class="n" href="https://www.bikehotels.it/de/suedtirol-wir/news/363-autofreie-paesse-die-termine-in-suedtirol-2026.html" target="_blank" rel="noopener noreferrer">Sellaronda Bikeday</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="ch"><div class="d"><span class="wd">So</span><span class="dm">13.</span></div><div class="b"><a class="n" href="https://www.klausen-monument.ch" target="_blank" rel="noopener noreferrer">Klausen Monument</a><div class="m"><span class="c c-ch">Schweiz</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">So</span><span class="dm">13.</span></div><div class="b"><a class="n" href="https://www.massif-des-vosges.fr/experiences/colattitude/" target="_blank" rel="noopener noreferrer">Col Amic (Elsass)</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">Sa</span><span class="dm">19.</span></div><div class="b"><a class="n" href="https://www.bikehotels.it/de/suedtirol-wir/news/363-autofreie-paesse-die-termine-in-suedtirol-2026.html" target="_blank" rel="noopener noreferrer">Radtag am Mendelpass</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">Sa</span><span class="dm">19.</span></div><div class="b"><a class="n" href="https://ciclista.net/autofrei-termine-2026/" target="_blank" rel="noopener noreferrer">Stilfserjoch / Stelvio</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">Mo</span><span class="dm">21.</span></div><div class="b"><a class="n" href="https://www.bikehotels.it/de/suedtirol-wir/news/363-autofreie-paesse-die-termine-in-suedtirol-2026.html" target="_blank" rel="noopener noreferrer">Nigerpass (Eggental)</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">Di</span><span class="dm">22.</span></div><div class="b"><a class="n" href="https://www.bikehotels.it/de/suedtirol-wir/news/363-autofreie-paesse-die-termine-in-suedtirol-2026.html" target="_blank" rel="noopener noreferrer">Nigerpass-Karerpass</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="ch"><div class="d"><span class="wd">Sa</span><span class="dm">26.</span></div><div class="b"><a class="n" href="https://ridethealps.ch/de/" target="_blank" rel="noopener noreferrer">Ride the Alps Mauvoisin</a><div class="m"><span class="c c-ch">Schweiz</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">So</span><span class="dm">27.</span></div><div class="b"><a class="n" href="https://www.massif-des-vosges.fr/experiences/colattitude/" target="_blank" rel="noopener noreferrer">Col du Petit Ballon (Elsass)</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li></ul></section>
+  </main>
+
+  <p class="empty hide" id="empty">Keine Termine für diese Auswahl.</p>
+
+  <details class="past"><summary>75 vergangene Termine 2026 anzeigen</summary><section class="mo"><h3 class="mo-h">April 2026<span class="mo-n">2</span></h3><ul class="lst"><li class="ev" data-c="it"><div class="d"><span class="wd">Sa</span><span class="dm">11.</span></div><div class="b"><a class="n" href="https://www.mendelrace.it" target="_blank" rel="noopener noreferrer">MendelRace</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="ch"><div class="d"><span class="wd">Di</span><span class="dm">21.</span></div><div class="b"><a class="n" href="https://www.graubuenden.ch/de/freipass/flueelapass" target="_blank" rel="noopener noreferrer">Flüelapass</a><div class="m"><span class="c c-ch">Schweiz</span></div></div></li></ul></section><section class="mo"><h3 class="mo-h">Mai 2026<span class="mo-n">7</span></h3><ul class="lst"><li class="ev" data-c="it"><div class="d"><span class="wd">Sa</span><span class="dm">9.</span></div><div class="b"><a class="n" href="https://www.bergcup.it/deutsch/die-bergcup-rennen/edelrot-trophäe-gampenpass/" target="_blank" rel="noopener noreferrer">Edelrot Trophäe (Gampenpass)</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="ch"><div class="d"><span class="wd">So</span><span class="dm">17.</span></div><div class="b"><a class="n" href="https://ridethealps.ch/de/" target="_blank" rel="noopener noreferrer">Moosalp</a><div class="m"><span class="c c-ch">Schweiz</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">Sa</span><span class="dm">23.</span></div><div class="b"><a class="n" href="https://ciclista.net/autofrei-termine-2026/" target="_blank" rel="noopener noreferrer">Monte Grappa Bike Day</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">So</span><span class="dm">24.</span></div><div class="b"><a class="n" href="https://ciclista.net/autofrei-termine-2026/" target="_blank" rel="noopener noreferrer">Campo Moro</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">So</span><span class="dm">24.</span></div><div class="b"><a class="n" href="https://www.novecolli.it/de-DE" target="_blank" rel="noopener noreferrer">Nove Colli</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">So</span><span class="dm">24.</span></div><div class="b"><a class="n" href="https://villarddelans.gfny.com" target="_blank" rel="noopener noreferrer">GFNY Villard de Lans</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">Sa</span><span class="dm">30.</span></div><div class="b"><a class="n" href="https://ciclista.net/autofrei-termine-2026/" target="_blank" rel="noopener noreferrer">Passo San Marco</a><div class="m"><span class="c c-it">Italien</span></div></div></li></ul></section><section class="mo"><h3 class="mo-h">Juni 2026<span class="mo-n">31</span></h3><ul class="lst"><li class="ev" data-c="fr"><div class="d"><span class="wd">Mo</span><span class="dm">1.–5.</span></div><div class="b"><a class="n" href="https://uk.bike-oisans.com/agenda/alpe-dhuzes/" target="_blank" rel="noopener noreferrer">Alpe d&#39;Huez</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">Do</span><span class="dm">4.</span></div><div class="b"><a class="n" href="https://www.opgevenisgeenoptie.nl" target="_blank" rel="noopener noreferrer">Alpe d&#39;Huez (Alpe d&#39;Huez Charity Event)</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">Sa</span><span class="dm">6.</span></div><div class="b"><a class="n" href="https://gfmontventoux.com/en/" target="_blank" rel="noopener noreferrer">Granfondo Mont Ventoux</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">Sa</span><span class="dm">6.</span></div><div class="b"><a class="n" href="http://www.sellarondabikeday.com" target="_blank" rel="noopener noreferrer">Sellaronda Bike Day</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">Sa</span><span class="dm">6.</span></div><div class="b"><a class="n" href="https://www.galibier-challenge.com/rando" target="_blank" rel="noopener noreferrer">Rando La Mauriennaise</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">Sa</span><span class="dm">6.</span></div><div class="b"><a class="n" href="https://www.tourmaletpicdumidi.com/temps-fort/la-montee-du-geant/" target="_blank" rel="noopener noreferrer">Tourmalet</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">Sa</span><span class="dm">6.</span></div><div class="b"><a class="n" href="https://www.bergcup.it/deutsch/die-bergcup-rennen/prad-stilfser-joch/" target="_blank" rel="noopener noreferrer">Stilfser Joch</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">So</span><span class="dm">7.</span></div><div class="b"><a class="n" href="https://www.galibier-challenge.com/cyclosportive" target="_blank" rel="noopener noreferrer">La Cyclosportive</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">So</span><span class="dm">7.</span></div><div class="b"><a class="n" href="https://www.visit.alsace/de/230112334-colattitude-lac-blanc-col-du-calvaire-col-du-louschbach/" target="_blank" rel="noopener noreferrer">Col du Calvaire &amp; Col du Louschbach (Elsass)</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="ch"><div class="d"><span class="wd">So</span><span class="dm">7.</span></div><div class="b"><a class="n" href="https://freipass.ch/index.php" target="_blank" rel="noopener noreferrer">FreiPass Lukmanier</a><div class="m"><span class="c c-ch">Schweiz</span></div></div></li><li class="ev" data-c="at"><div class="d"><span class="wd">So</span><span class="dm">7.</span></div><div class="b"><a class="n" href="https://www.glocknerkoenig.com/de" target="_blank" rel="noopener noreferrer">Glocknerkönig</a><div class="m"><span class="c c-at">Österreich</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">So</span><span class="dm">7.</span></div><div class="b"><a class="n" href="https://www.galibier-challenge.com/la-grimpee" target="_blank" rel="noopener noreferrer">Galibier</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">Mo</span><span class="dm">8.</span></div><div class="b"><a class="n" href="https://ciclista.net/autofrei-termine-2026/" target="_blank" rel="noopener noreferrer">Laghi di Cancano</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">Di</span><span class="dm">9.–13.</span></div><div class="b"><a class="n" href="https://www.ardechoise.com" target="_blank" rel="noopener noreferrer">L&#39;Ardéchoise</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">Sa</span><span class="dm">13.</span></div><div class="b"><a class="n" href="https://ciclista.net/autofrei-termine-2026/" target="_blank" rel="noopener noreferrer">Col du Grand Colombier</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">So</span><span class="dm">14.</span></div><div class="b"><a class="n" href="https://www.dolomitensport.at/de/events/supergirodolomiti.html" target="_blank" rel="noopener noreferrer">Super Giro Dolomiti</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">Do</span><span class="dm">18.</span></div><div class="b"><a class="n" href="https://www.tourduals.nl" target="_blank" rel="noopener noreferrer">Mont Ventoux, Tour du ALS</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">Sa</span><span class="dm">20.</span></div><div class="b"><a class="n" href="https://www.bikehotels.it/de/suedtirol-wir/events/74-dolomites-bike-day-2023.html" target="_blank" rel="noopener noreferrer">Dolomites Bike Day</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">So</span><span class="dm">21.</span></div><div class="b"><a class="n" href="https://www.valdisere.com/en/events-entertainment-calendar/iserane-val-disere-en-4157467/" target="_blank" rel="noopener noreferrer">Col de L&#39;Iseran</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">So</span><span class="dm">21.</span></div><div class="b"><a class="n" href="https://www.sportfuldolomitirace.it/en/home/" target="_blank" rel="noopener noreferrer">Sportful Dolomiti Race</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="ch"><div class="d"><span class="wd">Fr</span><span class="dm">26.</span></div><div class="b"><a class="n" href="https://ridethealps.ch/de/" target="_blank" rel="noopener noreferrer">Ride the Alps Sanetsch</a><div class="m"><span class="c c-ch">Schweiz</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">Fr</span><span class="dm">26.</span></div><div class="b"><a class="n" href="https://www.stelvionight.com/de/home.html" target="_blank" rel="noopener noreferrer">Stelvio Night</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="ch"><div class="d"><span class="wd">Sa</span><span class="dm">27.</span></div><div class="b"><a class="n" href="https://ridethealps.ch/de/" target="_blank" rel="noopener noreferrer">Ride the Alps Moiry</a><div class="m"><span class="c c-ch">Schweiz</span></div></div></li><li class="ev" data-c="ch"><div class="d"><span class="wd">So</span><span class="dm">28.</span></div><div class="b"><a class="n" href="https://ridethealps.ch/de/" target="_blank" rel="noopener noreferrer">Ride the Alps Tseuzier</a><div class="m"><span class="c c-ch">Schweiz</span></div></div></li><li class="ev" data-c="ch"><div class="d"><span class="wd">So</span><span class="dm">28.</span></div><div class="b"><a class="n" href="https://freipass.ch/index.php" target="_blank" rel="noopener noreferrer">FreiPass Splügenpass</a><div class="m"><span class="c c-ch">Schweiz</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">So</span><span class="dm">28.</span></div><div class="b"><a class="n" href="https://uk.bike-oisans.com/agenda/lepape-marmotte-granfondo/" target="_blank" rel="noopener noreferrer">Marmotte Granfondo</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="ch"><div class="d"><span class="wd">So</span><span class="dm">28.</span></div><div class="b"><a class="n" href="https://www.glarus.ch/verwaltung/bau-und-versorgung/parkraumbewirtschaftung/slow-sundays-kloental.html/8403" target="_blank" rel="noopener noreferrer">Slow Sundays Klöntal</a><div class="m"><span class="c c-ch">Schweiz</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">So</span><span class="dm">28.</span></div><div class="b"><a class="n" href="https://www.massif-des-vosges.fr/experiences/colattitude/" target="_blank" rel="noopener noreferrer">Loosthal (Elsass)</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">Mo</span><span class="dm">29.</span></div><div class="b"><a class="n" href="https://lequeyras.com/agenda/la-tournee-des-grands-cols/" target="_blank" rel="noopener noreferrer">Galibier</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">Di</span><span class="dm">30.</span></div><div class="b"><a class="n" href="https://ciclista.net/autofrei-termine-2026/" target="_blank" rel="noopener noreferrer">Col de la Croix de Fer</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">Di</span><span class="dm">30.</span></div><div class="b"><a class="n" href="https://lequeyras.com/agenda/la-tournee-des-grands-cols/" target="_blank" rel="noopener noreferrer">Col du Granon</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li></ul></section><section class="mo"><h3 class="mo-h">Juli 2026<span class="mo-n">30</span></h3><ul class="lst"><li class="ev" data-c="fr"><div class="d"><span class="wd">Mi</span><span class="dm">1.</span></div><div class="b"><a class="n" href="https://lequeyras.com/agenda/la-tournee-des-grands-cols/" target="_blank" rel="noopener noreferrer">Col de l&#39;Èchelle</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">Do</span><span class="dm">2.</span></div><div class="b"><a class="n" href="https://lequeyras.com/agenda/la-tournee-des-grands-cols/" target="_blank" rel="noopener noreferrer">Col d&#39;Izoard</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">Fr</span><span class="dm">3.</span></div><div class="b"><a class="n" href="https://lequeyras.com/en/agenda/reserved-passes-col-agnel-molines-en-queyras-en-3261727/" target="_blank" rel="noopener noreferrer">Col d&#39;Agnel</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">Sa</span><span class="dm">4.</span></div><div class="b"><a class="n" href="https://lequeyras.com/agenda/la-tournee-des-grands-cols/" target="_blank" rel="noopener noreferrer">Rucas / Col Montoso</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">So</span><span class="dm">5.</span></div><div class="b"><a class="n" href="https://lequeyras.com/agenda/la-tournee-des-grands-cols/" target="_blank" rel="noopener noreferrer">Strada die Cannoni</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">So</span><span class="dm">5.</span></div><div class="b"><a class="n" href="https://www.valtellina.it/de/gavia-gesperrt" target="_blank" rel="noopener noreferrer">Gavia</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">So</span><span class="dm">5.</span></div><div class="b"><a class="n" href="https://www.maratona.it/de/" target="_blank" rel="noopener noreferrer">Maratona dles Dolomites</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="at"><div class="d"><span class="wd">So</span><span class="dm">5.</span></div><div class="b"><a class="n" href="https://www.granfondoguide.com/Events/Index/7165/grossglockner-bike-challenge" target="_blank" rel="noopener noreferrer">Grossglockner Bike Challenge</a><div class="m"><span class="c c-at">Österreich</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">So</span><span class="dm">5.</span></div><div class="b"><a class="n" href="https://www.massif-des-vosges.fr/experiences/colattitude/" target="_blank" rel="noopener noreferrer">Planche des Belles Filles (Elsass)</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">Mo</span><span class="dm">6.</span></div><div class="b"><a class="n" href="https://lequeyras.com/agenda/la-tournee-des-grands-cols/" target="_blank" rel="noopener noreferrer">Col Sampeyre</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">Di</span><span class="dm">7.</span></div><div class="b"><a class="n" href="https://lequeyras.com/agenda/la-tournee-des-grands-cols/" target="_blank" rel="noopener noreferrer">Col Pian del Re</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">Di</span><span class="dm">7.</span></div><div class="b"><a class="n" href="https://ciclista.net/autofrei-termine-2026/" target="_blank" rel="noopener noreferrer">Alpe d&#39;Huez</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">Mi</span><span class="dm">8.</span></div><div class="b"><a class="n" href="https://lequeyras.com/agenda/la-tournee-des-grands-cols/" target="_blank" rel="noopener noreferrer">S. Anna Vinadio</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">Do</span><span class="dm">9.</span></div><div class="b"><a class="n" href="https://www.valtellina.it/de/mortirolo-gesperrt" target="_blank" rel="noopener noreferrer">Mortirolo</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">Do</span><span class="dm">9.</span></div><div class="b"><a class="n" href="https://lequeyras.com/agenda/la-tournee-des-grands-cols/" target="_blank" rel="noopener noreferrer">Col Fauniera</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">Fr</span><span class="dm">10.</span></div><div class="b"><a class="n" href="https://lequeyras.com/agenda/la-tournee-des-grands-cols/" target="_blank" rel="noopener noreferrer">Col Montemale</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">Sa</span><span class="dm">11.</span></div><div class="b"><a class="n" href="https://ciclista.net/autofrei-termine-2026/" target="_blank" rel="noopener noreferrer">Col du Grand Colombier</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">Sa</span><span class="dm">11.</span></div><div class="b"><a class="n" href="https://ciclista.net/autofrei-termine-2026/" target="_blank" rel="noopener noreferrer">Laghi di Cancano</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">So</span><span class="dm">12.</span></div><div class="b"><a class="n" href="https://www.valtellina.it/de/geschehen/bormio/re-stelvio-mapei-de" target="_blank" rel="noopener noreferrer">Re Stelvio Mapei</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">Mo</span><span class="dm">13.</span></div><div class="b"><a class="n" href="https://www.girodolomiti.com/it/giro-2026" target="_blank" rel="noopener noreferrer">Giro delle Dolomiti, Nigerpass</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">Di</span><span class="dm">14.</span></div><div class="b"><a class="n" href="https://ciclista.net/autofrei-termine-2026/" target="_blank" rel="noopener noreferrer">Alpe d&#39;Huez</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">Di</span><span class="dm">14.</span></div><div class="b"><a class="n" href="https://www.girodolomiti.com/it/giro-2026" target="_blank" rel="noopener noreferrer">Giro delle Dolomiti, Passo Gardena</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">Mi</span><span class="dm">15.</span></div><div class="b"><a class="n" href="https://www.girodolomiti.com/it/giro-2026" target="_blank" rel="noopener noreferrer">Giro delle Dolomiti, Weber im Moos</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">Do</span><span class="dm">16.</span></div><div class="b"><a class="n" href="https://www.girodolomiti.com/it/giro-2026" target="_blank" rel="noopener noreferrer">Giro delle Dolomiti, Passo Valles</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">Fr</span><span class="dm">17.</span></div><div class="b"><a class="n" href="https://www.girodolomiti.com/it/giro-2026" target="_blank" rel="noopener noreferrer">Giro delle Dolomiti, Frassineto</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">So</span><span class="dm">19.</span></div><div class="b"><a class="n" href="https://uk.bike-oisans.com/agenda/etape-du-tour-amateurs-passage-a-la-grave/" target="_blank" rel="noopener noreferrer">La Grave</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">So</span><span class="dm">19.</span></div><div class="b"><a class="n" href="https://www.massif-des-vosges.fr/experiences/colattitude/" target="_blank" rel="noopener noreferrer">Col des Pandours (Elsass)</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">Di</span><span class="dm">21.</span></div><div class="b"><a class="n" href="https://ciclista.net/autofrei-termine-2026/" target="_blank" rel="noopener noreferrer">Alpe d&#39;Huez</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="ch"><div class="d"><span class="wd">So</span><span class="dm">26.</span></div><div class="b"><a class="n" href="https://www.glarus.ch/verwaltung/bau-und-versorgung/parkraumbewirtschaftung/slow-sundays-kloental.html/8403" target="_blank" rel="noopener noreferrer">Slow Sundays Klöntal</a><div class="m"><span class="c c-ch">Schweiz</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">Di</span><span class="dm">28.</span></div><div class="b"><a class="n" href="https://ciclista.net/autofrei-termine-2026/" target="_blank" rel="noopener noreferrer">Alpe d&#39;Huez</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li></ul></section><section class="mo"><h3 class="mo-h">August 2026<span class="mo-n">5</span></h3><ul class="lst"><li class="ev" data-c="it"><div class="d"><span class="wd">Sa</span><span class="dm">1.</span></div><div class="b"><a class="n" href="https://ciclista.net/autofrei-termine-2026/" target="_blank" rel="noopener noreferrer">Campo Moro</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">Di</span><span class="dm">4.</span></div><div class="b"><a class="n" href="https://ciclista.net/autofrei-termine-2026/" target="_blank" rel="noopener noreferrer">Alpe d&#39;Huez</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="it"><div class="d"><span class="wd">Di</span><span class="dm">4.</span></div><div class="b"><a class="n" href="https://ciclista.net/autofrei-termine-2026/" target="_blank" rel="noopener noreferrer">Penser Joch</a><div class="m"><span class="c c-it">Italien</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">Fr</span><span class="dm">7.</span></div><div class="b"><a class="n" href="https://www.ledevoluy.com/ete/offres/montee-cycliste-du-col-du-noyer-poligny-fr-ete-5019584/" target="_blank" rel="noopener noreferrer">Col du Noyer</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li><li class="ev" data-c="fr"><div class="d"><span class="wd">Sa</span><span class="dm">8.</span></div><div class="b"><a class="n" href="https://ciclista.net/autofrei-termine-2026/" target="_blank" rel="noopener noreferrer">Col du Grand Colombier</a><div class="m"><span class="c c-fr">Frankreich</span></div></div></li></ul></section></details>
+
+  <footer class="ft">
+    <span>Kalender abonnieren:
+      <a class="lnk" href="https://nikitaberzin.github.io/autofrei/autofrei.ics">autofrei.ics</a>
+      &mdash; in Outlook, Google oder Apple Kalender als URL hinzufügen
+    </span>
+    <span>
+      <a class="lnk" href="https://nikitaberzin.github.io/autofrei/karte.html">Karte ansehen</a> &middot;
+      <a class="lnk" href="https://nikitaberzin.github.io/autofrei/autofrei.geojson">GeoJSON</a> für ArcGIS Online
+    </span>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var fil = document.getElementById('fil');
+  var empty = document.getElementById('empty');
+
+  fil.addEventListener('click', function (e) {
+    var btn = e.target.closest('button');
+    if (!btn) { return; }
+    var land = btn.dataset.land;
+
+    fil.querySelectorAll('button').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b === btn));
+    });
+
+    document.querySelectorAll('.ev').forEach(function (ev) {
+      ev.classList.toggle('hide', land !== 'all' && ev.dataset.c !== land);
+    });
+
+    // Monatsgruppen ohne sichtbare Eintraege ausblenden.
+    document.querySelectorAll('.mo').forEach(function (mo) {
+      var sichtbar = mo.querySelectorAll('.ev:not(.hide)').length;
+      mo.classList.toggle('hide', sichtbar === 0);
+      var n = mo.querySelector('.mo-n');
+      if (n) { n.textContent = sichtbar; }
+    });
+
+    var offen = document.querySelectorAll('#upcoming .ev:not(.hide)').length;
+    empty.classList.toggle('hide', offen > 0);
+  });
+
+  // Countdown erst im Browser rechnen - die Seite kann Tage nach der
+  // Generierung geoeffnet werden.
+  var cd = document.getElementById('cd');
+  if (cd && cd.dataset.date) {
+    var heute = new Date(); heute.setHours(0, 0, 0, 0);
+    var ziel = new Date(cd.dataset.date + 'T00:00:00');
+    var tage = Math.round((ziel - heute) / 86400000);
+    cd.textContent = tage < 0 ? 'vorbei'
+      : tage === 0 ? 'heute'
+      : tage === 1 ? 'morgen'
+      : 'in ' + tage + ' Tagen';
+  }
+})();
+</script>
