@@ -224,7 +224,7 @@ Arbeitsverzeichnis für alle Pfade: `~/claude/01 Projects/autofrei/`
 
 ## Phase 4 — Skill + Automatisierung
 
-- [ ] **13. SKILL.md schreiben**
+- [x] **13. SKILL.md schreiben**
   - Files: `skills/autofrei-check/SKILL.md`
   - Details: Orchestriert den Ablauf aus SPEC.md „Behaviour" Schritt 1–11.
     Frontmatter mit `name` und `description`. Muss enthalten: Artifact-Update
@@ -244,7 +244,12 @@ Arbeitsverzeichnis für alle Pfade: `~/claude/01 Projects/autofrei/`
     Link funktionieren, Land-Layer umschaltbar; User bestätigt den
     ArcGIS-Import
 
-- [ ] **15. Wöchentliche Routine einrichten**
+- [ ] **15. Wöchentliche Routine einrichten** — BLOCKIERT (2026-08-09)
+  - Blocker: Die Cloud-Routine wurde vom API abgelehnt:
+    „Connect your GitHub account before saving a routine that uses a
+    GitHub repository." Nikita muss GitHub einmalig verbinden
+    (`/web-setup` oder https://claude.ai/code/onboarding?magic=github-app-setup),
+    danach kann die Routine mit `0 5 * * 1` angelegt werden.
   - Files: keine
   - Details: Cloud-Routine, die den Skill aus Task 13 aufruft. Rhythmus:
     wöchentlich. **Vorschlag Montag 07:00** — vom User bestätigen lassen,
