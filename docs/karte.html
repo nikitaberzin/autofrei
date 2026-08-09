@@ -119,11 +119,42 @@
     { 'Topografisch': topo, 'Satellit': sat }, overlays, { collapsed: false }
   ).addTo(map);
 
-  if (alle.length) {
-    map.fitBounds(L.latLngBounds(alle), { padding: [30, 30] });
-  } else {
-    map.setView([46.5, 10.5], 6);
+  // Hat der Container beim Init noch keine Hoehe (langsames Layout, Vorschau-
+  // Pane das erst nachtraeglich aufgeht, Hintergrund-Tab), liefert Leaflets
+  // getBoundsZoom maxZoom zurueck - die Karte klebt dann auf Zoom 17.
+  // Deshalb nach Layout-Aenderungen erneut einpassen, aber nur solange der
+  // Nutzer die Karte noch nicht selbst bewegt hat.
+  var bounds = alle.length ? L.latLngBounds(alle) : null;
+  var nutzerHatBewegt = false;
+
+  ['mousedown', 'touchstart', 'wheel', 'dblclick'].forEach(function (typ) {
+    map.getContainer().addEventListener(typ, function () {
+      nutzerHatBewegt = true;
+    }, { passive: true });
+  });
+  map.on('zoomend', function () { /* Zoom-Buttons zaehlen auch als Eingriff */ });
+  document.querySelector('.leaflet-control-zoom')
+    ?.addEventListener('click', function () { nutzerHatBewegt = true; });
+
+  function einpassen() {
+    map.invalidateSize({ animate: false });
+    if (bounds) { map.fitBounds(bounds, { padding: [30, 30] }); }
+    else { map.setView([46.5, 10.5], 6); }
   }
+
+  einpassen();
+  window.addEventListener('load', function () {
+    if (!nutzerHatBewegt) { einpassen(); }
+  });
+
+  var timer;
+  window.addEventListener('resize', function () {
+    clearTimeout(timer);
+    timer = setTimeout(function () {
+      map.invalidateSize({ animate: false });
+      if (!nutzerHatBewegt) { einpassen(); }
+    }, 150);
+  });
 })();
 </script>
 </body>
