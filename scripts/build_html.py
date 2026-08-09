@@ -35,6 +35,20 @@ def esc(value):
     )
 
 
+def sichere_url(url):
+    """Nur http/https durchlassen.
+
+    Die URLs stammen aus fremdem HTML. Ohne diese Pruefung landet z. B.
+    "javascript:..." unveraendert in einem href und wird beim Klick
+    ausgefuehrt. Alles andere wird verworfen - das Event bleibt bestehen,
+    nur ohne Link.
+    """
+    if not url:
+        return None
+    u = url.strip()
+    return u if u[:7].lower() == "http://" or u[:8].lower() == "https://" else None
+
+
 def datum_kurz(ev):
     """'6. Juni' bzw. '1.-5. Juni' - Originaltext, nur Bindestrich als Halbgeviert."""
     return ev["dateRaw"].replace("-", "–")
@@ -69,9 +83,10 @@ def render_event(ev, gruppen_monat=None):
     name = esc(ev["name"])
     wd = wochentag(ev["dateStart"]) if ev["dateStart"] else "&mdash;"
 
-    if ev.get("url"):
+    url = sichere_url(ev.get("url"))
+    if url:
         titel = ('<a class="n" href="%s" target="_blank" rel="noopener noreferrer">'
-                 "%s</a>" % (esc(ev["url"]), name))
+                 "%s</a>" % (esc(url), name))
     else:
         titel = '<span class="n">%s</span>' % name
 
@@ -333,6 +348,13 @@ a.n:hover { color:var(--accent); text-decoration:underline;
       if (n) { n.textContent = sichtbar; }
     });
 
+    // Zaehler im Aufklapper mitfuehren - sonst behauptet er weiter
+    // "75 vergangene", obwohl nur die des gewaehlten Landes sichtbar sind.
+    var pn = document.getElementById('pn');
+    if (pn) {
+      pn.textContent = document.querySelectorAll('.past .ev:not(.hide)').length;
+    }
+
     var offen = document.querySelectorAll('#upcoming .ev:not(.hide)').length;
     empty.classList.toggle('hide', offen > 0);
   });
@@ -364,9 +386,10 @@ def build_html(data):
     # --- "Als Naechstes" ---
     if kommend:
         n = kommend[0]
-        if n.get("url"):
+        n_url = sichere_url(n.get("url"))
+        if n_url:
             titel = ('<a href="%s" target="_blank" rel="noopener noreferrer">%s</a>'
-                     % (esc(n["url"]), esc(n["name"])))
+                     % (esc(n_url), esc(n["name"])))
         else:
             titel = esc(n["name"])
         next_block = (
@@ -401,8 +424,8 @@ def build_html(data):
     # --- Vergangene: eingeklappt, sonst waeren 3/4 der Seite Altlast ---
     if vergangen:
         past_block = (
-            '<details class="past"><summary>%d vergangene Termine %s anzeigen'
-            "</summary>%s</details>"
+            '<details class="past"><summary><span id="pn">%d</span> vergangene '
+            'Termine %s anzeigen</summary>%s</details>'
         ) % (len(vergangen), data["season"], render_gruppen(gruppiere_nach_monat(vergangen)))
     else:
         past_block = ""

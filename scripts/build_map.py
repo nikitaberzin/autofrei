@@ -31,6 +31,20 @@ LAND_NAME = {"it": "Italien", "at": "Österreich", "fr": "Frankreich", "ch": "Sc
 LAND_FARBE = {"it": "#009246", "at": "#e07b00", "fr": "#0055a4", "ch": "#d52b1e"}
 
 
+def sichere_url(url):
+    """Nur http/https durchlassen.
+
+    Die URLs stammen aus fremdem HTML. Ungeprueft landet z. B.
+    "javascript:..." in einem href im Popup und wird beim Klick
+    ausgefuehrt. Alles andere wird verworfen - der Marker bleibt,
+    nur ohne Link.
+    """
+    if not url:
+        return None
+    u = url.strip()
+    return u if u[:7].lower() == "http://" or u[:8].lower() == "https://" else None
+
+
 def build_geojson(events):
     """FeatureCollection, nur Events MIT Koordinaten. Reihenfolge [lng, lat]."""
     features = []
@@ -88,7 +102,7 @@ def build_html(data):
                 "country": e["country"],
                 "date": e["dateStart"],
                 "dateRaw": e["dateRaw"],
-                "url": e["url"],
+                "url": sichere_url(e["url"]),
                 "isNew": e["isNew"],
                 "lat": e["lat"],
                 "lng": e["lng"],
@@ -235,7 +249,6 @@ def build_html(data):
       nutzerHatBewegt = true;
     }, { passive: true });
   });
-  map.on('zoomend', function () { /* Zoom-Buttons zaehlen auch als Eingriff */ });
   document.querySelector('.leaflet-control-zoom')
     ?.addEventListener('click', function () { nutzerHatBewegt = true; });
 

@@ -134,7 +134,6 @@
       nutzerHatBewegt = true;
     }, { passive: true });
   });
-  map.on('zoomend', function () { /* Zoom-Buttons zaehlen auch als Eingriff */ });
   document.querySelector('.leaflet-control-zoom')
     ?.addEventListener('click', function () { nutzerHatBewegt = true; });
 
