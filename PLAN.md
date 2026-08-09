@@ -9,7 +9,7 @@ Arbeitsverzeichnis für alle Pfade: `~/claude/01 Projects/autofrei/`
 ## Prerequisites
 
 - [x] `python3 --version` → 3.9 oder neuer
-- [ ] `gh auth status` → eingeloggt als `nikitaberzin`
+- [x] `gh auth status` → eingeloggt als `nikitaberzin`
 - [x] SPEC.md gelesen, insbesondere „Datenquelle — verifizierte Struktur"
 
 ---
@@ -154,7 +154,7 @@ Arbeitsverzeichnis für alle Pfade: `~/claude/01 Projects/autofrei/`
 
 ## Phase 3 — GitHub + Hosting
 
-- [ ] **9a. Git-Identität lokal anonymisieren (VOR dem ersten Commit)**
+- [x] **9a. Git-Identität lokal anonymisieren (VOR dem ersten Commit)**
   - Files: `.git/config` (nur lokal, nicht im Repo-Inhalt)
   - Details: Siehe SPEC.md „Datenschutz". `git init`, dann:
     ```bash
@@ -168,7 +168,7 @@ Arbeitsverzeichnis für alle Pfade: `~/claude/01 Projects/autofrei/`
   - Verify: `git config user.email` → enthält `users.noreply.github.com`,
     **nicht** `outlook.com`
 
-- [ ] **9b. Repo anlegen, Leak-Check, dann pushen**
+- [x] **9b. Repo anlegen, Leak-Check, dann pushen**
   - Files: `.gitignore`, `README.md`
   - Details: `.gitignore` für `__pycache__/`, `*.pyc`. README mit
     Kurzbeschreibung + Abo-Anleitung (**ohne** E-Mail-Adressen). Erst
@@ -191,7 +191,7 @@ Arbeitsverzeichnis für alle Pfade: `~/claude/01 Projects/autofrei/`
     **Wenn Check 3 etwas findet: NICHT pushen.** Stattdessen stoppen, den
     User informieren und Repo/History neu aufsetzen.
 
-- [ ] **10. GitHub Pages aktivieren**
+- [x] **10. GitHub Pages aktivieren**
   - Files: `docs/index.html`
   - Details: Landing-Page mit Abo-Anleitung für Outlook / Google / Apple.
     Pages auf Branch `main`, Ordner `/docs` stellen (über
@@ -205,7 +205,7 @@ Arbeitsverzeichnis für alle Pfade: `~/claude/01 Projects/autofrei/`
     informieren** — dann schlagen Outlook-Abos fehl (SPEC-Decision zum
     Hosting).
 
-- [ ] **11. Artifact veröffentlichen**
+- [x] **11. Artifact veröffentlichen**
   - Files: `data/artifact-url.txt`
   - Details: `data/artifact.html` über das `Artifact`-Tool publishen.
     `favicon`: `🚲`. Zurückgegebene URL in `data/artifact-url.txt` speichern.
