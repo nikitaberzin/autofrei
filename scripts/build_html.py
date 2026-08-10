@@ -158,7 +158,25 @@ def build_minimap(events, breite=760, hoehe=380, rand=8):
         for i, (lng, lat) in enumerate(ring["ring"]):
             x, y = px(lng, lat)
             d.append("%s%.1f %.1f" % ("M" if i == 0 else "L", x, y))
-        pfade.append('<path d="%sZ"/>' % "".join(d))
+        iso = (ring.get("iso") or "").lower()
+        # Nur die vier Zielländer werden eingefaerbt; alles andere bleibt
+        # neutraler Kontext.
+        klasse = ' class="l-%s"' % iso if iso in LAND_NAME else ""
+        pfade.append('<path%s d="%sZ"/>' % (klasse, "".join(d)))
+
+    # Beschriftung der Zielländer. Ankerpunkte bewusst von Hand gesetzt -
+    # ein Polygon-Schwerpunkt landet bei Italien im Meer.
+    ANKER = {
+        "ch": (8.15, 46.85), "it": (11.4, 44.4),
+        "fr": (2.6, 46.6), "at": (13.4, 48.15),
+    }
+    labels = []
+    for iso, (lng, lat) in ANKER.items():
+        x, y = px(lng, lat)
+        if not (0 <= x <= breite and 0 <= y <= hoehe):
+            continue
+        labels.append('<text class="lb lb-%s" x="%.1f" y="%.1f">%s</text>'
+                      % (iso, x, y, esc(LAND_NAME[iso])))
 
     heute = date.today().isoformat()
     kreise = []
@@ -176,9 +194,11 @@ def build_minimap(events, breite=760, hoehe=380, rand=8):
         '<a class="mini" href="%s/karte.html" target="_blank" rel="noopener noreferrer">'
         '<svg viewBox="0 0 %d %d" role="img" '
         'aria-label="Übersichtskarte aller Termine">'
-        '<g class="land">%s</g><g class="pts">%s</g></svg>'
+        '<g class="land">%s</g><g class="pts">%s</g>'
+        '<g class="lbs">%s</g></svg>'
         '<span class="mini-h">Interaktive Karte öffnen &rarr;</span></a>'
-        % (PAGES_BASE, breite, hoehe, "".join(pfade), "".join(kreise))
+        % (PAGES_BASE, breite, hoehe, "".join(pfade), "".join(kreise),
+           "".join(labels))
     )
 
 
@@ -281,6 +301,18 @@ h1 { margin:0; font-size:1.45rem; line-height:1.2; letter-spacing:-.015em;
   fill:var(--bg); stroke:var(--line); stroke-width:.8;
   stroke-linejoin:round; vector-effect:non-scaling-stroke;
 }
+.mini .land path.l-ch { fill:var(--ch); fill-opacity:.13; stroke:var(--ch);
+                          stroke-opacity:.55; stroke-width:1.4; }
+.mini .land path.l-it { fill:var(--it); fill-opacity:.07; }
+.mini .land path.l-fr { fill:var(--fr); fill-opacity:.07; }
+.mini .land path.l-at { fill:var(--at); fill-opacity:.07; }
+.mini .lb {
+  font-family:var(--mono); font-size:11px; letter-spacing:.08em;
+  text-anchor:middle; pointer-events:none;
+  paint-order:stroke; stroke:var(--surface); stroke-width:3.5;
+  stroke-linejoin:round; fill:var(--ink2);
+}
+.mini .lb-ch { fill:var(--ch); font-size:12.5px; font-weight:700; }
 .mini .pt { stroke:var(--surface); stroke-width:1.2; }
 .mini .pt.vorbei { opacity:.28; }
 .mini .pt[data-c="it"] { fill:var(--it); }
