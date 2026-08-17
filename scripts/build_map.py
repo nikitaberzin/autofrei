@@ -332,11 +332,14 @@ def build_html(data):
   }
 
   // --- Namensschilder ---
-  var LABEL_ZOOM = 6;          // = Startzoom, Namen sind also gleich sichtbar
-  var labelsGewuenscht = true; // Schalter; blendet sie bei Bedarf aus
+  // Ab dieser Stufe erscheinen die Namen von selbst. Auf dem Desktop passt
+  // der Startausschnitt genau auf 6; auf schmalen Schirmen muss die Karte
+  // weiter herauszoomen (typisch 5), dort bleiben sie zunaechst aus.
+  var LABEL_ZOOM = 6;
+  var labelsErzwungen = false;  // Schalter: Namen unabhaengig vom Zoom zeigen
 
   function labelsAktualisieren() {
-    var an = labelsGewuenscht && map.getZoom() >= LABEL_ZOOM;
+    var an = labelsErzwungen || map.getZoom() >= LABEL_ZOOM;
     map.getContainer().classList.toggle('labels-an', an);
   }
   map.on('zoomend', labelsAktualisieren);
@@ -347,12 +350,12 @@ def build_html(data):
       var b = L.DomUtil.create('button', 'btn-lbl');
       b.type = 'button';
       b.textContent = 'Namen';
-      b.title = 'Namen der Termine ein- oder ausblenden';
-      b.setAttribute('aria-pressed', 'true');
+      b.title = 'Namen immer anzeigen (sonst ab Zoomstufe ' + LABEL_ZOOM + ')';
+      b.setAttribute('aria-pressed', 'false');
       L.DomEvent.disableClickPropagation(b);
       L.DomEvent.on(b, 'click', function () {
-        labelsGewuenscht = !labelsGewuenscht;
-        b.setAttribute('aria-pressed', String(labelsGewuenscht));
+        labelsErzwungen = !labelsErzwungen;
+        b.setAttribute('aria-pressed', String(labelsErzwungen));
         labelsAktualisieren();
       });
       return b;
