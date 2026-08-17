@@ -2,11 +2,13 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//autofrei//freipass.ch scraper//DE
 CALSCALE:GREGORIAN
-METHOD:PUBLISH
+NAME:Autofreie Bike-Tage
 X-WR-CALNAME:Autofreie Bike-Tage
+DESCRIPTION:Autofreie Passtage in Italien\, Österreich\, Frankreich und de
+ r Schweiz. Quellen: https://freipass.ch/ und https://www.slowup.ch/
 X-WR-CALDESC:Autofreie Passtage in Italien\, Österreich\, Frankreich und d
  er Schweiz. Quellen: https://freipass.ch/ und https://www.slowup.ch/
-SOURCE;VALUE=URI:https://freipass.ch/
+SOURCE;VALUE=URI:https://nikitaberzin.github.io/autofrei/autofrei.ics
 REFRESH-INTERVAL;VALUE=DURATION:P1W
 X-PUBLISHED-TTL:P1W
 BEGIN:VEVENT

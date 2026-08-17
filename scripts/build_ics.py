@@ -18,7 +18,13 @@ OUT_PATH = os.path.join(BASE, "docs", "autofrei.ics")
 CRLF = "\r\n"
 PRODID = "-//autofrei//freipass.ch scraper//DE"
 CALNAME = "Autofreie Bike-Tage"
+BESCHREIBUNG = ("Autofreie Passtage in Italien, Österreich, Frankreich und "
+                "der Schweiz. Quellen: https://freipass.ch/ und "
+                "https://www.slowup.ch/")
 QUELLE_URL = "https://freipass.ch/"
+# Selbst-URL des Feeds. SOURCE (RFC 7986) meint die Adresse, unter der
+# sich DIESER Kalender neu laden kann - NICHT die Datenherkunft.
+FEED_URL = "https://nikitaberzin.github.io/autofrei/autofrei.ics"
 QUELLE_NAME = "freipass.ch"
 
 
@@ -77,15 +83,19 @@ def build_ics(events, stamp_iso):
         "VERSION:2.0",
         "PRODID:" + PRODID,
         "CALSCALE:GREGORIAN",
-        "METHOD:PUBLISH",
+        # Kein METHOD: das gehoert zu iTIP-Nachrichten (Einladungen). Ein
+        # Abo-Kalender braucht es nicht, und manche Clients behandeln eine
+        # Datei mit METHOD eher als Import denn als Abonnement.
+        # NAME/DESCRIPTION sind die standardisierten Felder (RFC 7986),
+        # X-WR-* die aelteren Varianten - beide setzen, damit jeder Client
+        # den Namen findet statt "Untitled" anzuzeigen.
+        "NAME:" + escape_text(CALNAME),
         "X-WR-CALNAME:" + escape_text(CALNAME),
         # Bewusst nicht "Alpen": der Datensatz enthaelt auch Vogesen,
         # Ardeche, Ventoux und einen Pyrenaeen-Pass (Tourmalet).
-        "X-WR-CALDESC:" + escape_text(
-            "Autofreie Passtage in Italien, Österreich, Frankreich und der "
-            "Schweiz. Quellen: " + QUELLE_URL + " und https://www.slowup.ch/"
-        ),
-        "SOURCE;VALUE=URI:" + QUELLE_URL,
+        "DESCRIPTION:" + escape_text(BESCHREIBUNG),
+        "X-WR-CALDESC:" + escape_text(BESCHREIBUNG),
+        "SOURCE;VALUE=URI:" + FEED_URL,
         "REFRESH-INTERVAL;VALUE=DURATION:P1W",
         "X-PUBLISHED-TTL:P1W",
     ]
