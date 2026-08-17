@@ -75,6 +75,36 @@ git config user.name "nikitaberzin"
 Niemals `--global` verwenden. Keine E-Mail-Adressen ins Repo — es ist
 öffentlich.
 
+### 3b. Wenn der Pages-Build fehlschlägt
+
+GitHub meldet gelegentlich beim Deployment einen **503** („No server is
+currently available to service your request", „Failed to create deployment").
+Das ist ein Ausfall auf GitHub-Seite, **kein Fehler im Repo** — der Build
+selbst war in Ordnung.
+
+Prüfen, ob es wirklich nur das war:
+
+```bash
+gh run list --limit 3
+gh run view <RUN_ID> --log-failed | tail -20
+```
+
+Steht dort ein 503 oder „Pages outage": nichts reparieren. Entweder den Lauf
+neu anstoßen oder einfach den nächsten Push abwarten — der überschreibt
+ohnehin alles:
+
+```bash
+gh run rerun <RUN_ID>
+```
+
+Danach kontrollieren, ob live der aktuelle Stand liegt:
+
+```bash
+curl -sI https://nikitaberzin.github.io/autofrei/autofrei.ics | head -3
+```
+
+Erwartet: `HTTP/2 200` und `content-type: text/calendar`.
+
 ### 4. Artifact aktualisieren
 
 Die URL steht in `data/artifact-url.txt`. Sie **muss** als `url`-Parameter an
