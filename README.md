@@ -27,7 +27,9 @@ bekommt nie wieder Updates. Beim Abonnieren übernimmt der Client den Namen und
 aktualisiert wöchentlich von selbst.
 
 - **Google Kalender** — Weitere Kalender `+` → Per URL → Adresse einfügen
-- **Outlook** — Kalender hinzufügen → Aus dem Internet abonnieren
+- **Outlook im Web** — Kalender hinzufügen → Aus dem Internet abonnieren
+- **Outlook am Handy** — die App kann keine Adresse abonnieren; einmal im
+  Web abonnieren, dann erscheint der Kalender in der App unter demselben Konto
 - **Apple Kalender** — Ablage → *Neues Kalenderabo…* (nicht „Importieren")
 
 Ein Abo ist eine reine Ansicht: es verschickt keine Einladungen. Wer die
