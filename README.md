@@ -3,7 +3,8 @@
 Wöchentlich aktualisierte Übersicht autofreier Pass- und Straßentage in
 **Italien, Österreich, Frankreich und der Schweiz**.
 
-Datenquelle: [freipass.ch](https://freipass.ch/)
+Datenquellen: [freipass.ch](https://freipass.ch/) und
+[slowup.ch](https://www.slowup.ch/)
 
 ## Was hier liegt
 
@@ -47,5 +48,6 @@ nicht den Kalender.
 
 ## Dokumentation
 
+- [`CLAUDE.md`](CLAUDE.md) — Fallstricke beim Weiterentwickeln
 - [`SPEC.md`](SPEC.md) — Entscheidungen, Datenmodell, Edge Cases
 - [`PLAN.md`](PLAN.md) — Umsetzungsschritte
