@@ -100,13 +100,14 @@ def render_event(ev, gruppen_monat=None):
     slow = '<span class="su">slowUp</span>' if ev.get("isSlowup") else ""
 
     return (
-        '<li class="ev" data-c="%s" data-f="%s">'
+        '<li class="ev" data-c="%s" data-f="%s" data-y="%s">'
         '<div class="d"><span class="wd">%s</span>'
         '<span class="dm">%s</span></div>'
         '<div class="b">%s<div class="m">'
         '<span class="c c-%s">%s</span>%s%s</div></div>'
         "</li>"
-    ) % (land, "1" if ev.get("flach") else "0", wd,
+    ) % (land, "1" if ev.get("flach") else "0",
+         (ev["dateStart"] or "")[:4], wd,
          esc(datum_in_gruppe(ev, gruppen_monat)), titel, land,
          esc(LAND_NAME.get(land, land)), slow, neu)
 
@@ -191,12 +192,12 @@ def build_minimap(events, breite=760, hoehe=380, rand=8):
         x, y = px(e["lng"], e["lat"])
         kommend = bool(e["dateStart"] and e["dateStart"] >= heute)
         kreise.append(
-            '<circle class="pt %s%s" data-c="%s" data-f="%s" cx="%.1f" cy="%.1f" r="%s">'
+            '<circle class="pt %s%s" data-c="%s" data-f="%s" data-y="%s" cx="%.1f" cy="%.1f" r="%s">'
             "<title>%s</title></circle>"
             % ("kommend" if kommend else "vorbei",
                " su" if e.get("flach") else "",
                e["country"], "1" if e.get("flach") else "0",
-               x, y, "4.2" if kommend else "3",
+               (e["dateStart"] or "")[:4], x, y, "4.2" if kommend else "3",
                esc("%s — %s" % (e["name"], datum_kurz(e))))
         )
 
@@ -341,7 +342,9 @@ h1 { margin:0; font-size:1.45rem; line-height:1.2; letter-spacing:-.015em;
   font-family:var(--mono); font-size:.72rem; color:var(--accent);
 }
 .fil { display:flex; flex-wrap:wrap; gap:.4rem; margin-bottom:.5rem; }
-.fil2 { margin-bottom:1.6rem; }
+.fil2, .fil3 { margin-bottom:.5rem; }
+.fil3 { margin-bottom:1.6rem; }
+.fil .cnt { opacity:.7; margin-left:.1rem; }
 .fil button {
   font:inherit; font-family:var(--mono); font-size:.76rem; letter-spacing:.02em;
   padding:.34rem .68rem; border-radius:99px; cursor:pointer;
@@ -462,9 +465,15 @@ a.n:hover { color:var(--accent); text-decoration:underline;
   </nav>
 
   <nav class="fil fil2" id="fil2" aria-label="Nach Streckenart filtern">
-    <button type="button" data-ter="all" aria-pressed="true">Alle Strecken</button>
-    <button type="button" data-ter="flach">Flach &middot; kindergerecht $flach_n</button>
-    <button type="button" data-ter="berg">Pässe $berg_n</button>
+    <button type="button" data-ter="all" aria-pressed="true">Alle Strecken
+      <span class="cnt"></span></button>
+    <button type="button" data-ter="flach">Flach &middot; kindergerecht
+      <span class="cnt"></span></button>
+    <button type="button" data-ter="berg">Pässe <span class="cnt"></span></button>
+  </nav>
+
+  <nav class="fil fil3" id="fil3" aria-label="Nach Saison filtern">
+    $jahr_buttons
   </nav>
 
   <main id="upcoming">
@@ -489,28 +498,48 @@ a.n:hover { color:var(--accent); text-decoration:underline;
 
 <script>
 (function () {
-  var fil = document.getElementById('fil');
-  var fil2 = document.getElementById('fil2');
   var empty = document.getElementById('empty');
+  var alleEv = [].slice.call(document.querySelectorAll('.ev'));
 
-  // Zwei unabhaengige Filter: Land und Streckenart. Beide werden zugleich
-  // angewendet - "Schweiz + flach" muss moeglich sein.
-  var land = 'all';
-  var terrain = 'all';
+  // Drei unabhaengige Filter, gleichzeitig angewendet:
+  // "Schweiz + flach + 2026" muss moeglich sein.
+  var f = { land: 'all', ter: 'all', jahr: '$default_jahr' };
 
-  function passt(el) {
-    var okLand = land === 'all' || el.dataset.c === land;
-    var okTer = terrain === 'all' ||
-                (terrain === 'flach' ? el.dataset.f === '1' : el.dataset.f !== '1');
-    return okLand && okTer;
+  function trifftZu(el, ausser) {
+    return (ausser === 'land' || f.land === 'all' || el.dataset.c === f.land)
+        && (ausser === 'ter'  || f.ter === 'all'
+            || (f.ter === 'flach' ? el.dataset.f === '1' : el.dataset.f !== '1'))
+        && (ausser === 'jahr' || f.jahr === 'all' || el.dataset.y === f.jahr);
+  }
+
+  // Zaehler jeder Schaltflaeche gegen die JEWEILS ANDEREN Filter rechnen -
+  // sonst behauptet "Italien 9", waehrend bei aktivem Jahresfilter nur 4
+  // uebrig sind.
+  function zaehlerSetzen(nav, attr, dimension) {
+    nav.querySelectorAll('button').forEach(function (b) {
+      var wert = b.dataset[attr];
+      var n = 0;
+      for (var i = 0; i < alleEv.length; i++) {
+        var el = alleEv[i];
+        if (el.closest('.past')) { continue; }
+        if (!trifftZu(el, dimension)) { continue; }
+        if (wert === 'all'
+            || (dimension === 'land' && el.dataset.c === wert)
+            || (dimension === 'ter' && (wert === 'flach'
+                  ? el.dataset.f === '1' : el.dataset.f !== '1'))
+            || (dimension === 'jahr' && el.dataset.y === wert)) { n++; }
+      }
+      var sp = b.querySelector('.cnt');
+      if (sp) { sp.textContent = n; }
+    });
   }
 
   function anwenden() {
-    document.querySelectorAll('.ev').forEach(function (ev) {
-      ev.classList.toggle('hide', !passt(ev));
+    alleEv.forEach(function (el) {
+      el.classList.toggle('hide', !trifftZu(el));
     });
     document.querySelectorAll('.mini .pt').forEach(function (pt) {
-      pt.classList.toggle('hide', !passt(pt));
+      pt.classList.toggle('hide', !trifftZu(pt));
     });
 
     document.querySelectorAll('.mo').forEach(function (mo) {
@@ -525,24 +554,28 @@ a.n:hover { color:var(--accent); text-decoration:underline;
       pn.textContent = document.querySelectorAll('.past .ev:not(.hide)').length;
     }
 
+    zaehlerSetzen(document.getElementById('fil'), 'land', 'land');
+    zaehlerSetzen(document.getElementById('fil2'), 'ter', 'ter');
+    zaehlerSetzen(document.getElementById('fil3'), 'jahr', 'jahr');
+
     var offen = document.querySelectorAll('#upcoming .ev:not(.hide)').length;
     empty.classList.toggle('hide', offen > 0);
   }
 
-  function verdrahten(nav, setzen) {
+  [['fil', 'land'], ['fil2', 'ter'], ['fil3', 'jahr']].forEach(function (paar) {
+    var nav = document.getElementById(paar[0]);
     nav.addEventListener('click', function (e) {
       var btn = e.target.closest('button');
       if (!btn) { return; }
       nav.querySelectorAll('button').forEach(function (b) {
         b.setAttribute('aria-pressed', String(b === btn));
       });
-      setzen(btn);
+      f[paar[1]] = btn.dataset[paar[1]];
       anwenden();
     });
-  }
+  });
 
-  verdrahten(fil, function (b) { land = b.dataset.land; });
-  verdrahten(fil2, function (b) { terrain = b.dataset.ter; });
+  anwenden();
 
   // Countdown erst im Browser rechnen - die Seite kann Tage nach der
   // Generierung geoeffnet werden.
@@ -598,13 +631,32 @@ def build_html(data):
         zaehler[e["country"]] = zaehler.get(e["country"], 0) + 1
 
     knoepfe = ['<button type="button" data-land="all" aria-pressed="true">'
-               "Alle %d</button>" % len(kommend)]
+               'Alle <span class="cnt"></span></button>']
     for code in ("it", "at", "fr", "ch"):
         if zaehler.get(code):
             knoepfe.append(
                 '<button type="button" data-land="%s" aria-pressed="false">'
-                "%s %d</button>" % (code, LAND_NAME[code], zaehler[code])
+                '%s <span class="cnt"></span></button>' % (code, LAND_NAME[code])
             )
+
+    # Saison-Filter. Vorbelegt ist das laufende Jahr - danach wird am
+    # haeufigsten gesucht, und slowUp reicht bis 2028.
+    jahre_kommend = sorted({e["dateStart"][:4] for e in kommend if e["dateStart"]})
+    jetzt = str(date.today().year)
+    default_jahr = jetzt if jetzt in jahre_kommend else (
+        jahre_kommend[0] if jahre_kommend else "all")
+    jahr_knoepfe = []
+    for j in jahre_kommend:
+        jahr_knoepfe.append(
+            '<button type="button" data-jahr="%s" aria-pressed="%s">'
+            '%s <span class="cnt"></span></button>'
+            % (j, "true" if j == default_jahr else "false", j)
+        )
+    jahr_knoepfe.append(
+        '<button type="button" data-jahr="all" aria-pressed="%s">'
+        'Alle Jahre <span class="cnt"></span></button>'
+        % ("true" if default_jahr == "all" else "false")
+    )
 
     # --- Vergangene: eingeklappt, sonst waeren 3/4 der Seite Altlast ---
     if vergangen:
@@ -629,8 +681,8 @@ def build_html(data):
         stand=data["fetchedAt"],
         next_block=next_block,
         filter_buttons="\n    ".join(knoepfe),
-        flach_n=sum(1 for e in kommend if e.get("flach")),
-        berg_n=sum(1 for e in kommend if not e.get("flach")),
+        jahr_buttons="\n    ".join(jahr_knoepfe),
+        default_jahr=default_jahr,
         upcoming=render_gruppen(gruppiere_nach_monat(kommend)) or
                  '<p class="empty">Keine kommenden Termine.</p>',
         minimap=build_minimap(events),
