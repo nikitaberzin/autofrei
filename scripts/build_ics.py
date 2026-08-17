@@ -104,7 +104,10 @@ def build_ics(events, stamp_iso):
         land = LAND_LABEL.get(ev["country"], ev["country"].upper())
         summary = "\U0001f6b2 %s (%s)" % (ev["name"], land)
 
-        beschreibung = "Autofreier Tag\nQuelle: " + QUELLE_URL
+        beschreibung = "Autofreier Tag"
+        if ev.get("isSlowup"):
+            beschreibung += " (slowUp)"
+        beschreibung += "\nQuelle: " + QUELLE_URL
         if ev.get("url"):
             beschreibung += "\n" + ev["url"]
 

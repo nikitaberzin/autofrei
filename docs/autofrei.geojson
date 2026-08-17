@@ -3,7 +3,7 @@
   "name": "Autofreie Bike-Tage",
   "source": "freipass.ch",
   "sourceUrl": "https://freipass.ch/",
-  "attribution": "Termine: freipass.ch",
+  "attribution": "Termine: freipass.ch, slowup.ch",
   "features": [
     {
       "type": "Feature",
@@ -21,7 +21,9 @@
         "dateEnd": "2026-04-11",
         "dateRaw": "11. April",
         "url": "https://www.mendelrace.it",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -40,7 +42,9 @@
         "dateEnd": "2026-04-21",
         "dateRaw": "21. April",
         "url": "https://www.graubuenden.ch/de/freipass/flueelapass",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -59,7 +63,9 @@
         "dateEnd": "2026-05-09",
         "dateRaw": "9. Mai",
         "url": "https://www.bergcup.it/deutsch/die-bergcup-rennen/edelrot-trophäe-gampenpass/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -78,7 +84,9 @@
         "dateEnd": "2026-05-17",
         "dateRaw": "17. Mai",
         "url": "https://ridethealps.ch/de/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -97,7 +105,9 @@
         "dateEnd": "2026-05-23",
         "dateRaw": "23. Mai",
         "url": "https://ciclista.net/autofrei-termine-2026/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -116,7 +126,9 @@
         "dateEnd": "2026-05-24",
         "dateRaw": "24. Mai",
         "url": "https://ciclista.net/autofrei-termine-2026/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -135,7 +147,9 @@
         "dateEnd": "2026-05-24",
         "dateRaw": "24. Mai",
         "url": "https://www.novecolli.it/de-DE",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -154,7 +168,9 @@
         "dateEnd": "2026-05-24",
         "dateRaw": "24. Mai",
         "url": "https://villarddelans.gfny.com",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -173,7 +189,9 @@
         "dateEnd": "2026-05-30",
         "dateRaw": "30. Mai",
         "url": "https://ciclista.net/autofrei-termine-2026/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -192,7 +210,9 @@
         "dateEnd": "2026-06-05",
         "dateRaw": "1.-5. Juni",
         "url": "https://uk.bike-oisans.com/agenda/alpe-dhuzes/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -211,7 +231,9 @@
         "dateEnd": "2026-06-04",
         "dateRaw": "4. Juni",
         "url": "https://www.opgevenisgeenoptie.nl",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -230,7 +252,9 @@
         "dateEnd": "2026-06-06",
         "dateRaw": "6. Juni",
         "url": "https://gfmontventoux.com/en/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -249,7 +273,9 @@
         "dateEnd": "2026-06-06",
         "dateRaw": "6. Juni",
         "url": "http://www.sellarondabikeday.com",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -268,7 +294,9 @@
         "dateEnd": "2026-06-06",
         "dateRaw": "6. Juni",
         "url": "https://www.galibier-challenge.com/rando",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -287,7 +315,9 @@
         "dateEnd": "2026-06-06",
         "dateRaw": "6. Juni",
         "url": "https://www.tourmaletpicdumidi.com/temps-fort/la-montee-du-geant/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -306,7 +336,9 @@
         "dateEnd": "2026-06-06",
         "dateRaw": "6. Juni",
         "url": "https://www.bergcup.it/deutsch/die-bergcup-rennen/prad-stilfser-joch/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -325,7 +357,9 @@
         "dateEnd": "2026-06-07",
         "dateRaw": "7. Juni",
         "url": "https://www.galibier-challenge.com/cyclosportive",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -344,7 +378,9 @@
         "dateEnd": "2026-06-07",
         "dateRaw": "7. Juni",
         "url": "https://www.visit.alsace/de/230112334-colattitude-lac-blanc-col-du-calvaire-col-du-louschbach/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -363,7 +399,9 @@
         "dateEnd": "2026-06-07",
         "dateRaw": "7. Juni",
         "url": "https://freipass.ch/index.php",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -382,7 +420,9 @@
         "dateEnd": "2026-06-07",
         "dateRaw": "7. Juni",
         "url": "https://www.glocknerkoenig.com/de",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -401,7 +441,9 @@
         "dateEnd": "2026-06-07",
         "dateRaw": "7. Juni",
         "url": "https://www.galibier-challenge.com/la-grimpee",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -420,7 +462,9 @@
         "dateEnd": "2026-06-08",
         "dateRaw": "8. Juni",
         "url": "https://ciclista.net/autofrei-termine-2026/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -439,7 +483,9 @@
         "dateEnd": "2026-06-13",
         "dateRaw": "9.-13. Juni",
         "url": "https://www.ardechoise.com",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -458,7 +504,9 @@
         "dateEnd": "2026-06-13",
         "dateRaw": "13. Juni",
         "url": "https://ciclista.net/autofrei-termine-2026/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -477,7 +525,9 @@
         "dateEnd": "2026-06-14",
         "dateRaw": "14. Juni",
         "url": "https://www.dolomitensport.at/de/events/supergirodolomiti.html",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -496,7 +546,9 @@
         "dateEnd": "2026-06-18",
         "dateRaw": "18. Juni",
         "url": "https://www.tourduals.nl",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -515,7 +567,9 @@
         "dateEnd": "2026-06-20",
         "dateRaw": "20. Juni",
         "url": "https://www.bikehotels.it/de/suedtirol-wir/events/74-dolomites-bike-day-2023.html",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -534,7 +588,9 @@
         "dateEnd": "2026-06-21",
         "dateRaw": "21. Juni",
         "url": "https://www.valdisere.com/en/events-entertainment-calendar/iserane-val-disere-en-4157467/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -553,7 +609,9 @@
         "dateEnd": "2026-06-21",
         "dateRaw": "21. Juni",
         "url": "https://www.sportfuldolomitirace.it/en/home/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -572,7 +630,9 @@
         "dateEnd": "2026-06-26",
         "dateRaw": "26. Juni",
         "url": "https://ridethealps.ch/de/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -591,7 +651,9 @@
         "dateEnd": "2026-06-26",
         "dateRaw": "26. Juni",
         "url": "https://www.stelvionight.com/de/home.html",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -610,7 +672,9 @@
         "dateEnd": "2026-06-27",
         "dateRaw": "27. Juni",
         "url": "https://ridethealps.ch/de/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -629,7 +693,9 @@
         "dateEnd": "2026-06-28",
         "dateRaw": "28. Juni",
         "url": "https://ridethealps.ch/de/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -648,7 +714,9 @@
         "dateEnd": "2026-06-28",
         "dateRaw": "28. Juni",
         "url": "https://freipass.ch/index.php",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -667,7 +735,9 @@
         "dateEnd": "2026-06-28",
         "dateRaw": "28. Juni",
         "url": "https://uk.bike-oisans.com/agenda/lepape-marmotte-granfondo/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -686,7 +756,9 @@
         "dateEnd": "2026-06-28",
         "dateRaw": "28. Juni",
         "url": "https://www.glarus.ch/verwaltung/bau-und-versorgung/parkraumbewirtschaftung/slow-sundays-kloental.html/8403",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -705,7 +777,9 @@
         "dateEnd": "2026-06-28",
         "dateRaw": "28. Juni",
         "url": "https://www.massif-des-vosges.fr/experiences/colattitude/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -724,7 +798,9 @@
         "dateEnd": "2026-06-29",
         "dateRaw": "29. Juni",
         "url": "https://lequeyras.com/agenda/la-tournee-des-grands-cols/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -743,7 +819,9 @@
         "dateEnd": "2026-06-30",
         "dateRaw": "30. Juni",
         "url": "https://ciclista.net/autofrei-termine-2026/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -762,7 +840,9 @@
         "dateEnd": "2026-06-30",
         "dateRaw": "30. Juni",
         "url": "https://lequeyras.com/agenda/la-tournee-des-grands-cols/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -781,7 +861,9 @@
         "dateEnd": "2026-07-01",
         "dateRaw": "1. Juli",
         "url": "https://lequeyras.com/agenda/la-tournee-des-grands-cols/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -800,7 +882,9 @@
         "dateEnd": "2026-07-02",
         "dateRaw": "2. Juli",
         "url": "https://lequeyras.com/agenda/la-tournee-des-grands-cols/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -819,7 +903,9 @@
         "dateEnd": "2026-07-03",
         "dateRaw": "3. Juli",
         "url": "https://lequeyras.com/en/agenda/reserved-passes-col-agnel-molines-en-queyras-en-3261727/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -838,7 +924,9 @@
         "dateEnd": "2026-07-04",
         "dateRaw": "4. Juli",
         "url": "https://lequeyras.com/agenda/la-tournee-des-grands-cols/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -857,7 +945,9 @@
         "dateEnd": "2026-07-05",
         "dateRaw": "5. Juli",
         "url": "https://lequeyras.com/agenda/la-tournee-des-grands-cols/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -876,7 +966,9 @@
         "dateEnd": "2026-07-05",
         "dateRaw": "5. Juli",
         "url": "https://www.valtellina.it/de/gavia-gesperrt",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -895,7 +987,9 @@
         "dateEnd": "2026-07-05",
         "dateRaw": "5. Juli",
         "url": "https://www.maratona.it/de/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -914,7 +1008,9 @@
         "dateEnd": "2026-07-05",
         "dateRaw": "5. Juli",
         "url": "https://www.granfondoguide.com/Events/Index/7165/grossglockner-bike-challenge",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -933,7 +1029,9 @@
         "dateEnd": "2026-07-05",
         "dateRaw": "5. Juli",
         "url": "https://www.massif-des-vosges.fr/experiences/colattitude/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -952,7 +1050,9 @@
         "dateEnd": "2026-07-06",
         "dateRaw": "6. Juli",
         "url": "https://lequeyras.com/agenda/la-tournee-des-grands-cols/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -971,7 +1071,9 @@
         "dateEnd": "2026-07-07",
         "dateRaw": "7. Juli",
         "url": "https://lequeyras.com/agenda/la-tournee-des-grands-cols/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -990,7 +1092,9 @@
         "dateEnd": "2026-07-07",
         "dateRaw": "7. Juli",
         "url": "https://ciclista.net/autofrei-termine-2026/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1009,7 +1113,9 @@
         "dateEnd": "2026-07-08",
         "dateRaw": "8. Juli",
         "url": "https://lequeyras.com/agenda/la-tournee-des-grands-cols/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1028,7 +1134,9 @@
         "dateEnd": "2026-07-09",
         "dateRaw": "9. Juli",
         "url": "https://www.valtellina.it/de/mortirolo-gesperrt",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1047,7 +1155,9 @@
         "dateEnd": "2026-07-09",
         "dateRaw": "9. Juli",
         "url": "https://lequeyras.com/agenda/la-tournee-des-grands-cols/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1066,7 +1176,9 @@
         "dateEnd": "2026-07-10",
         "dateRaw": "10. Juli",
         "url": "https://lequeyras.com/agenda/la-tournee-des-grands-cols/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1085,7 +1197,9 @@
         "dateEnd": "2026-07-11",
         "dateRaw": "11. Juli",
         "url": "https://ciclista.net/autofrei-termine-2026/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1104,7 +1218,9 @@
         "dateEnd": "2026-07-11",
         "dateRaw": "11. Juli",
         "url": "https://ciclista.net/autofrei-termine-2026/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1123,7 +1239,9 @@
         "dateEnd": "2026-07-12",
         "dateRaw": "12. Juli",
         "url": "https://www.valtellina.it/de/geschehen/bormio/re-stelvio-mapei-de",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1142,7 +1260,9 @@
         "dateEnd": "2026-07-13",
         "dateRaw": "13. Juli",
         "url": "https://www.girodolomiti.com/it/giro-2026",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1161,7 +1281,9 @@
         "dateEnd": "2026-07-14",
         "dateRaw": "14. Juli",
         "url": "https://ciclista.net/autofrei-termine-2026/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1180,7 +1302,9 @@
         "dateEnd": "2026-07-14",
         "dateRaw": "14. Juli",
         "url": "https://www.girodolomiti.com/it/giro-2026",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1199,7 +1323,9 @@
         "dateEnd": "2026-07-15",
         "dateRaw": "15. Juli",
         "url": "https://www.girodolomiti.com/it/giro-2026",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1218,7 +1344,9 @@
         "dateEnd": "2026-07-16",
         "dateRaw": "16. Juli",
         "url": "https://www.girodolomiti.com/it/giro-2026",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1237,7 +1365,9 @@
         "dateEnd": "2026-07-17",
         "dateRaw": "17. Juli",
         "url": "https://www.girodolomiti.com/it/giro-2026",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1256,7 +1386,9 @@
         "dateEnd": "2026-07-19",
         "dateRaw": "19. Juli",
         "url": "https://uk.bike-oisans.com/agenda/etape-du-tour-amateurs-passage-a-la-grave/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1275,7 +1407,9 @@
         "dateEnd": "2026-07-19",
         "dateRaw": "19. Juli",
         "url": "https://www.massif-des-vosges.fr/experiences/colattitude/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1294,7 +1428,9 @@
         "dateEnd": "2026-07-21",
         "dateRaw": "21. Juli",
         "url": "https://ciclista.net/autofrei-termine-2026/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1313,7 +1449,9 @@
         "dateEnd": "2026-07-26",
         "dateRaw": "26. Juli",
         "url": "https://www.glarus.ch/verwaltung/bau-und-versorgung/parkraumbewirtschaftung/slow-sundays-kloental.html/8403",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1332,7 +1470,9 @@
         "dateEnd": "2026-07-28",
         "dateRaw": "28. Juli",
         "url": "https://ciclista.net/autofrei-termine-2026/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1351,7 +1491,9 @@
         "dateEnd": "2026-08-01",
         "dateRaw": "1. August",
         "url": "https://ciclista.net/autofrei-termine-2026/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1370,7 +1512,9 @@
         "dateEnd": "2026-08-04",
         "dateRaw": "4. August",
         "url": "https://ciclista.net/autofrei-termine-2026/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1389,7 +1533,9 @@
         "dateEnd": "2026-08-04",
         "dateRaw": "4. August",
         "url": "https://ciclista.net/autofrei-termine-2026/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1408,7 +1554,9 @@
         "dateEnd": "2026-08-07",
         "dateRaw": "7. August",
         "url": "https://www.ledevoluy.com/ete/offres/montee-cycliste-du-col-du-noyer-poligny-fr-ete-5019584/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1427,7 +1575,9 @@
         "dateEnd": "2026-08-08",
         "dateRaw": "8. August",
         "url": "https://ciclista.net/autofrei-termine-2026/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1446,7 +1596,9 @@
         "dateEnd": "2026-08-09",
         "dateRaw": "9. August",
         "url": "https://www.massif-des-vosges.fr/experiences/colattitude/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1465,7 +1617,9 @@
         "dateEnd": "2026-08-11",
         "dateRaw": "11. August",
         "url": "https://ciclista.net/autofrei-termine-2026/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1484,7 +1638,9 @@
         "dateEnd": "2026-08-16",
         "dateRaw": "16. August",
         "url": "https://www.massif-des-vosges.fr/experiences/colattitude/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1503,7 +1659,9 @@
         "dateEnd": "2026-08-22",
         "dateRaw": "20.-22. August",
         "url": "https://uk.bike-oisans.com/agenda/climbing-for-life/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1522,7 +1680,9 @@
         "dateEnd": "2026-08-22",
         "dateRaw": "22. August",
         "url": "https://triathlon-madeleine.fr",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1541,7 +1701,9 @@
         "dateEnd": "2026-08-23",
         "dateRaw": "23. August",
         "url": "https://www.granfondosangottardo.com",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1560,7 +1722,9 @@
         "dateEnd": "2026-08-23",
         "dateRaw": "23. August",
         "url": "https://www.massif-des-vosges.fr/experiences/colattitude/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1579,7 +1743,9 @@
         "dateEnd": "2026-08-27",
         "dateRaw": "25.-27. August",
         "url": "https://uk.bike-oisans.com/agenda/haute-route-alpes/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1598,7 +1764,9 @@
         "dateEnd": "2026-08-27",
         "dateRaw": "27. August",
         "url": "https://ciclista.net/autofrei-termine-2026/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1617,7 +1785,9 @@
         "dateEnd": "2026-08-28",
         "dateRaw": "28. August",
         "url": "https://www.valtellina.it/de/mortirolo-gesperrt",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1636,7 +1806,9 @@
         "dateEnd": "2026-08-29",
         "dateRaw": "29. August",
         "url": "https://www.nationalpark-stelvio.it/de/erleben/radfahren-mountainbiken/radtag-stilfserjoch.html",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1655,7 +1827,9 @@
         "dateEnd": "2026-08-30",
         "dateRaw": "30. August",
         "url": "https://www.valtellina.it/de/gavia-gesperrt",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1674,7 +1848,9 @@
         "dateEnd": "2026-08-30",
         "dateRaw": "30. August",
         "url": "https://www.glarus.ch/verwaltung/bau-und-versorgung/parkraumbewirtschaftung/slow-sundays-kloental.html/8403",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1693,7 +1869,51 @@
         "dateEnd": "2026-08-30",
         "dateRaw": "30. August",
         "url": "https://www.massif-des-vosges.fr/experiences/colattitude/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.378,
+          47.565
+        ]
+      },
+      "properties": {
+        "name": "slowUp Bodensee Schweiz",
+        "country": "ch",
+        "date": "2026-08-30",
+        "dateEnd": "2026-08-30",
+        "dateRaw": "30. August",
+        "url": "https://www.slowup.ch/bodensee/de.html",
+        "isNew": true,
+        "isSlowup": true,
+        "source": "slowup"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.401,
+          47.48
+        ]
+      },
+      "properties": {
+        "name": "slowUp Sundgau (F)",
+        "country": "fr",
+        "date": "2026-08-30",
+        "dateEnd": "2026-08-30",
+        "dateRaw": "30. August",
+        "url": "https://www.slowup-sundgau.fr/",
+        "isNew": true,
+        "isSlowup": true,
+        "source": "slowup"
       }
     },
     {
@@ -1712,7 +1932,9 @@
         "dateEnd": "2026-09-05",
         "dateRaw": "5. September",
         "url": "https://www.massif-des-vosges.fr/experiences/colattitude/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1731,7 +1953,9 @@
         "dateEnd": "2026-09-06",
         "dateRaw": "6. September",
         "url": "https://lequeyras.com/en/agenda/reserved-passes-col-agnel-molines-en-queyras-en-3261727/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1750,7 +1974,9 @@
         "dateEnd": "2026-09-06",
         "dateRaw": "6. September",
         "url": "https://www.slowup.ch/albula/de.html",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": true,
+        "source": "freipass"
       }
     },
     {
@@ -1769,7 +1995,9 @@
         "dateEnd": "2026-09-12",
         "dateRaw": "12. September",
         "url": "https://ciclista.net/autofrei-termine-2026/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1788,7 +2016,9 @@
         "dateEnd": "2026-09-12",
         "dateRaw": "12. September",
         "url": "https://www.bikehotels.it/de/suedtirol-wir/news/363-autofreie-paesse-die-termine-in-suedtirol-2026.html",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1807,7 +2037,9 @@
         "dateEnd": "2026-09-13",
         "dateRaw": "13. September",
         "url": "https://www.klausen-monument.ch",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1826,7 +2058,30 @@
         "dateEnd": "2026-09-13",
         "dateRaw": "13. September",
         "url": "https://www.massif-des-vosges.fr/experiences/colattitude/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.831,
+          47.12
+        ]
+      },
+      "properties": {
+        "name": "slowUp Emmental-Oberaargau",
+        "country": "ch",
+        "date": "2026-09-13",
+        "dateEnd": "2026-09-13",
+        "dateRaw": "13. September",
+        "url": "https://www.slowup.ch/emmental-oberaargau/de.html",
+        "isNew": true,
+        "isSlowup": true,
+        "source": "slowup"
       }
     },
     {
@@ -1845,7 +2100,9 @@
         "dateEnd": "2026-09-19",
         "dateRaw": "19. September",
         "url": "https://www.bikehotels.it/de/suedtirol-wir/news/363-autofreie-paesse-die-termine-in-suedtirol-2026.html",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1864,7 +2121,30 @@
         "dateEnd": "2026-09-19",
         "dateRaw": "19. September",
         "url": "https://ciclista.net/autofrei-termine-2026/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.588,
+          47.558
+        ]
+      },
+      "properties": {
+        "name": "slowUp Basel-Dreiland",
+        "country": "ch",
+        "date": "2026-09-20",
+        "dateEnd": "2026-09-20",
+        "dateRaw": "20. September",
+        "url": "https://www.slowup.ch/basel-dreiland/de.html",
+        "isNew": true,
+        "isSlowup": true,
+        "source": "slowup"
       }
     },
     {
@@ -1883,7 +2163,9 @@
         "dateEnd": "2026-09-21",
         "dateRaw": "21. September",
         "url": "https://www.bikehotels.it/de/suedtirol-wir/news/363-autofreie-paesse-die-termine-in-suedtirol-2026.html",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1902,7 +2184,9 @@
         "dateEnd": "2026-09-22",
         "dateRaw": "22. September",
         "url": "https://www.bikehotels.it/de/suedtirol-wir/news/363-autofreie-paesse-die-termine-in-suedtirol-2026.html",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1921,7 +2205,9 @@
         "dateEnd": "2026-09-26",
         "dateRaw": "26. September",
         "url": "https://ridethealps.ch/de/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
       }
     },
     {
@@ -1940,7 +2226,345 @@
         "dateEnd": "2026-09-27",
         "dateRaw": "27. September",
         "url": "https://www.massif-des-vosges.fr/experiences/colattitude/",
-        "isNew": false
+        "isNew": false,
+        "isSlowup": false,
+        "source": "freipass"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.742,
+          47.255
+        ]
+      },
+      "properties": {
+        "name": "slowUp Zürichsee",
+        "country": "ch",
+        "date": "2026-09-27",
+        "dateEnd": "2026-09-27",
+        "dateRaw": "27. September",
+        "url": "https://www.slowup.ch/zuerichsee/de.html",
+        "isNew": true,
+        "isSlowup": true,
+        "source": "slowup"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.021,
+          46.192
+        ]
+      },
+      "properties": {
+        "name": "slowUp Ticino",
+        "country": "ch",
+        "date": "2027-04-18",
+        "dateEnd": "2027-04-18",
+        "dateRaw": "18. April",
+        "url": "https://www.slowup.ch/ticino/de.html",
+        "isNew": true,
+        "isSlowup": true,
+        "source": "slowup"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.116,
+          46.929
+        ]
+      },
+      "properties": {
+        "name": "slowUp Murtensee",
+        "country": "ch",
+        "date": "2027-04-25",
+        "dateEnd": "2027-04-25",
+        "dateRaw": "25. April",
+        "url": "https://www.slowup.ch/murtensee/de.html",
+        "isNew": true,
+        "isSlowup": true,
+        "source": "slowup"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.476,
+          47.163
+        ]
+      },
+      "properties": {
+        "name": "slowUp Werdenberg-Liechtenstein",
+        "country": "ch",
+        "date": "2027-05-02",
+        "dateEnd": "2027-05-02",
+        "dateRaw": "2. Mai",
+        "url": "https://www.slowup.ch/wfl/de.html",
+        "isNew": true,
+        "isSlowup": true,
+        "source": "slowup"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.635,
+          47.696
+        ]
+      },
+      "properties": {
+        "name": "slowUp Schaffhausen-Hegau",
+        "country": "ch",
+        "date": "2027-05-09",
+        "dateEnd": "2027-05-09",
+        "dateRaw": "9. Mai",
+        "url": "https://www.slowup.ch/schaffhausen-hegau/de.html",
+        "isNew": true,
+        "isSlowup": true,
+        "source": "slowup"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.67,
+          47.319
+        ]
+      },
+      "properties": {
+        "name": "slowUp Solothurn-Buechibärg",
+        "country": "ch",
+        "date": "2027-05-30",
+        "dateEnd": "2027-05-30",
+        "dateRaw": "30. Mai",
+        "url": "https://www.slowup.ch/solothurn-buechibaerg/de.html",
+        "isNew": true,
+        "isSlowup": true,
+        "source": "slowup"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.532,
+          46.292
+        ]
+      },
+      "properties": {
+        "name": "slowUp Valais",
+        "country": "ch",
+        "date": "2027-06-06",
+        "dateEnd": "2027-06-06",
+        "dateRaw": "6. Juni",
+        "url": "https://www.slowup.ch/valais/de.html",
+        "isNew": true,
+        "isSlowup": true,
+        "source": "slowup"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.551,
+          48.009
+        ]
+      },
+      "properties": {
+        "name": "slowUp Alsace (F)",
+        "country": "fr",
+        "date": "2027-06-06",
+        "dateEnd": "2027-06-06",
+        "dateRaw": "6. Juni",
+        "url": "https://www.slowup-alsace.fr/",
+        "isNew": true,
+        "isSlowup": true,
+        "source": "slowup"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.783,
+          47.55
+        ]
+      },
+      "properties": {
+        "name": "slowUp Hochrhein",
+        "country": "ch",
+        "date": "2027-06-20",
+        "dateEnd": "2027-06-20",
+        "dateRaw": "20. Juni",
+        "url": "https://www.slowup.ch/hochrhein/de.html",
+        "isNew": true,
+        "isSlowup": true,
+        "source": "slowup"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.355,
+          47.362
+        ]
+      },
+      "properties": {
+        "name": "slowUp Jura",
+        "country": "ch",
+        "date": "2027-06-27",
+        "dateEnd": "2027-06-27",
+        "dateRaw": "27. Juni",
+        "url": "https://www.slowup.ch/jura/de.html",
+        "isNew": true,
+        "isSlowup": true,
+        "source": "slowup"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.231,
+          46.606
+        ]
+      },
+      "properties": {
+        "name": "slowUp Vallée de Joux",
+        "country": "ch",
+        "date": "2027-07-04",
+        "dateEnd": "2027-07-04",
+        "dateRaw": "4. Juli",
+        "url": "https://www.slowup.ch/valleedejoux/fr.html",
+        "isNew": true,
+        "isSlowup": true,
+        "source": "slowup"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.939,
+          46.821
+        ]
+      },
+      "properties": {
+        "name": "slowUp la Broye",
+        "country": "ch",
+        "date": "2027-07-25",
+        "dateEnd": "2027-07-25",
+        "dateRaw": "25. Juli",
+        "url": "https://www.slowup.ch/broye/fr.html",
+        "isNew": true,
+        "isSlowup": true,
+        "source": "slowup"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.209,
+          47.481
+        ]
+      },
+      "properties": {
+        "name": "slowUp Brugg Regio",
+        "country": "ch",
+        "date": "2027-08-08",
+        "dateEnd": "2027-08-08",
+        "dateRaw": "8. August",
+        "url": "https://www.slowup.ch/brugg-regio/de.html",
+        "isNew": true,
+        "isSlowup": true,
+        "source": "slowup"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.192,
+          47.135
+        ]
+      },
+      "properties": {
+        "name": "slowUp Sempachersee",
+        "country": "ch",
+        "date": "2027-08-22",
+        "dateEnd": "2027-08-22",
+        "dateRaw": "22. August",
+        "url": "https://www.slowup.ch/sempachersee/de.html",
+        "isNew": true,
+        "isSlowup": true,
+        "source": "slowup"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.722,
+          47.057
+        ]
+      },
+      "properties": {
+        "name": "slowUp Schwyz",
+        "country": "ch",
+        "date": "2028-06-18",
+        "dateEnd": "2028-06-18",
+        "dateRaw": "18. Juni",
+        "url": "https://www.slowup.ch/schwyz/de.html",
+        "isNew": true,
+        "isSlowup": true,
+        "source": "slowup"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.216,
+          47.282
+        ]
+      },
+      "properties": {
+        "name": "slowUp Seetal",
+        "country": "ch",
+        "date": "2028-08-20",
+        "dateEnd": "2028-08-20",
+        "dateRaw": "20. August",
+        "url": "https://www.slowup.ch/seetal/de.html",
+        "isNew": true,
+        "isSlowup": true,
+        "source": "slowup"
       }
     }
   ]

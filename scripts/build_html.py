@@ -95,16 +95,17 @@ def render_event(ev, gruppen_monat=None):
         titel = '<span class="n">%s</span>' % name
 
     neu = '<span class="neu">neu</span>' if ev.get("isNew") else ""
+    slow = '<span class="su">slowUp</span>' if ev.get("isSlowup") else ""
 
     return (
         '<li class="ev" data-c="%s">'
         '<div class="d"><span class="wd">%s</span>'
         '<span class="dm">%s</span></div>'
         '<div class="b">%s<div class="m">'
-        '<span class="c c-%s">%s</span>%s</div></div>'
+        '<span class="c c-%s">%s</span>%s%s</div></div>'
         "</li>"
     ) % (land, wd, esc(datum_in_gruppe(ev, gruppen_monat)), titel, land,
-         esc(LAND_NAME.get(land, land)), neu)
+         esc(LAND_NAME.get(land, land)), slow, neu)
 
 
 OUTLINE_PATH = os.path.join(BASE, "data", "outline.json")
@@ -187,9 +188,11 @@ def build_minimap(events, breite=760, hoehe=380, rand=8):
         x, y = px(e["lng"], e["lat"])
         kommend = bool(e["dateStart"] and e["dateStart"] >= heute)
         kreise.append(
-            '<circle class="pt %s" data-c="%s" cx="%.1f" cy="%.1f" r="%s"><title>%s</title></circle>'
-            % ("kommend" if kommend else "vorbei", e["country"], x, y,
-               "4.2" if kommend else "3",
+            '<circle class="pt %s%s" data-c="%s" cx="%.1f" cy="%.1f" r="%s">'
+            "<title>%s</title></circle>"
+            % ("kommend" if kommend else "vorbei",
+               " su" if e.get("isSlowup") else "",
+               e["country"], x, y, "4.2" if kommend else "3",
                esc("%s — %s" % (e["name"], datum_kurz(e))))
         )
 
@@ -233,7 +236,7 @@ def render_gruppen(gruppen):
     return "".join(teile)
 
 
-PAGE = Template("""<title>Autofreie Bike-Tage $season</title>
+PAGE = Template("""<title>Autofreie Bike-Tage $spanne</title>
 <style>
 :root {
   color-scheme: light dark;
@@ -322,6 +325,12 @@ h1 { margin:0; font-size:1.45rem; line-height:1.2; letter-spacing:-.015em;
 .mini .pt[data-c="at"] { fill:var(--at); }
 .mini .pt[data-c="fr"] { fill:var(--fr); }
 .mini .pt[data-c="ch"] { fill:var(--ch); }
+/* slowUps hohl statt gefuellt - so sind sie ohne Legende unterscheidbar. */
+.mini .pt.su { fill:var(--surface); stroke-width:2; }
+.mini .pt.su[data-c="it"] { stroke:var(--it); }
+.mini .pt.su[data-c="at"] { stroke:var(--at); }
+.mini .pt.su[data-c="fr"] { stroke:var(--fr); }
+.mini .pt.su[data-c="ch"] { stroke:var(--ch); }
 .mini .pt.hide { display:none; }
 .mini-h {
   display:block; padding:.35rem .3rem .5rem; text-align:right;
@@ -378,6 +387,11 @@ a.n:hover { color:var(--accent); text-decoration:underline;
              background:currentColor; flex:none; }
 .c-it { color:var(--it); } .c-at { color:var(--at); }
 .c-fr { color:var(--fr); } .c-ch { color:var(--ch); }
+.su {
+  font-family:var(--mono); font-size:.62rem; text-transform:uppercase;
+  letter-spacing:.1em; padding:.1rem .35rem; border-radius:3px;
+  border:1px solid currentColor; color:var(--ink2); font-weight:600;
+}
 .neu {
   font-family:var(--mono); font-size:.62rem; text-transform:uppercase;
   letter-spacing:.1em; padding:.1rem .35rem; border-radius:3px;
@@ -426,7 +440,7 @@ a.n:hover { color:var(--accent); text-decoration:underline;
 
 <div class="wrap">
   <header class="hd">
-    <h1>Autofreie Bike-Tage $season</h1>
+    <h1>Autofreie Bike-Tage $spanne</h1>
     <p class="sub">$total Termine &middot; Stand $stand &middot; Quelle
       <a href="$quelle_url" target="_blank" rel="noopener noreferrer">$quelle_name</a>
     </p>
@@ -573,7 +587,11 @@ def build_html(data):
     else:
         past_block = ""
 
+    jahre = sorted({e["dateStart"][:4] for e in events if e["dateStart"]})
+    spanne = jahre[0] if len(jahre) <= 1 else "%s–%s" % (jahre[0], jahre[-1])
+
     return PAGE.substitute(
+        spanne=spanne,
         quelle_url=QUELLE_URL,
         quelle_name=QUELLE_NAME,
         season=data["season"],

@@ -69,6 +69,8 @@ def build_geojson(events):
                 "dateRaw": ev["dateRaw"],
                 "url": ev["url"],
                 "isNew": ev["isNew"],
+                "isSlowup": bool(ev.get("isSlowup")),
+                "source": ev.get("source", "freipass"),
             },
         })
     # Quellenangabe gehoert in die Datei selbst: das GeoJSON wird als Layer
@@ -80,7 +82,7 @@ def build_geojson(events):
         "name": "Autofreie Bike-Tage",
         "source": QUELLE_NAME,
         "sourceUrl": QUELLE_URL,
-        "attribution": "Termine: %s" % QUELLE_NAME,
+        "attribution": "Termine: %s, slowup.ch" % QUELLE_NAME,
         "features": features,
     }
 
@@ -118,6 +120,7 @@ def build_html(data):
                 "dateRaw": e["dateRaw"],
                 "url": sichere_url(e["url"]),
                 "isNew": e["isNew"],
+                "isSlowup": bool(e.get("isSlowup")),
                 "lat": e["lat"],
                 "lng": e["lng"],
             }
@@ -132,7 +135,7 @@ def build_html(data):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Autofreie Bike-Tage %(season)s &ndash; Karte</title>
+<title>Autofreie Bike-Tage %(spanne)s &ndash; Karte</title>
 <link rel="stylesheet" href="%(leaflet_css)s"
       integrity="%(leaflet_css_sri)s" crossorigin="anonymous">
 <style>
@@ -154,8 +157,35 @@ def build_html(data):
   .ohne ul { padding-left: 1.1rem; color: #444; }
   footer { padding: 1rem 1.25rem 2rem; font-size: .85rem; color: #666; }
   footer a { color: #06c; }
+  .leg { display: inline-block; margin-bottom: .5rem; }
+  .leg-p { display: inline-block; width: 11px; height: 11px; border-radius: 50%%;
+           vertical-align: -1px; margin-right: 2px; }
+  .leg-voll { background: #0055a4; border: 2px solid #fff;
+              box-shadow: 0 0 0 1px #bbb; }
+  .leg-hohl { background: #fff; border: 3px solid #0055a4; }
+  /* Namensschilder: bei 102 Markern im Alpenbogen waeren sie in der
+     Uebersicht unlesbar - daher erst ab LABEL_ZOOM oder per Schalter. */
+  .leaflet-tooltip.lbl {
+    display: none; background: rgba(255,255,255,.88); border: 0;
+    box-shadow: none; border-radius: 3px; padding: 0 4px;
+    font: 600 11px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #16211f; white-space: nowrap;
+  }
+  .leaflet-tooltip.lbl::before { display: none; }
+  .labels-an .leaflet-tooltip.lbl { display: block; }
+  .btn-lbl {
+    background: #fff; border: 0; border-radius: 4px; cursor: pointer;
+    padding: 5px 9px; font: 600 12px/1.4 -apple-system, sans-serif;
+    color: #16211f; box-shadow: 0 1px 5px rgba(0,0,0,.3);
+  }
+  .btn-lbl[aria-pressed="true"] { background: #16211f; color: #fff; }
   .pop b { display: block; font-size: 1rem; margin-bottom: .15rem; }
   .pop .d { color: #555; }
+  .pop .su {
+    display: inline-block; margin-left: .3rem; padding: 0 .35rem;
+    border: 1px solid #999; color: #555; border-radius: 3px;
+    font-size: .72rem; font-weight: 700; vertical-align: middle;
+  }
   .pop .neu {
     display: inline-block; margin-left: .3rem; padding: 0 .35rem;
     background: #e8f5e9; color: #1b5e20; border-radius: 3px;
@@ -164,13 +194,16 @@ def build_html(data):
   @media (prefers-color-scheme: dark) {
     body { background: #16181c; color: #e8e8e8; }
     .meta, .ohne ul, footer { color: #9aa; }
+    .leaflet-tooltip.lbl { background: rgba(22,24,28,.85); color: #e8e8e8; }
+    .btn-lbl { background: #24282e; color: #e8e8e8; }
+    .btn-lbl[aria-pressed="true"] { background: #e8e8e8; color: #16181c; }
     .pop .d { color: #555; }
   }
 </style>
 </head>
 <body>
 <header>
-  <h1>&#128690; Autofreie Bike-Tage %(season)s</h1>
+  <h1>&#128690; Autofreie Bike-Tage %(spanne)s</h1>
   <p class="meta">
     %(count)d Orte &middot; Stand %(stand)s &middot;
     Quelle <a href="%(quelle_url)s" target="_blank" rel="noopener noreferrer">%(quelle_name)s</a>
@@ -181,6 +214,8 @@ def build_html(data):
 
 %(ohne_liste)s
 <footer>
+  <span class="leg"><span class="leg-p leg-voll"></span> Passtage &middot;
+  <span class="leg-p leg-hohl"></span> slowUp</span><br>
   <a href="index.html">&larr; Übersicht &amp; Kalender-Abo</a> &middot;
   <a href="autofrei.geojson" download>GeoJSON herunterladen</a> (für ArcGIS Online)
 </footer>
@@ -209,7 +244,9 @@ def build_html(data):
   // sonst nur die Kachelquelle.
   map.attributionControl.addAttribution(
     'Termine: <a href="%(quelle_url)s" target="_blank" ' +
-    'rel="noopener noreferrer">%(quelle_name)s</a>'
+    'rel="noopener noreferrer">%(quelle_name)s</a>, ' +
+    '<a href="https://www.slowup.ch/" target="_blank" ' +
+    'rel="noopener noreferrer">slowup.ch</a>'
   );
 
   function esc(s) {
@@ -224,20 +261,32 @@ def build_html(data):
 
   DATA.events.forEach(function (ev) {
     var farbe = DATA.landFarbe[ev.country] || '#666';
-    var m = L.circleMarker([ev.lat, ev.lng], {
-      radius: 7, color: '#fff', weight: 2,
-      fillColor: farbe, fillOpacity: .9
-    });
+    // slowUps hohl (Landesfarbe als Ring), uebrige gefuellt - so sind sie
+    // auf der Karte ohne Legende auseinanderzuhalten.
+    var m = ev.isSlowup
+      ? L.circleMarker([ev.lat, ev.lng], {
+          radius: 7, color: farbe, weight: 3,
+          fillColor: '#fff', fillOpacity: 1
+        })
+      : L.circleMarker([ev.lat, ev.lng], {
+          radius: 7, color: '#fff', weight: 2,
+          fillColor: farbe, fillOpacity: .9
+        });
 
     var html = '<div class="pop"><b>' + esc(ev.name) + '</b>' +
       '<span class="d">' + esc(ev.dateRaw) + ' &middot; ' +
       esc(DATA.landName[ev.country] || ev.country) + '</span>' +
+      (ev.isSlowup ? '<span class="su">slowUp</span>' : '') +
       (ev.isNew ? '<span class="neu">NEU</span>' : '');
     if (ev.url) {
       html += '<br><a href="' + esc(ev.url) +
               '" target="_blank" rel="noopener noreferrer">Details &rarr;</a>';
     }
     m.bindPopup(html + '</div>');
+    m.bindTooltip(esc(ev.name), {
+      permanent: true, direction: 'right', offset: [7, 0],
+      className: 'lbl', opacity: 1
+    });
 
     if (!gruppen[ev.country]) { gruppen[ev.country] = L.layerGroup(); }
     gruppen[ev.country].addLayer(m);
@@ -279,6 +328,36 @@ def build_html(data):
     else { map.setView([46.5, 10.5], 6); }
   }
 
+  // --- Namensschilder ---
+  var LABEL_ZOOM = 8;
+  var labelsErzwungen = false;
+
+  function labelsAktualisieren() {
+    var an = labelsErzwungen || map.getZoom() >= LABEL_ZOOM;
+    map.getContainer().classList.toggle('labels-an', an);
+  }
+  map.on('zoomend', labelsAktualisieren);
+
+  var Schalter = L.Control.extend({
+    options: { position: 'topleft' },
+    onAdd: function () {
+      var b = L.DomUtil.create('button', 'btn-lbl');
+      b.type = 'button';
+      b.textContent = 'Namen';
+      b.title = 'Namen immer anzeigen (sonst ab Zoomstufe ' + LABEL_ZOOM + ')';
+      b.setAttribute('aria-pressed', 'false');
+      L.DomEvent.disableClickPropagation(b);
+      L.DomEvent.on(b, 'click', function () {
+        labelsErzwungen = !labelsErzwungen;
+        b.setAttribute('aria-pressed', String(labelsErzwungen));
+        labelsAktualisieren();
+      });
+      return b;
+    }
+  });
+  map.addControl(new Schalter());
+  labelsAktualisieren();
+
   einpassen();
   window.addEventListener('load', function () {
     if (!nutzerHatBewegt) { einpassen(); }
@@ -309,6 +388,8 @@ def build_html(data):
 """ % {
         "quelle_url": QUELLE_URL,
         "quelle_name": QUELLE_NAME,
+        "spanne": (lambda j: j[0] if len(j) <= 1 else "%s\u2013%s" % (j[0], j[-1]))(
+            sorted({e["dateStart"][:4] for e in events if e["dateStart"]}) or ["?"]),
         "season": data["season"],
         "count": len(mit_koord),
         "stand": data["fetchedAt"],

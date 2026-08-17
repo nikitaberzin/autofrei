@@ -7,6 +7,7 @@ Bei jedem Fehler: Exit 1 und bestehende events.json bleibt unveraendert.
 
 import json
 import os
+sys_path_hint = None
 import re
 import sys
 import time
@@ -14,8 +15,12 @@ import urllib.error
 import urllib.request
 from datetime import date
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT_PATH = os.path.join(BASE, "data", "events.json")
+
+import fetch_slowup
 
 URL_HTML = "https://www.freipass.ch/index.php"
 URL_JS = "https://www.freipass.ch/fpscripts3.js"
@@ -231,6 +236,42 @@ def parse_coords(js):
     return coords
 
 
+def merge_slowup(freipass_events, slowup_events):
+    """Fuehrt beide Quellen zusammen und entfernt Dubletten.
+
+    freipass.ch verlinkt einzelne Eintraege direkt auf slowup.ch (z. B.
+    "Slowup Mountain Albula" -> slowup.ch/albula/de.html). Solche Paare sind
+    dieselbe Veranstaltung. Der freipass-Eintrag gewinnt, weil er echte
+    Koordinaten mitbringt statt unserer geschaetzten - er wird aber als
+    slowUp markiert, damit die Kennzeichnung stimmt.
+    """
+    # (slug, datum) -> freipass-Event, sofern dieses auf slowup.ch zeigt
+    nach_slug = {}
+    for e in freipass_events:
+        e.setdefault("source", "freipass")
+        e.setdefault("isSlowup", False)
+        if e.get("url") and "slowup" in e["url"].lower():
+            slug = fetch_slowup.slug_aus_url(e["url"])
+            if slug:
+                nach_slug[(slug, e["dateStart"])] = e
+
+    zusammen = list(freipass_events)
+    dubletten = 0
+    for e in slowup_events:
+        treffer = nach_slug.get((e.get("slug"), e["dateStart"]))
+        if treffer is not None:
+            treffer["isSlowup"] = True
+            dubletten += 1
+            continue
+        e["isSlowup"] = True
+        e.pop("slug", None)
+        zusammen.append(e)
+
+    if dubletten:
+        print("  %d Dublette(n) zwischen den Quellen zusammengefuehrt" % dubletten)
+    return zusammen
+
+
 def diff_new(events, previous_path):
     """Markiert Events, die im letzten Snapshot fehlten.
 
@@ -284,6 +325,22 @@ def main():
         if ev["marker"] in coords:
             ev["lat"], ev["lng"] = coords[ev["marker"]]
 
+    # Zweitquelle slowup.ch. Faellt sie aus, laeuft der Rest trotzdem durch -
+    # ein Ausfall dort darf den freipass-Kalender nicht mitreissen.
+    try:
+        slowup_html = fetch(fetch_slowup.URL)
+        slowup_events = fetch_slowup.parse_slowup(slowup_html)
+        if len(slowup_events) < fetch_slowup.MIN_EVENTS:
+            warn("slowup.ch lieferte nur %d Termine - Struktur geaendert? "
+                 "Zweitquelle wird uebersprungen." % len(slowup_events))
+            slowup_events = []
+    except (urllib.error.URLError, urllib.error.HTTPError, OSError) as exc:
+        warn("slowup.ch nicht erreichbar (%s) - nur freipass-Daten." % exc)
+        slowup_events = []
+
+    print("  freipass: %d | slowUp: %d" % (len(events), len(slowup_events)))
+    events = merge_slowup(events, slowup_events)
+
     events = diff_new(events, OUT_PATH)
 
     # Chronologisch; Events ohne Datum ans Ende.
@@ -291,6 +348,7 @@ def main():
 
     data = {
         "source": "https://freipass.ch/",
+        "sources": ["https://freipass.ch/", "https://www.slowup.ch/"],
         "season": season,
         "fetchedAt": date.today().isoformat(),
         "eventCount": len(events),
@@ -311,6 +369,9 @@ def main():
     print("  ohne Koordinaten: %d" % ohne_koord)
     print("  ohne Datum:       %d" % ohne_datum)
     print("  neu seit letztem Lauf: %d" % neu)
+    from collections import Counter
+    print("  Quellen:", dict(Counter(e.get("source", "freipass") for e in events)))
+    print("  davon slowUp markiert:", sum(1 for e in events if e.get("isSlowup")))
     print("geschrieben: %s" % OUT_PATH)
     return 0
 
