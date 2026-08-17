@@ -3,7 +3,7 @@
 Wöchentlich aktualisierte Übersicht autofreier Pass- und Straßentage in
 **Italien, Österreich, Frankreich und der Schweiz**.
 
-Datenquelle: [freipass.ch](https://www.freipass.ch/)
+Datenquelle: [freipass.ch](https://freipass.ch/)
 
 ## Was hier liegt
 

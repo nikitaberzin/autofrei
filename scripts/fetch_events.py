@@ -290,7 +290,7 @@ def main():
     events.sort(key=lambda e: (e["dateStart"] is None, e["dateStart"] or ""))
 
     data = {
-        "source": "https://www.freipass.ch/",
+        "source": "https://freipass.ch/",
         "season": season,
         "fetchedAt": date.today().isoformat(),
         "eventCount": len(events),

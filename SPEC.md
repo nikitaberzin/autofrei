@@ -6,7 +6,7 @@
 ## Goal
 
 Ein wöchentlich laufender Skill liest die Event-Liste von
-[freipass.ch](https://www.freipass.ch/) (autofreie Pass-/Straßentage in den
+[freipass.ch](https://freipass.ch/) (autofreie Pass-/Straßentage in den
 Alpen), filtert auf Italien/Dolomiten, Österreich, Frankreich und Schweiz und
 erzeugt drei Outputs:
 

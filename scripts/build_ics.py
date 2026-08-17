@@ -18,6 +18,9 @@ OUT_PATH = os.path.join(BASE, "docs", "autofrei.ics")
 CRLF = "\r\n"
 PRODID = "-//autofrei//freipass.ch scraper//DE"
 CALNAME = "Autofreie Bike-Tage"
+QUELLE_URL = "https://freipass.ch/"
+QUELLE_NAME = "freipass.ch"
+
 
 LAND_LABEL = {"it": "IT", "at": "AT", "fr": "FR", "ch": "CH"}
 
@@ -80,8 +83,9 @@ def build_ics(events, stamp_iso):
         # Ardeche, Ventoux und einen Pyrenaeen-Pass (Tourmalet).
         "X-WR-CALDESC:" + escape_text(
             "Autofreie Passtage in Italien, Österreich, Frankreich und der "
-            "Schweiz. Quelle: freipass.ch"
+            "Schweiz. Quelle: " + QUELLE_URL
         ),
+        "SOURCE;VALUE=URI:" + QUELLE_URL,
         "REFRESH-INTERVAL;VALUE=DURATION:P1W",
         "X-PUBLISHED-TTL:P1W",
     ]
@@ -100,7 +104,7 @@ def build_ics(events, stamp_iso):
         land = LAND_LABEL.get(ev["country"], ev["country"].upper())
         summary = "\U0001f6b2 %s (%s)" % (ev["name"], land)
 
-        beschreibung = "Autofreier Tag\nQuelle: freipass.ch"
+        beschreibung = "Autofreier Tag\nQuelle: " + QUELLE_URL
         if ev.get("url"):
             beschreibung += "\n" + ev["url"]
 

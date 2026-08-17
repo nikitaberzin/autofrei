@@ -20,6 +20,9 @@ IN_PATH = os.path.join(BASE, "data", "events.json")
 OUT_PATH = os.path.join(BASE, "data", "artifact.html")
 
 PAGES_BASE = "https://nikitaberzin.github.io/autofrei"
+QUELLE_URL = "https://freipass.ch/"
+QUELLE_NAME = "freipass.ch"
+
 
 LAND_NAME = {"it": "Italien", "at": "Österreich", "fr": "Frankreich", "ch": "Schweiz"}
 MONAT = ["", "Januar", "Februar", "März", "April", "Mai", "Juni",
@@ -425,7 +428,7 @@ a.n:hover { color:var(--accent); text-decoration:underline;
   <header class="hd">
     <h1>Autofreie Bike-Tage $season</h1>
     <p class="sub">$total Termine &middot; Stand $stand &middot; Quelle
-      <a href="https://www.freipass.ch/" target="_blank" rel="noopener noreferrer">freipass.ch</a>
+      <a href="$quelle_url" target="_blank" rel="noopener noreferrer">$quelle_name</a>
     </p>
   </header>
 
@@ -571,6 +574,8 @@ def build_html(data):
         past_block = ""
 
     return PAGE.substitute(
+        quelle_url=QUELLE_URL,
+        quelle_name=QUELLE_NAME,
         season=data["season"],
         total=len(events),
         stand=data["fetchedAt"],
@@ -652,8 +657,8 @@ INDEX = Template("""<!DOCTYPE html>
   </ol>
 
   <footer>
-    Daten von <a href="https://www.freipass.ch/" target="_blank"
-    rel="noopener noreferrer">freipass.ch</a>. Wöchentlich automatisch
+    Daten von <a href="$quelle_url" target="_blank"
+    rel="noopener noreferrer">$quelle_name</a>. Wöchentlich automatisch
     aktualisiert.
   </footer>
 </div>
@@ -664,6 +669,7 @@ INDEX = Template("""<!DOCTYPE html>
 
 def build_index(data):
     return INDEX.substitute(
+        quelle_url=QUELLE_URL, quelle_name=QUELLE_NAME,
         season=data["season"], total=len(data["events"]),
         stand=data["fetchedAt"], pages=PAGES_BASE,
     )

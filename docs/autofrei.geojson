@@ -1,5 +1,9 @@
 {
   "type": "FeatureCollection",
+  "name": "Autofreie Bike-Tage",
+  "source": "freipass.ch",
+  "sourceUrl": "https://freipass.ch/",
+  "attribution": "Termine: freipass.ch",
   "features": [
     {
       "type": "Feature",

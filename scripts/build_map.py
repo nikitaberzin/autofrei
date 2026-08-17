@@ -19,6 +19,9 @@ IN_PATH = os.path.join(BASE, "data", "events.json")
 OUT_HTML = os.path.join(BASE, "docs", "karte.html")
 OUT_GEOJSON = os.path.join(BASE, "docs", "autofrei.geojson")
 
+QUELLE_URL = "https://freipass.ch/"
+QUELLE_NAME = "freipass.ch"
+
 LEAFLET_JS = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
 LEAFLET_JS_SRI = "sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH"
 LEAFLET_CSS = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -68,7 +71,18 @@ def build_geojson(events):
                 "isNew": ev["isNew"],
             },
         })
-    return {"type": "FeatureCollection", "features": features}
+    # Quellenangabe gehoert in die Datei selbst: das GeoJSON wird als Layer
+    # nach ArcGIS Online importiert und ist dort vom Rest des Projekts
+    # getrennt - ohne diese Felder waere die Herkunft dort nicht mehr
+    # nachvollziehbar.
+    return {
+        "type": "FeatureCollection",
+        "name": "Autofreie Bike-Tage",
+        "source": QUELLE_NAME,
+        "sourceUrl": QUELLE_URL,
+        "attribution": "Termine: %s" % QUELLE_NAME,
+        "features": features,
+    }
 
 
 def js_json(obj):
@@ -159,7 +173,7 @@ def build_html(data):
   <h1>&#128690; Autofreie Bike-Tage %(season)s</h1>
   <p class="meta">
     %(count)d Orte &middot; Stand %(stand)s &middot;
-    Quelle <a href="https://www.freipass.ch/" target="_blank" rel="noopener noreferrer">freipass.ch</a>
+    Quelle <a href="%(quelle_url)s" target="_blank" rel="noopener noreferrer">%(quelle_name)s</a>
   </p>
 </header>
 
@@ -190,6 +204,13 @@ def build_html(data):
     maxZoom: 17, attribution: 'Tiles &copy; Esri'
   });
   topo.addTo(map);
+
+  // Datenquelle gehoert in die Attributionsleiste der Karte - dort steht
+  // sonst nur die Kachelquelle.
+  map.attributionControl.addAttribution(
+    'Termine: <a href="%(quelle_url)s" target="_blank" ' +
+    'rel="noopener noreferrer">%(quelle_name)s</a>'
+  );
 
   function esc(s) {
     return String(s).replace(/[&<>"']/g, function (c) {
@@ -286,6 +307,8 @@ def build_html(data):
 </body>
 </html>
 """ % {
+        "quelle_url": QUELLE_URL,
+        "quelle_name": QUELLE_NAME,
         "season": data["season"],
         "count": len(mit_koord),
         "stand": data["fetchedAt"],

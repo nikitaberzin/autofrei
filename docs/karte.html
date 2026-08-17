@@ -43,8 +43,8 @@
 <header>
   <h1>&#128690; Autofreie Bike-Tage 2026</h1>
   <p class="meta">
-    102 Orte &middot; Stand 2026-08-10 &middot;
-    Quelle <a href="https://www.freipass.ch/" target="_blank" rel="noopener noreferrer">freipass.ch</a>
+    102 Orte &middot; Stand 2026-08-17 &middot;
+    Quelle <a href="https://freipass.ch/" target="_blank" rel="noopener noreferrer">freipass.ch</a>
   </p>
 </header>
 
@@ -75,6 +75,13 @@
     maxZoom: 17, attribution: 'Tiles &copy; Esri'
   });
   topo.addTo(map);
+
+  // Datenquelle gehoert in die Attributionsleiste der Karte - dort steht
+  // sonst nur die Kachelquelle.
+  map.attributionControl.addAttribution(
+    'Termine: <a href="https://freipass.ch/" target="_blank" ' +
+    'rel="noopener noreferrer">freipass.ch</a>'
+  );
 
   function esc(s) {
     return String(s).replace(/[&<>"']/g, function (c) {
