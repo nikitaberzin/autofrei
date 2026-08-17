@@ -1,0 +1,38 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//autofrei//freipass.ch scraper//DE
+CALSCALE:GREGORIAN
+NAME:Autofreie Bike-Tage – Österreich
+X-WR-CALNAME:Autofreie Bike-Tage – Österreich
+DESCRIPTION:Autofreie Passtage in Italien\, Österreich\, Frankreich und de
+ r Schweiz. Quellen: https://freipass.ch/ und https://www.slowup.ch/
+X-WR-CALDESC:Autofreie Passtage in Italien\, Österreich\, Frankreich und d
+ er Schweiz. Quellen: https://freipass.ch/ und https://www.slowup.ch/
+SOURCE;VALUE=URI:https://nikitaberzin.github.io/autofrei/autofrei-at.ics
+REFRESH-INTERVAL;VALUE=DURATION:P1W
+X-PUBLISHED-TTL:P1W
+COLOR:orange
+BEGIN:VEVENT
+UID:grossglockner26__2026-06-07@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260607
+DTEND;VALUE=DATE:20260608
+SUMMARY:🚲 Glocknerkönig (AT)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://www.glock
+ nerkoenig.com/de
+URL:https://www.glocknerkoenig.com/de
+GEO:47.050000;12.830000
+END:VEVENT
+BEGIN:VEVENT
+UID:grossglockner126__2026-07-05@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260705
+DTEND;VALUE=DATE:20260706
+SUMMARY:🚲 Grossglockner Bike Challenge (AT)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://www.granf
+ ondoguide.com/Events/Index/7165/grossglockner-bike-challenge
+URL:https://www.granfondoguide.com/Events/Index/7165/grossglockner-bike-cha
+ llenge
+GEO:47.054800;12.834620
+END:VEVENT
+END:VCALENDAR

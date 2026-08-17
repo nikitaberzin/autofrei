@@ -1,0 +1,551 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//autofrei//freipass.ch scraper//DE
+CALSCALE:GREGORIAN
+NAME:Autofreie Bike-Tage – Frankreich
+X-WR-CALNAME:Autofreie Bike-Tage – Frankreich
+DESCRIPTION:Autofreie Passtage in Italien\, Österreich\, Frankreich und de
+ r Schweiz. Quellen: https://freipass.ch/ und https://www.slowup.ch/
+X-WR-CALDESC:Autofreie Passtage in Italien\, Österreich\, Frankreich und d
+ er Schweiz. Quellen: https://freipass.ch/ und https://www.slowup.ch/
+SOURCE;VALUE=URI:https://nikitaberzin.github.io/autofrei/autofrei-fr.ics
+REFRESH-INTERVAL;VALUE=DURATION:P1W
+X-PUBLISHED-TTL:P1W
+COLOR:blue
+BEGIN:VEVENT
+UID:lans26__2026-05-24@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260524
+DTEND;VALUE=DATE:20260525
+SUMMARY:🚲 GFNY Villard de Lans (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://villardde
+ lans.gfny.com
+URL:https://villarddelans.gfny.com
+GEO:45.074356;5.540486
+END:VEVENT
+BEGIN:VEVENT
+UID:huez2256__2026-06-01@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260606
+SUMMARY:🚲 Alpe d'Huez (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://uk.bike-o
+ isans.com/agenda/alpe-dhuzes/
+URL:https://uk.bike-oisans.com/agenda/alpe-dhuzes/
+GEO:45.083000;6.067000
+END:VEVENT
+BEGIN:VEVENT
+UID:huez126__2026-06-04@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260604
+DTEND;VALUE=DATE:20260605
+SUMMARY:🚲 Alpe d'Huez (Alpe d'Huez Charity Event) (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://www.opgev
+ enisgeenoptie.nl
+URL:https://www.opgevenisgeenoptie.nl
+GEO:45.030000;6.060000
+END:VEVENT
+BEGIN:VEVENT
+UID:ventoux26__2026-06-06@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260606
+DTEND;VALUE=DATE:20260607
+SUMMARY:🚲 Granfondo Mont Ventoux (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://gfmontven
+ toux.com/en/
+URL:https://gfmontventoux.com/en/
+GEO:44.173662;5.279245
+END:VEVENT
+BEGIN:VEVENT
+UID:galibierchallenge26__2026-06-06@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260606
+DTEND;VALUE=DATE:20260607
+SUMMARY:🚲 Rando La Mauriennaise (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://www.galib
+ ier-challenge.com/rando
+URL:https://www.galibier-challenge.com/rando
+GEO:45.063992;6.408053
+END:VEVENT
+BEGIN:VEVENT
+UID:tourmalet26__2026-06-06@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260606
+DTEND;VALUE=DATE:20260607
+SUMMARY:🚲 Tourmalet (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://www.tourm
+ aletpicdumidi.com/temps-fort/la-montee-du-geant/
+URL:https://www.tourmaletpicdumidi.com/temps-fort/la-montee-du-geant/
+GEO:42.907540;0.147402
+END:VEVENT
+BEGIN:VEVENT
+UID:galibierchallenge126__2026-06-07@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260607
+DTEND;VALUE=DATE:20260608
+SUMMARY:🚲 La Cyclosportive (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://www.galib
+ ier-challenge.com/cyclosportive
+URL:https://www.galibier-challenge.com/cyclosportive
+GEO:45.060000;6.400000
+END:VEVENT
+BEGIN:VEVENT
+UID:calvaire26__2026-06-07@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260607
+DTEND;VALUE=DATE:20260608
+SUMMARY:🚲 Col du Calvaire & Col du Louschbach (Elsass) (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://www.visit
+ .alsace/de/230112334-colattitude-lac-blanc-col-du-calvaire-col-du-louschba
+ ch/
+URL:https://www.visit.alsace/de/230112334-colattitude-lac-blanc-col-du-calv
+ aire-col-du-louschbach/
+GEO:48.135803;7.089037
+END:VEVENT
+BEGIN:VEVENT
+UID:galibierchallenge226__2026-06-07@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260607
+DTEND;VALUE=DATE:20260608
+SUMMARY:🚲 Galibier (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://www.galib
+ ier-challenge.com/la-grimpee
+URL:https://www.galibier-challenge.com/la-grimpee
+GEO:45.064000;6.408000
+END:VEVENT
+BEGIN:VEVENT
+UID:ardechoise26__2026-06-09@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260609
+DTEND;VALUE=DATE:20260614
+SUMMARY:🚲 L'Ardéchoise (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://www.ardec
+ hoise.com
+URL:https://www.ardechoise.com
+GEO:45.086215;4.627515
+END:VEVENT
+BEGIN:VEVENT
+UID:grandcolombier26__2026-06-13@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260613
+DTEND;VALUE=DATE:20260614
+SUMMARY:🚲 Col du Grand Colombier (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://ciclista.
+ net/autofrei-termine-2026/
+URL:https://ciclista.net/autofrei-termine-2026/
+GEO:45.905688;5.759890
+END:VEVENT
+BEGIN:VEVENT
+UID:ventouxals26__2026-06-18@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260618
+DTEND;VALUE=DATE:20260619
+SUMMARY:🚲 Mont Ventoux\, Tour du ALS (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://www.tourd
+ uals.nl
+URL:https://www.tourduals.nl
+GEO:44.173084;5.278229
+END:VEVENT
+BEGIN:VEVENT
+UID:iseran26__2026-06-21@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260621
+DTEND;VALUE=DATE:20260622
+SUMMARY:🚲 Col de L'Iseran (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://www.valdi
+ sere.com/en/events-entertainment-calendar/iserane-val-disere-en-4157467/
+URL:https://www.valdisere.com/en/events-entertainment-calendar/iserane-val-
+ disere-en-4157467/
+GEO:45.416929;7.031677
+END:VEVENT
+BEGIN:VEVENT
+UID:marmotte26__2026-06-28@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260628
+DTEND;VALUE=DATE:20260629
+SUMMARY:🚲 Marmotte Granfondo (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://uk.bike-o
+ isans.com/agenda/lepape-marmotte-granfondo/
+URL:https://uk.bike-oisans.com/agenda/lepape-marmotte-granfondo/
+GEO:45.083800;6.067200
+END:VEVENT
+BEGIN:VEVENT
+UID:loosthal26__2026-06-28@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260628
+DTEND;VALUE=DATE:20260629
+SUMMARY:🚲 Loosthal (Elsass) (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://www.massi
+ f-des-vosges.fr/experiences/colattitude/
+URL:https://www.massif-des-vosges.fr/experiences/colattitude/
+GEO:48.850849;7.351022
+END:VEVENT
+BEGIN:VEVENT
+UID:galibier126__2026-06-29@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260629
+DTEND;VALUE=DATE:20260630
+SUMMARY:🚲 Galibier (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://lequeyras
+ .com/agenda/la-tournee-des-grands-cols/
+URL:https://lequeyras.com/agenda/la-tournee-des-grands-cols/
+GEO:45.070736;6.411444
+END:VEVENT
+BEGIN:VEVENT
+UID:croixdefer26__2026-06-30@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260630
+DTEND;VALUE=DATE:20260701
+SUMMARY:🚲 Col de la Croix de Fer (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://ciclista.
+ net/autofrei-termine-2026/
+URL:https://ciclista.net/autofrei-termine-2026/
+GEO:45.227444;6.203196
+END:VEVENT
+BEGIN:VEVENT
+UID:granon126__2026-06-30@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260630
+DTEND;VALUE=DATE:20260701
+SUMMARY:🚲 Col du Granon (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://lequeyras
+ .com/agenda/la-tournee-des-grands-cols/
+URL:https://lequeyras.com/agenda/la-tournee-des-grands-cols/
+GEO:44.964080;6.595040
+END:VEVENT
+BEGIN:VEVENT
+UID:echelle26__2026-07-01@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260701
+DTEND;VALUE=DATE:20260702
+SUMMARY:🚲 Col de l'Èchelle (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://lequeyras
+ .com/agenda/la-tournee-des-grands-cols/
+URL:https://lequeyras.com/agenda/la-tournee-des-grands-cols/
+GEO:45.025614;6.657419
+END:VEVENT
+BEGIN:VEVENT
+UID:izoard126__2026-07-02@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260702
+DTEND;VALUE=DATE:20260703
+SUMMARY:🚲 Col d'Izoard (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://lequeyras
+ .com/agenda/la-tournee-des-grands-cols/
+URL:https://lequeyras.com/agenda/la-tournee-des-grands-cols/
+GEO:44.801846;6.732821
+END:VEVENT
+BEGIN:VEVENT
+UID:agnel126__2026-07-03@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260703
+DTEND;VALUE=DATE:20260704
+SUMMARY:🚲 Col d'Agnel (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://lequeyras
+ .com/en/agenda/reserved-passes-col-agnel-molines-en-queyras-en-3261727/
+URL:https://lequeyras.com/en/agenda/reserved-passes-col-agnel-molines-en-qu
+ eyras-en-3261727/
+GEO:44.683920;6.979700
+END:VEVENT
+BEGIN:VEVENT
+UID:cannoni26__2026-07-05@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260705
+DTEND;VALUE=DATE:20260706
+SUMMARY:🚲 Strada die Cannoni (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://lequeyras
+ .com/agenda/la-tournee-des-grands-cols/
+URL:https://lequeyras.com/agenda/la-tournee-des-grands-cols/
+GEO:44.548870;7.119818
+END:VEVENT
+BEGIN:VEVENT
+UID:bellesfilles26__2026-07-05@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260705
+DTEND;VALUE=DATE:20260706
+SUMMARY:🚲 Planche des Belles Filles (Elsass) (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://www.massi
+ f-des-vosges.fr/experiences/colattitude/
+URL:https://www.massif-des-vosges.fr/experiences/colattitude/
+GEO:47.772772;6.778221
+END:VEVENT
+BEGIN:VEVENT
+UID:huez226__2026-07-07@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260707
+DTEND;VALUE=DATE:20260708
+SUMMARY:🚲 Alpe d'Huez (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://ciclista.
+ net/autofrei-termine-2026/
+URL:https://ciclista.net/autofrei-termine-2026/
+GEO:45.040000;6.060000
+END:VEVENT
+BEGIN:VEVENT
+UID:grandcolombier226__2026-07-11@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260711
+DTEND;VALUE=DATE:20260712
+SUMMARY:🚲 Col du Grand Colombier (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://ciclista.
+ net/autofrei-termine-2026/
+URL:https://ciclista.net/autofrei-termine-2026/
+GEO:45.867000;5.786900
+END:VEVENT
+BEGIN:VEVENT
+UID:huez326__2026-07-14@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260714
+DTEND;VALUE=DATE:20260715
+SUMMARY:🚲 Alpe d'Huez (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://ciclista.
+ net/autofrei-termine-2026/
+URL:https://ciclista.net/autofrei-termine-2026/
+GEO:45.080000;6.060000
+END:VEVENT
+BEGIN:VEVENT
+UID:lagrave26__2026-07-19@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260719
+DTEND;VALUE=DATE:20260720
+SUMMARY:🚲 La Grave (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://uk.bike-o
+ isans.com/agenda/etape-du-tour-amateurs-passage-a-la-grave/
+URL:https://uk.bike-oisans.com/agenda/etape-du-tour-amateurs-passage-a-la-g
+ rave/
+GEO:45.046605;6.311509
+END:VEVENT
+BEGIN:VEVENT
+UID:pandours26__2026-07-19@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260719
+DTEND;VALUE=DATE:20260720
+SUMMARY:🚲 Col des Pandours (Elsass) (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://www.massi
+ f-des-vosges.fr/experiences/colattitude/
+URL:https://www.massif-des-vosges.fr/experiences/colattitude/
+GEO:48.589436;7.315886
+END:VEVENT
+BEGIN:VEVENT
+UID:huez426__2026-07-21@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260721
+DTEND;VALUE=DATE:20260722
+SUMMARY:🚲 Alpe d'Huez (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://ciclista.
+ net/autofrei-termine-2026/
+URL:https://ciclista.net/autofrei-termine-2026/
+GEO:45.050000;6.060000
+END:VEVENT
+BEGIN:VEVENT
+UID:huez526__2026-07-28@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260728
+DTEND;VALUE=DATE:20260729
+SUMMARY:🚲 Alpe d'Huez (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://ciclista.
+ net/autofrei-termine-2026/
+URL:https://ciclista.net/autofrei-termine-2026/
+GEO:45.060000;6.060000
+END:VEVENT
+BEGIN:VEVENT
+UID:huez926__2026-08-04@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260804
+DTEND;VALUE=DATE:20260805
+SUMMARY:🚲 Alpe d'Huez (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://ciclista.
+ net/autofrei-termine-2026/
+URL:https://ciclista.net/autofrei-termine-2026/
+GEO:45.070000;6.060000
+END:VEVENT
+BEGIN:VEVENT
+UID:noyer26__2026-08-07@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260807
+DTEND;VALUE=DATE:20260808
+SUMMARY:🚲 Col du Noyer (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://www.ledev
+ oluy.com/ete/offres/montee-cycliste-du-col-du-noyer-poligny-fr-ete-5019584
+ /
+URL:https://www.ledevoluy.com/ete/offres/montee-cycliste-du-col-du-noyer-po
+ ligny-fr-ete-5019584/
+GEO:44.692340;5.984618
+END:VEVENT
+BEGIN:VEVENT
+UID:grandcolombier326__2026-08-08@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260808
+DTEND;VALUE=DATE:20260809
+SUMMARY:🚲 Col du Grand Colombier (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://ciclista.
+ net/autofrei-termine-2026/
+URL:https://ciclista.net/autofrei-termine-2026/
+GEO:45.870000;5.790000
+END:VEVENT
+BEGIN:VEVENT
+UID:haag26__2026-08-09@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260809
+DTEND;VALUE=DATE:20260810
+SUMMARY:🚲 Col du Haag (Elsass) (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://www.massi
+ f-des-vosges.fr/experiences/colattitude/
+URL:https://www.massif-des-vosges.fr/experiences/colattitude/
+GEO:47.904760;7.091476
+END:VEVENT
+BEGIN:VEVENT
+UID:huez626__2026-08-11@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260811
+DTEND;VALUE=DATE:20260812
+SUMMARY:🚲 Alpe d'Huez (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://ciclista.
+ net/autofrei-termine-2026/
+URL:https://ciclista.net/autofrei-termine-2026/
+GEO:45.090000;6.060000
+END:VEVENT
+BEGIN:VEVENT
+UID:firstplan26__2026-08-16@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260816
+DTEND;VALUE=DATE:20260817
+SUMMARY:🚲 Col du Firstplan (Elsass) (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://www.massi
+ f-des-vosges.fr/experiences/colattitude/
+URL:https://www.massif-des-vosges.fr/experiences/colattitude/
+GEO:47.999158;7.186284
+END:VEVENT
+BEGIN:VEVENT
+UID:huez726__2026-08-20@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260820
+DTEND;VALUE=DATE:20260823
+SUMMARY:🚲 Alpe d'Huez (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://uk.bike-o
+ isans.com/agenda/climbing-for-life/
+URL:https://uk.bike-oisans.com/agenda/climbing-for-life/
+GEO:45.100000;6.060000
+END:VEVENT
+BEGIN:VEVENT
+UID:croixdefer226__2026-08-22@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260822
+DTEND;VALUE=DATE:20260823
+SUMMARY:🚲 Triathlon Madeleine (u. a. Chaussy\, Croix de Fer) (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://triathlon
+ -madeleine.fr
+URL:https://triathlon-madeleine.fr
+GEO:45.227000;6.203000
+END:VEVENT
+BEGIN:VEVENT
+UID:ballonalsace26__2026-08-23@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260823
+DTEND;VALUE=DATE:20260824
+SUMMARY:🚲 Col du Ballon d'Alsace (Elsass) (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://www.massi
+ f-des-vosges.fr/experiences/colattitude/
+URL:https://www.massif-des-vosges.fr/experiences/colattitude/
+GEO:47.819336;6.840890
+END:VEVENT
+BEGIN:VEVENT
+UID:huez826__2026-08-25@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260825
+DTEND;VALUE=DATE:20260828
+SUMMARY:🚲 Alpe d'Huez (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://uk.bike-o
+ isans.com/agenda/haute-route-alpes/
+URL:https://uk.bike-oisans.com/agenda/haute-route-alpes/
+GEO:45.110000;6.060000
+END:VEVENT
+BEGIN:VEVENT
+UID:wintersberg26__2026-08-30@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260830
+DTEND;VALUE=DATE:20260831
+SUMMARY:🚲 Col du Wintersberg (Elsass) (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://www.massi
+ f-des-vosges.fr/experiences/colattitude/
+URL:https://www.massif-des-vosges.fr/experiences/colattitude/
+GEO:48.978714;7.612861
+END:VEVENT
+BEGIN:VEVENT
+UID:slowup-slowup-sundgau__2026-08-30@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260830
+DTEND;VALUE=DATE:20260831
+SUMMARY:🚲 slowUp Sundgau (F) (FR)
+DESCRIPTION:Autofreier Tag (flach\, kindergerecht\, slowUp)\nQuelle: https:
+ //www.slowup.ch/\nhttps://www.slowup-sundgau.fr/
+URL:https://www.slowup-sundgau.fr/
+GEO:47.480000;7.401000
+END:VEVENT
+BEGIN:VEVENT
+UID:hartmann26__2026-09-05@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260905
+DTEND;VALUE=DATE:20260906
+SUMMARY:🚲 Hartmannswillerkopf (Elsass) (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://www.massi
+ f-des-vosges.fr/experiences/colattitude/
+URL:https://www.massif-des-vosges.fr/experiences/colattitude/
+GEO:47.858032;7.148511
+END:VEVENT
+BEGIN:VEVENT
+UID:agnel326__2026-09-06@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260906
+DTEND;VALUE=DATE:20260907
+SUMMARY:🚲 Col d'Agnel (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://lequeyras
+ .com/en/agenda/reserved-passes-col-agnel-molines-en-queyras-en-3261727/
+URL:https://lequeyras.com/en/agenda/reserved-passes-col-agnel-molines-en-qu
+ eyras-en-3261727/
+GEO:44.683924;6.979741
+END:VEVENT
+BEGIN:VEVENT
+UID:grandcolombier426__2026-09-12@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260912
+DTEND;VALUE=DATE:20260913
+SUMMARY:🚲 Col du Grand Colombier (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://ciclista.
+ net/autofrei-termine-2026/
+URL:https://ciclista.net/autofrei-termine-2026/
+GEO:45.840000;5.770000
+END:VEVENT
+BEGIN:VEVENT
+UID:amic26__2026-09-13@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260913
+DTEND;VALUE=DATE:20260914
+SUMMARY:🚲 Col Amic (Elsass) (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://www.massi
+ f-des-vosges.fr/experiences/colattitude/
+URL:https://www.massif-des-vosges.fr/experiences/colattitude/
+GEO:47.874891;7.127837
+END:VEVENT
+BEGIN:VEVENT
+UID:petitballon26__2026-09-27@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260927
+DTEND;VALUE=DATE:20260928
+SUMMARY:🚲 Col du Petit Ballon (Elsass) (FR)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://www.massi
+ f-des-vosges.fr/experiences/colattitude/
+URL:https://www.massif-des-vosges.fr/experiences/colattitude/
+GEO:47.984621;7.120370
+END:VEVENT
+BEGIN:VEVENT
+UID:slowup-slowup-alsace__2027-06-06@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20270606
+DTEND;VALUE=DATE:20270607
+SUMMARY:🚲 slowUp Alsace (F) (FR)
+DESCRIPTION:Autofreier Tag (flach\, kindergerecht\, slowUp)\nQuelle: https:
+ //www.slowup.ch/\nhttps://www.slowup-alsace.fr/
+URL:https://www.slowup-alsace.fr/
+GEO:48.009000;7.551000
+END:VEVENT
+END:VCALENDAR

@@ -734,6 +734,16 @@ INDEX = Template("""<!DOCTYPE html>
     font-size:.8rem; background:var(--surface); border:1px solid var(--line);
     border-radius:5px; padding:.15rem .4rem; overflow-wrap:anywhere; }
   ol { padding-left:1.2rem; } li { margin:.35rem 0; font-size:.92rem; }
+  .feeds { border-collapse:collapse; width:100%; margin:.8rem 0 1rem;
+           font-size:.85rem; }
+  .feeds th, .feeds td { text-align:left; padding:.4rem .5rem;
+                         border-bottom:1px solid var(--line); }
+  .feeds th { font-size:.72rem; text-transform:uppercase;
+              letter-spacing:.08em; color:var(--ink2); font-weight:600; }
+  .feeds td:nth-child(2) { text-align:right; font-variant-numeric:tabular-nums;
+                           color:var(--ink2); white-space:nowrap; }
+  .feeds code { font-size:.74rem; word-break:break-all; background:none;
+                border:0; padding:0; }
   .url { display:block; margin:.6rem 0; padding:.6rem .7rem;
     background:var(--surface); border:1px solid var(--line);
     border-radius:7px; font-family:ui-monospace,Menlo,monospace;
@@ -768,7 +778,21 @@ INDEX = Template("""<!DOCTYPE html>
   <p style="font-size:.92rem">Wie oft ein Anbieter tats&auml;chlich nachl&auml;dt,
      bestimmt er selbst. Outlook pr&uuml;ft eher t&auml;glich bis seltener &ndash;
      neue Termine k&ouml;nnen also einen Tag brauchen.</p>
-  <span class="url">$pages/autofrei.ics</span>
+  <p style="font-size:.92rem"><strong>Farbe nach Land?</strong> Outlook,
+     Apple und Google f&auml;rben pro <em>Kalender</em>, nicht pro Termin.
+     Abonniere daher die L&auml;nder einzeln und weise jedem Abo im
+     Kalenderprogramm eine Farbe zu.</p>
+
+  <table class="feeds">
+    <tr><th>Feed</th><th>Termine</th><th>Adresse</th></tr>
+    <tr><td>Alle</td><td>$n_alle</td><td><code>$pages/autofrei.ics</code></td></tr>
+    <tr><td>Italien</td><td>$n_it</td><td><code>$pages/autofrei-it.ics</code></td></tr>
+    <tr><td>Österreich</td><td>$n_at</td><td><code>$pages/autofrei-at.ics</code></td></tr>
+    <tr><td>Frankreich</td><td>$n_fr</td><td><code>$pages/autofrei-fr.ics</code></td></tr>
+    <tr><td>Schweiz</td><td>$n_ch</td><td><code>$pages/autofrei-ch.ics</code></td></tr>
+    <tr><td>Flach &middot; kindergerecht</td><td>$n_flach</td>
+        <td><code>$pages/autofrei-flach.ics</code></td></tr>
+  </table>
   <ol>
     <li><strong>Google Kalender:</strong> Weitere Kalender <code>+</code> &rarr;
         Per URL &rarr; Adresse einfügen &rarr; Kalender hinzufügen</li>
@@ -799,7 +823,15 @@ INDEX = Template("""<!DOCTYPE html>
 
 
 def build_index(data):
+    ev = data["events"]
+    zahl = lambda f: sum(1 for e in ev if f(e))
     return INDEX.substitute(
+        n_alle=len(ev),
+        n_it=zahl(lambda e: e["country"] == "it"),
+        n_at=zahl(lambda e: e["country"] == "at"),
+        n_fr=zahl(lambda e: e["country"] == "fr"),
+        n_ch=zahl(lambda e: e["country"] == "ch"),
+        n_flach=zahl(lambda e: e.get("flach")),
         quelle_url=QUELLE_URL, quelle_name=QUELLE_NAME,
         quelle2_url=QUELLE2_URL, quelle2_name=QUELLE2_NAME,
         season=data["season"], total=len(data["events"]),

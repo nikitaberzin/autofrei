@@ -1,0 +1,373 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//autofrei//freipass.ch scraper//DE
+CALSCALE:GREGORIAN
+NAME:Autofreie Bike-Tage – Schweiz
+X-WR-CALNAME:Autofreie Bike-Tage – Schweiz
+DESCRIPTION:Autofreie Passtage in Italien\, Österreich\, Frankreich und de
+ r Schweiz. Quellen: https://freipass.ch/ und https://www.slowup.ch/
+X-WR-CALDESC:Autofreie Passtage in Italien\, Österreich\, Frankreich und d
+ er Schweiz. Quellen: https://freipass.ch/ und https://www.slowup.ch/
+SOURCE;VALUE=URI:https://nikitaberzin.github.io/autofrei/autofrei-ch.ics
+REFRESH-INTERVAL;VALUE=DURATION:P1W
+X-PUBLISHED-TTL:P1W
+COLOR:red
+BEGIN:VEVENT
+UID:flueela26__2026-04-21@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260421
+DTEND;VALUE=DATE:20260422
+SUMMARY:🚲 Flüelapass (CH)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://www.graub
+ uenden.ch/de/freipass/flueelapass
+URL:https://www.graubuenden.ch/de/freipass/flueelapass
+GEO:46.749461;9.948298
+END:VEVENT
+BEGIN:VEVENT
+UID:moosalp26__2026-05-17@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260517
+DTEND;VALUE=DATE:20260518
+SUMMARY:🚲 Moosalp (CH)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://ridetheal
+ ps.ch/de/
+URL:https://ridethealps.ch/de/
+GEO:46.271993;7.826364
+END:VEVENT
+BEGIN:VEVENT
+UID:lukmanier26__2026-06-07@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260607
+DTEND;VALUE=DATE:20260608
+SUMMARY:🚲 FreiPass Lukmanier (CH)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://freipass.
+ ch/index.php
+URL:https://freipass.ch/index.php
+GEO:46.541267;8.825230
+END:VEVENT
+BEGIN:VEVENT
+UID:santesch26__2026-06-26@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260626
+DTEND;VALUE=DATE:20260627
+SUMMARY:🚲 Ride the Alps Sanetsch (CH)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://ridetheal
+ ps.ch/de/
+URL:https://ridethealps.ch/de/
+GEO:46.332559;7.286453
+END:VEVENT
+BEGIN:VEVENT
+UID:moiry26__2026-06-27@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260627
+DTEND;VALUE=DATE:20260628
+SUMMARY:🚲 Ride the Alps Moiry (CH)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://ridetheal
+ ps.ch/de/
+URL:https://ridethealps.ch/de/
+GEO:46.139447;7.571842
+END:VEVENT
+BEGIN:VEVENT
+UID:tseuzier26__2026-06-28@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260628
+DTEND;VALUE=DATE:20260629
+SUMMARY:🚲 Ride the Alps Tseuzier (CH)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://ridetheal
+ ps.ch/de/
+URL:https://ridethealps.ch/de/
+GEO:46.344159;7.433185
+END:VEVENT
+BEGIN:VEVENT
+UID:spluegen26__2026-06-28@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260628
+DTEND;VALUE=DATE:20260629
+SUMMARY:🚲 FreiPass Splügenpass (CH)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://freipass.
+ ch/index.php
+URL:https://freipass.ch/index.php
+GEO:46.507032;9.329937
+END:VEVENT
+BEGIN:VEVENT
+UID:kloental26__2026-06-28@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260628
+DTEND;VALUE=DATE:20260629
+SUMMARY:🚲 Slow Sundays Klöntal (CH)
+DESCRIPTION:Autofreier Tag (flach\, kindergerecht)\nQuelle: https://freipas
+ s.ch/\nhttps://www.glarus.ch/verwaltung/bau-und-versorgung/parkraumbewirts
+ chaftung/slow-sundays-kloental.html/8403
+URL:https://www.glarus.ch/verwaltung/bau-und-versorgung/parkraumbewirtschaf
+ tung/slow-sundays-kloental.html/8403
+GEO:47.036725;9.008195
+END:VEVENT
+BEGIN:VEVENT
+UID:kloental26__2026-07-26@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260726
+DTEND;VALUE=DATE:20260727
+SUMMARY:🚲 Slow Sundays Klöntal (CH)
+DESCRIPTION:Autofreier Tag (flach\, kindergerecht)\nQuelle: https://freipas
+ s.ch/\nhttps://www.glarus.ch/verwaltung/bau-und-versorgung/parkraumbewirts
+ chaftung/slow-sundays-kloental.html/8403
+URL:https://www.glarus.ch/verwaltung/bau-und-versorgung/parkraumbewirtschaf
+ tung/slow-sundays-kloental.html/8403
+GEO:47.036725;9.008195
+END:VEVENT
+BEGIN:VEVENT
+UID:gottardo26__2026-08-23@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260823
+DTEND;VALUE=DATE:20260824
+SUMMARY:🚲 Granfondo San Gottardo (nur Tremola ist autofrei) (CH)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://www.granf
+ ondosangottardo.com
+URL:https://www.granfondosangottardo.com
+GEO:46.532407;8.588442
+END:VEVENT
+BEGIN:VEVENT
+UID:kloental26__2026-08-30@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260830
+DTEND;VALUE=DATE:20260831
+SUMMARY:🚲 Slow Sundays Klöntal (CH)
+DESCRIPTION:Autofreier Tag (flach\, kindergerecht)\nQuelle: https://freipas
+ s.ch/\nhttps://www.glarus.ch/verwaltung/bau-und-versorgung/parkraumbewirts
+ chaftung/slow-sundays-kloental.html/8403
+URL:https://www.glarus.ch/verwaltung/bau-und-versorgung/parkraumbewirtschaf
+ tung/slow-sundays-kloental.html/8403
+GEO:47.036725;9.008195
+END:VEVENT
+BEGIN:VEVENT
+UID:slowup-bodensee__2026-08-30@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260830
+DTEND;VALUE=DATE:20260831
+SUMMARY:🚲 slowUp Bodensee Schweiz (CH)
+DESCRIPTION:Autofreier Tag (flach\, kindergerecht\, slowUp)\nQuelle: https:
+ //www.slowup.ch/\nhttps://www.slowup.ch/bodensee/de.html
+URL:https://www.slowup.ch/bodensee/de.html
+GEO:47.565000;9.378000
+END:VEVENT
+BEGIN:VEVENT
+UID:albula26__2026-09-06@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260906
+DTEND;VALUE=DATE:20260907
+SUMMARY:🚲 Slowup Mountain Albula (CH)
+DESCRIPTION:Autofreier Tag (slowUp)\nQuelle: https://freipass.ch/\nhttps://
+ www.slowup.ch/albula/de.html
+URL:https://www.slowup.ch/albula/de.html
+GEO:46.583615;9.843841
+END:VEVENT
+BEGIN:VEVENT
+UID:klausen26__2026-09-13@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260913
+DTEND;VALUE=DATE:20260914
+SUMMARY:🚲 Klausen Monument (CH)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://www.klaus
+ en-monument.ch
+URL:https://www.klausen-monument.ch
+GEO:46.868010;8.854187
+END:VEVENT
+BEGIN:VEVENT
+UID:slowup-emmental-oberaargau__2026-09-13@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260913
+DTEND;VALUE=DATE:20260914
+SUMMARY:🚲 slowUp Emmental-Oberaargau (CH)
+DESCRIPTION:Autofreier Tag (flach\, kindergerecht\, slowUp)\nQuelle: https:
+ //www.slowup.ch/\nhttps://www.slowup.ch/emmental-oberaargau/de.html
+URL:https://www.slowup.ch/emmental-oberaargau/de.html
+GEO:47.120000;7.831000
+END:VEVENT
+BEGIN:VEVENT
+UID:slowup-basel-dreiland__2026-09-20@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260920
+DTEND;VALUE=DATE:20260921
+SUMMARY:🚲 slowUp Basel-Dreiland (CH)
+DESCRIPTION:Autofreier Tag (flach\, kindergerecht\, slowUp)\nQuelle: https:
+ //www.slowup.ch/\nhttps://www.slowup.ch/basel-dreiland/de.html
+URL:https://www.slowup.ch/basel-dreiland/de.html
+GEO:47.558000;7.588000
+END:VEVENT
+BEGIN:VEVENT
+UID:mauvoisin26__2026-09-26@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260926
+DTEND;VALUE=DATE:20260927
+SUMMARY:🚲 Ride the Alps Mauvoisin (CH)
+DESCRIPTION:Autofreier Tag\nQuelle: https://freipass.ch/\nhttps://ridetheal
+ ps.ch/de/
+URL:https://ridethealps.ch/de/
+GEO:46.002732;7.341044
+END:VEVENT
+BEGIN:VEVENT
+UID:slowup-zuerichsee__2026-09-27@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260927
+DTEND;VALUE=DATE:20260928
+SUMMARY:🚲 slowUp Zürichsee (CH)
+DESCRIPTION:Autofreier Tag (flach\, kindergerecht\, slowUp)\nQuelle: https:
+ //www.slowup.ch/\nhttps://www.slowup.ch/zuerichsee/de.html
+URL:https://www.slowup.ch/zuerichsee/de.html
+GEO:47.255000;8.742000
+END:VEVENT
+BEGIN:VEVENT
+UID:slowup-ticino__2027-04-18@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20270418
+DTEND;VALUE=DATE:20270419
+SUMMARY:🚲 slowUp Ticino (CH)
+DESCRIPTION:Autofreier Tag (flach\, kindergerecht\, slowUp)\nQuelle: https:
+ //www.slowup.ch/\nhttps://www.slowup.ch/ticino/de.html
+URL:https://www.slowup.ch/ticino/de.html
+GEO:46.192000;9.021000
+END:VEVENT
+BEGIN:VEVENT
+UID:slowup-murtensee__2027-04-25@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20270425
+DTEND;VALUE=DATE:20270426
+SUMMARY:🚲 slowUp Murtensee (CH)
+DESCRIPTION:Autofreier Tag (flach\, kindergerecht\, slowUp)\nQuelle: https:
+ //www.slowup.ch/\nhttps://www.slowup.ch/murtensee/de.html
+URL:https://www.slowup.ch/murtensee/de.html
+GEO:46.929000;7.116000
+END:VEVENT
+BEGIN:VEVENT
+UID:slowup-wfl__2027-05-02@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20270502
+DTEND;VALUE=DATE:20270503
+SUMMARY:🚲 slowUp Werdenberg-Liechtenstein (CH)
+DESCRIPTION:Autofreier Tag (flach\, kindergerecht\, slowUp)\nQuelle: https:
+ //www.slowup.ch/\nhttps://www.slowup.ch/wfl/de.html
+URL:https://www.slowup.ch/wfl/de.html
+GEO:47.163000;9.476000
+END:VEVENT
+BEGIN:VEVENT
+UID:slowup-schaffhausen-hegau__2027-05-09@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20270509
+DTEND;VALUE=DATE:20270510
+SUMMARY:🚲 slowUp Schaffhausen-Hegau (CH)
+DESCRIPTION:Autofreier Tag (flach\, kindergerecht\, slowUp)\nQuelle: https:
+ //www.slowup.ch/\nhttps://www.slowup.ch/schaffhausen-hegau/de.html
+URL:https://www.slowup.ch/schaffhausen-hegau/de.html
+GEO:47.696000;8.635000
+END:VEVENT
+BEGIN:VEVENT
+UID:slowup-solothurn-buechibaerg__2027-05-30@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20270530
+DTEND;VALUE=DATE:20270531
+SUMMARY:🚲 slowUp Solothurn-Buechibärg (CH)
+DESCRIPTION:Autofreier Tag (flach\, kindergerecht\, slowUp)\nQuelle: https:
+ //www.slowup.ch/\nhttps://www.slowup.ch/solothurn-buechibaerg/de.html
+URL:https://www.slowup.ch/solothurn-buechibaerg/de.html
+GEO:47.319000;7.670000
+END:VEVENT
+BEGIN:VEVENT
+UID:slowup-valais__2027-06-06@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20270606
+DTEND;VALUE=DATE:20270607
+SUMMARY:🚲 slowUp Valais (CH)
+DESCRIPTION:Autofreier Tag (flach\, kindergerecht\, slowUp)\nQuelle: https:
+ //www.slowup.ch/\nhttps://www.slowup.ch/valais/de.html
+URL:https://www.slowup.ch/valais/de.html
+GEO:46.292000;7.532000
+END:VEVENT
+BEGIN:VEVENT
+UID:slowup-hochrhein__2027-06-20@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20270620
+DTEND;VALUE=DATE:20270621
+SUMMARY:🚲 slowUp Hochrhein (CH)
+DESCRIPTION:Autofreier Tag (flach\, kindergerecht\, slowUp)\nQuelle: https:
+ //www.slowup.ch/\nhttps://www.slowup.ch/hochrhein/de.html
+URL:https://www.slowup.ch/hochrhein/de.html
+GEO:47.550000;7.783000
+END:VEVENT
+BEGIN:VEVENT
+UID:slowup-jura__2027-06-27@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20270627
+DTEND;VALUE=DATE:20270628
+SUMMARY:🚲 slowUp Jura (CH)
+DESCRIPTION:Autofreier Tag (flach\, kindergerecht\, slowUp)\nQuelle: https:
+ //www.slowup.ch/\nhttps://www.slowup.ch/jura/de.html
+URL:https://www.slowup.ch/jura/de.html
+GEO:47.362000;7.355000
+END:VEVENT
+BEGIN:VEVENT
+UID:slowup-valleedejoux__2027-07-04@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20270704
+DTEND;VALUE=DATE:20270705
+SUMMARY:🚲 slowUp Vallée de Joux (CH)
+DESCRIPTION:Autofreier Tag (flach\, kindergerecht\, slowUp)\nQuelle: https:
+ //www.slowup.ch/\nhttps://www.slowup.ch/valleedejoux/fr.html
+URL:https://www.slowup.ch/valleedejoux/fr.html
+GEO:46.606000;6.231000
+END:VEVENT
+BEGIN:VEVENT
+UID:slowup-broye__2027-07-25@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20270725
+DTEND;VALUE=DATE:20270726
+SUMMARY:🚲 slowUp la Broye (CH)
+DESCRIPTION:Autofreier Tag (flach\, kindergerecht\, slowUp)\nQuelle: https:
+ //www.slowup.ch/\nhttps://www.slowup.ch/broye/fr.html
+URL:https://www.slowup.ch/broye/fr.html
+GEO:46.821000;6.939000
+END:VEVENT
+BEGIN:VEVENT
+UID:slowup-brugg-regio__2027-08-08@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20270808
+DTEND;VALUE=DATE:20270809
+SUMMARY:🚲 slowUp Brugg Regio (CH)
+DESCRIPTION:Autofreier Tag (flach\, kindergerecht\, slowUp)\nQuelle: https:
+ //www.slowup.ch/\nhttps://www.slowup.ch/brugg-regio/de.html
+URL:https://www.slowup.ch/brugg-regio/de.html
+GEO:47.481000;8.209000
+END:VEVENT
+BEGIN:VEVENT
+UID:slowup-sempachersee__2027-08-22@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20270822
+DTEND;VALUE=DATE:20270823
+SUMMARY:🚲 slowUp Sempachersee (CH)
+DESCRIPTION:Autofreier Tag (flach\, kindergerecht\, slowUp)\nQuelle: https:
+ //www.slowup.ch/\nhttps://www.slowup.ch/sempachersee/de.html
+URL:https://www.slowup.ch/sempachersee/de.html
+GEO:47.135000;8.192000
+END:VEVENT
+BEGIN:VEVENT
+UID:slowup-schwyz__2028-06-18@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20280618
+DTEND;VALUE=DATE:20280619
+SUMMARY:🚲 slowUp Schwyz (CH)
+DESCRIPTION:Autofreier Tag (flach\, kindergerecht\, slowUp)\nQuelle: https:
+ //www.slowup.ch/\nhttps://www.slowup.ch/schwyz/de.html
+URL:https://www.slowup.ch/schwyz/de.html
+GEO:47.057000;8.722000
+END:VEVENT
+BEGIN:VEVENT
+UID:slowup-seetal__2028-08-20@autofrei.freipass
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20280820
+DTEND;VALUE=DATE:20280821
+SUMMARY:🚲 slowUp Seetal (CH)
+DESCRIPTION:Autofreier Tag (flach\, kindergerecht\, slowUp)\nQuelle: https:
+ //www.slowup.ch/\nhttps://www.slowup.ch/seetal/de.html
+URL:https://www.slowup.ch/seetal/de.html
+GEO:47.282000;8.216000
+END:VEVENT
+END:VCALENDAR

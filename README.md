@@ -17,9 +17,20 @@ Datenquellen: [freipass.ch](https://freipass.ch/) und
 
 ## Kalender abonnieren
 
-```
-https://nikitaberzin.github.io/autofrei/autofrei.ics
-```
+| Feed | Inhalt | Adresse |
+|---|---|---|
+| Alle | alle Termine | `.../autofrei.ics` |
+| Italien | nur IT | `.../autofrei-it.ics` |
+| Österreich | nur AT | `.../autofrei-at.ics` |
+| Frankreich | nur FR | `.../autofrei-fr.ics` |
+| Schweiz | nur CH | `.../autofrei-ch.ics` |
+| Flach | kindergerechte Strecken | `.../autofrei-flach.ics` |
+
+Basis: `https://nikitaberzin.github.io/autofrei/`
+
+Der Gesamtfeed bleibt bestehen — die Länderfeeds sind ein Zusatz. Wer die
+Termine **farblich nach Land** trennen will, abonniert die Länder einzeln:
+Outlook, Apple und Google färben pro Kalender, nicht pro Termin.
 
 **Adresse abonnieren, Datei nicht herunterladen.** Wer die `.ics` herunterlädt
 und anklickt, importiert sie einmalig: der Kalender heißt dann „Untitled" und

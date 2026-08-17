@@ -42,7 +42,7 @@ In diesen Fällen dem User berichten, was passiert ist, und **nichts pushen**.
 ### 2. Ausgaben erzeugen
 
 ```bash
-python3 scripts/build_ics.py
+python3 scripts/build_ics.py    # schreibt 6 Feeds: gesamt, je Land, flach
 python3 scripts/build_map.py
 python3 scripts/build_html.py
 ```
