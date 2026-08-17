@@ -70,6 +70,7 @@ def build_geojson(events):
                 "url": ev["url"],
                 "isNew": ev["isNew"],
                 "isSlowup": bool(ev.get("isSlowup")),
+                "flach": bool(ev.get("flach")),
                 "source": ev.get("source", "freipass"),
             },
         })
@@ -121,6 +122,7 @@ def build_html(data):
                 "url": sichere_url(e["url"]),
                 "isNew": e["isNew"],
                 "isSlowup": bool(e.get("isSlowup")),
+                "flach": bool(e.get("flach")),
                 "lat": e["lat"],
                 "lng": e["lng"],
             }
@@ -206,7 +208,8 @@ def build_html(data):
   <h1>&#128690; Autofreie Bike-Tage %(spanne)s</h1>
   <p class="meta">
     %(count)d Orte &middot; Stand %(stand)s &middot;
-    Quelle <a href="%(quelle_url)s" target="_blank" rel="noopener noreferrer">%(quelle_name)s</a>
+    Quellen <a href="%(quelle_url)s" target="_blank" rel="noopener noreferrer">%(quelle_name)s</a>
+    &middot; <a href="https://www.slowup.ch/" target="_blank" rel="noopener noreferrer">slowup.ch</a>
   </p>
 </header>
 
@@ -215,7 +218,7 @@ def build_html(data):
 %(ohne_liste)s
 <footer>
   <span class="leg"><span class="leg-p leg-voll"></span> Passtage &middot;
-  <span class="leg-p leg-hohl"></span> slowUp</span><br>
+  <span class="leg-p leg-hohl"></span> flach, kindergerecht</span><br>
   <a href="index.html">&larr; Übersicht &amp; Kalender-Abo</a> &middot;
   <a href="autofrei.geojson" download>GeoJSON herunterladen</a> (für ArcGIS Online)
 </footer>
@@ -261,9 +264,8 @@ def build_html(data):
 
   DATA.events.forEach(function (ev) {
     var farbe = DATA.landFarbe[ev.country] || '#666';
-    // slowUps hohl (Landesfarbe als Ring), uebrige gefuellt - so sind sie
-    // auf der Karte ohne Legende auseinanderzuhalten.
-    var m = ev.isSlowup
+    // Hohl = flache, kindergerechte Strecke; gefuellt = Passtag.
+    var m = ev.flach
       ? L.circleMarker([ev.lat, ev.lng], {
           radius: 7, color: farbe, weight: 3,
           fillColor: '#fff', fillOpacity: 1
@@ -276,6 +278,7 @@ def build_html(data):
     var html = '<div class="pop"><b>' + esc(ev.name) + '</b>' +
       '<span class="d">' + esc(ev.dateRaw) + ' &middot; ' +
       esc(DATA.landName[ev.country] || ev.country) + '</span>' +
+      (ev.flach ? '<span class="su">flach</span>' : '') +
       (ev.isSlowup ? '<span class="su">slowUp</span>' : '') +
       (ev.isNew ? '<span class="neu">NEU</span>' : '');
     if (ev.url) {
@@ -329,11 +332,11 @@ def build_html(data):
   }
 
   // --- Namensschilder ---
-  var LABEL_ZOOM = 8;
-  var labelsErzwungen = false;
+  var LABEL_ZOOM = 6;          // = Startzoom, Namen sind also gleich sichtbar
+  var labelsGewuenscht = true; // Schalter; blendet sie bei Bedarf aus
 
   function labelsAktualisieren() {
-    var an = labelsErzwungen || map.getZoom() >= LABEL_ZOOM;
+    var an = labelsGewuenscht && map.getZoom() >= LABEL_ZOOM;
     map.getContainer().classList.toggle('labels-an', an);
   }
   map.on('zoomend', labelsAktualisieren);
@@ -344,12 +347,12 @@ def build_html(data):
       var b = L.DomUtil.create('button', 'btn-lbl');
       b.type = 'button';
       b.textContent = 'Namen';
-      b.title = 'Namen immer anzeigen (sonst ab Zoomstufe ' + LABEL_ZOOM + ')';
-      b.setAttribute('aria-pressed', 'false');
+      b.title = 'Namen der Termine ein- oder ausblenden';
+      b.setAttribute('aria-pressed', 'true');
       L.DomEvent.disableClickPropagation(b);
       L.DomEvent.on(b, 'click', function () {
-        labelsErzwungen = !labelsErzwungen;
-        b.setAttribute('aria-pressed', String(labelsErzwungen));
+        labelsGewuenscht = !labelsGewuenscht;
+        b.setAttribute('aria-pressed', String(labelsGewuenscht));
         labelsAktualisieren();
       });
       return b;

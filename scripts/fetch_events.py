@@ -236,6 +236,25 @@ def parse_coords(js):
     return coords
 
 
+# Flach = kindergerecht. Alle slowUps sind Flachstrecken - ausser "Mountain
+# Albula", das bewusst als Bergstrecke fuer Erwachsene gefahren wird (genau
+# deshalb steht es auch bei freipass.ch, das sonst nur Passtage listet).
+NICHT_FLACHE_SLOWUPS = {"albula"}
+
+# freipass.ch listet Passtage, also grundsaetzlich nicht flach. Ausnahme:
+# "Slow Sundays Kloental" ist eine Talstrasse mit sanfter Steigung, keine
+# Passueberquerung. Vom User als Grenzfall benannt - hier als flach gefuehrt.
+# Zum Umstellen: diese Menge leeren.
+FLACHE_FREIPASS_MARKER = {"kloental26"}
+
+
+def ist_flach(ev):
+    """True = kindergerechte Flachstrecke."""
+    if ev.get("source") == "slowup":
+        return ev.get("slug") not in NICHT_FLACHE_SLOWUPS
+    return ev.get("marker") in FLACHE_FREIPASS_MARKER
+
+
 def merge_slowup(freipass_events, slowup_events):
     """Fuehrt beide Quellen zusammen und entfernt Dubletten.
 
@@ -250,6 +269,7 @@ def merge_slowup(freipass_events, slowup_events):
     for e in freipass_events:
         e.setdefault("source", "freipass")
         e.setdefault("isSlowup", False)
+        e["flach"] = ist_flach(e)
         if e.get("url") and "slowup" in e["url"].lower():
             slug = fetch_slowup.slug_aus_url(e["url"])
             if slug:
@@ -261,9 +281,12 @@ def merge_slowup(freipass_events, slowup_events):
         treffer = nach_slug.get((e.get("slug"), e["dateStart"]))
         if treffer is not None:
             treffer["isSlowup"] = True
+            # Terrain kommt aus dem slowUp-Datensatz: Albula bleibt Bergstrecke.
+            treffer["flach"] = ist_flach(e)
             dubletten += 1
             continue
         e["isSlowup"] = True
+        e["flach"] = ist_flach(e)
         e.pop("slug", None)
         zusammen.append(e)
 
@@ -372,6 +395,7 @@ def main():
     from collections import Counter
     print("  Quellen:", dict(Counter(e.get("source", "freipass") for e in events)))
     print("  davon slowUp markiert:", sum(1 for e in events if e.get("isSlowup")))
+    print("  flach (kindergerecht):", sum(1 for e in events if e.get("flach")))
     print("geschrieben: %s" % OUT_PATH)
     return 0
 

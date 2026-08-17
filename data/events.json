@@ -22,7 +22,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "flueela26__2026-04-21",
@@ -38,7 +39,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "gampen126__2026-05-09",
@@ -54,7 +56,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "moosalp26__2026-05-17",
@@ -70,7 +73,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "grappa26__2026-05-23",
@@ -86,7 +90,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "moro26__2026-05-24",
@@ -102,7 +107,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "novecolli26__2026-05-24",
@@ -118,7 +124,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "lans26__2026-05-24",
@@ -134,7 +141,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "sanmarco26__2026-05-30",
@@ -150,7 +158,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "huez2256__2026-06-01",
@@ -166,7 +175,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "huez126__2026-06-04",
@@ -182,7 +192,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "ventoux26__2026-06-06",
@@ -198,7 +209,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "sellarondabikeday126__2026-06-06",
@@ -214,7 +226,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "galibierchallenge26__2026-06-06",
@@ -230,7 +243,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "tourmalet26__2026-06-06",
@@ -246,7 +260,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "stilfser26__2026-06-06",
@@ -262,7 +277,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "galibierchallenge126__2026-06-07",
@@ -278,7 +294,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "calvaire26__2026-06-07",
@@ -294,7 +311,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "lukmanier26__2026-06-07",
@@ -310,7 +328,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "grossglockner26__2026-06-07",
@@ -326,7 +345,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "galibierchallenge226__2026-06-07",
@@ -342,7 +362,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "cancano26__2026-06-08",
@@ -358,7 +379,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "ardechoise26__2026-06-09",
@@ -374,7 +396,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "grandcolombier26__2026-06-13",
@@ -390,7 +413,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "supergirodolomiti26__2026-06-14",
@@ -406,7 +430,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "ventouxals26__2026-06-18",
@@ -422,7 +447,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "dolomitesbikeday26__2026-06-20",
@@ -438,7 +464,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "iseran26__2026-06-21",
@@ -454,7 +481,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "sportful26__2026-06-21",
@@ -470,7 +498,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "santesch26__2026-06-26",
@@ -486,7 +515,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "stelvionight26__2026-06-26",
@@ -502,7 +532,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "moiry26__2026-06-27",
@@ -518,7 +549,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "tseuzier26__2026-06-28",
@@ -534,7 +566,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "spluegen26__2026-06-28",
@@ -550,7 +583,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "marmotte26__2026-06-28",
@@ -566,7 +600,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "kloental26__2026-06-28",
@@ -582,7 +617,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": true
     },
     {
       "id": "loosthal26__2026-06-28",
@@ -598,7 +634,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "galibier126__2026-06-29",
@@ -614,7 +651,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "croixdefer26__2026-06-30",
@@ -630,7 +668,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "granon126__2026-06-30",
@@ -646,7 +685,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "echelle26__2026-07-01",
@@ -662,7 +702,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "izoard126__2026-07-02",
@@ -678,7 +719,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "agnel126__2026-07-03",
@@ -694,7 +736,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "rucas26__2026-07-04",
@@ -710,7 +753,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "cannoni26__2026-07-05",
@@ -726,7 +770,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "gavia26__2026-07-05",
@@ -742,7 +787,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "maratona26__2026-07-05",
@@ -758,7 +804,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "grossglockner126__2026-07-05",
@@ -774,7 +821,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "bellesfilles26__2026-07-05",
@@ -790,7 +838,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "sampeyre26__2026-07-06",
@@ -806,7 +855,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "piandelre26__2026-07-07",
@@ -822,7 +872,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "huez226__2026-07-07",
@@ -838,7 +889,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "vinadio26__2026-07-08",
@@ -854,7 +906,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "mortirolo26__2026-07-09",
@@ -870,7 +923,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "fauniera26__2026-07-09",
@@ -886,7 +940,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "montemale26__2026-07-10",
@@ -902,7 +957,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "grandcolombier226__2026-07-11",
@@ -918,7 +974,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "cancano226__2026-07-11",
@@ -934,7 +991,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "mapei26__2026-07-12",
@@ -950,7 +1008,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "niger26__2026-07-13",
@@ -966,7 +1025,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "huez326__2026-07-14",
@@ -982,7 +1042,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "gardena26__2026-07-14",
@@ -998,7 +1059,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "weberimmoos26__2026-07-15",
@@ -1014,7 +1076,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "valles26__2026-07-16",
@@ -1030,7 +1093,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "frassineto26__2026-07-17",
@@ -1046,7 +1110,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "lagrave26__2026-07-19",
@@ -1062,7 +1127,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "pandours26__2026-07-19",
@@ -1078,7 +1144,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "huez426__2026-07-21",
@@ -1094,7 +1161,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "kloental26__2026-07-26",
@@ -1110,7 +1178,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": true
     },
     {
       "id": "huez526__2026-07-28",
@@ -1126,7 +1195,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "moro226__2026-08-01",
@@ -1142,7 +1212,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "huez926__2026-08-04",
@@ -1158,7 +1229,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "penserjoch26__2026-08-04",
@@ -1174,7 +1246,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "noyer26__2026-08-07",
@@ -1190,7 +1263,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "grandcolombier326__2026-08-08",
@@ -1206,7 +1280,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "haag26__2026-08-09",
@@ -1222,7 +1297,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "huez626__2026-08-11",
@@ -1238,7 +1314,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "firstplan26__2026-08-16",
@@ -1254,7 +1331,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "huez726__2026-08-20",
@@ -1270,7 +1348,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "croixdefer226__2026-08-22",
@@ -1286,7 +1365,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "gottardo26__2026-08-23",
@@ -1302,7 +1382,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "ballonalsace26__2026-08-23",
@@ -1318,7 +1399,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "huez826__2026-08-25",
@@ -1334,7 +1416,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "cancano326__2026-08-27",
@@ -1350,7 +1433,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "mortirolo226__2026-08-28",
@@ -1366,7 +1450,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "stelviobike26__2026-08-29",
@@ -1382,7 +1467,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "gavia226__2026-08-30",
@@ -1398,7 +1484,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "kloental26__2026-08-30",
@@ -1414,7 +1501,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": true
     },
     {
       "id": "wintersberg26__2026-08-30",
@@ -1430,7 +1518,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "slowup-bodensee__2026-08-30",
@@ -1444,9 +1533,10 @@
       "lat": 47.565,
       "lng": 9.378,
       "isNewOnSite": false,
-      "isNew": true,
+      "isNew": false,
       "source": "slowup",
-      "isSlowup": true
+      "isSlowup": true,
+      "flach": true
     },
     {
       "id": "slowup-slowup-sundgau__2026-08-30",
@@ -1460,9 +1550,10 @@
       "lat": 47.48,
       "lng": 7.401,
       "isNewOnSite": false,
-      "isNew": true,
+      "isNew": false,
       "source": "slowup",
-      "isSlowup": true
+      "isSlowup": true,
+      "flach": true
     },
     {
       "id": "hartmann26__2026-09-05",
@@ -1478,7 +1569,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "agnel326__2026-09-06",
@@ -1494,7 +1586,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "albula26__2026-09-06",
@@ -1510,7 +1603,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": true
+      "isSlowup": true,
+      "flach": false
     },
     {
       "id": "grandcolombier426__2026-09-12",
@@ -1526,7 +1620,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "sellarondabikeday226__2026-09-12",
@@ -1542,7 +1637,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "klausen26__2026-09-13",
@@ -1558,7 +1654,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "amic26__2026-09-13",
@@ -1574,7 +1671,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "slowup-emmental-oberaargau__2026-09-13",
@@ -1588,9 +1686,10 @@
       "lat": 47.12,
       "lng": 7.831,
       "isNewOnSite": false,
-      "isNew": true,
+      "isNew": false,
       "source": "slowup",
-      "isSlowup": true
+      "isSlowup": true,
+      "flach": true
     },
     {
       "id": "mendelpass26__2026-09-19",
@@ -1606,7 +1705,8 @@
       "isNewOnSite": false,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "stelvio326__2026-09-19",
@@ -1622,7 +1722,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "slowup-basel-dreiland__2026-09-20",
@@ -1636,9 +1737,10 @@
       "lat": 47.558,
       "lng": 7.588,
       "isNewOnSite": false,
-      "isNew": true,
+      "isNew": false,
       "source": "slowup",
-      "isSlowup": true
+      "isSlowup": true,
+      "flach": true
     },
     {
       "id": "niger226__2026-09-21",
@@ -1654,7 +1756,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "niger326__2026-09-22",
@@ -1670,7 +1773,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "mauvoisin26__2026-09-26",
@@ -1686,7 +1790,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "petitballon26__2026-09-27",
@@ -1702,7 +1807,8 @@
       "isNewOnSite": true,
       "isNew": false,
       "source": "freipass",
-      "isSlowup": false
+      "isSlowup": false,
+      "flach": false
     },
     {
       "id": "slowup-zuerichsee__2026-09-27",
@@ -1716,9 +1822,10 @@
       "lat": 47.255,
       "lng": 8.742,
       "isNewOnSite": false,
-      "isNew": true,
+      "isNew": false,
       "source": "slowup",
-      "isSlowup": true
+      "isSlowup": true,
+      "flach": true
     },
     {
       "id": "slowup-ticino__2027-04-18",
@@ -1732,9 +1839,10 @@
       "lat": 46.192,
       "lng": 9.021,
       "isNewOnSite": false,
-      "isNew": true,
+      "isNew": false,
       "source": "slowup",
-      "isSlowup": true
+      "isSlowup": true,
+      "flach": true
     },
     {
       "id": "slowup-murtensee__2027-04-25",
@@ -1748,9 +1856,10 @@
       "lat": 46.929,
       "lng": 7.116,
       "isNewOnSite": false,
-      "isNew": true,
+      "isNew": false,
       "source": "slowup",
-      "isSlowup": true
+      "isSlowup": true,
+      "flach": true
     },
     {
       "id": "slowup-wfl__2027-05-02",
@@ -1764,9 +1873,10 @@
       "lat": 47.163,
       "lng": 9.476,
       "isNewOnSite": false,
-      "isNew": true,
+      "isNew": false,
       "source": "slowup",
-      "isSlowup": true
+      "isSlowup": true,
+      "flach": true
     },
     {
       "id": "slowup-schaffhausen-hegau__2027-05-09",
@@ -1780,9 +1890,10 @@
       "lat": 47.696,
       "lng": 8.635,
       "isNewOnSite": false,
-      "isNew": true,
+      "isNew": false,
       "source": "slowup",
-      "isSlowup": true
+      "isSlowup": true,
+      "flach": true
     },
     {
       "id": "slowup-solothurn-buechibaerg__2027-05-30",
@@ -1796,9 +1907,10 @@
       "lat": 47.319,
       "lng": 7.67,
       "isNewOnSite": false,
-      "isNew": true,
+      "isNew": false,
       "source": "slowup",
-      "isSlowup": true
+      "isSlowup": true,
+      "flach": true
     },
     {
       "id": "slowup-valais__2027-06-06",
@@ -1812,9 +1924,10 @@
       "lat": 46.292,
       "lng": 7.532,
       "isNewOnSite": false,
-      "isNew": true,
+      "isNew": false,
       "source": "slowup",
-      "isSlowup": true
+      "isSlowup": true,
+      "flach": true
     },
     {
       "id": "slowup-slowup-alsace__2027-06-06",
@@ -1828,9 +1941,10 @@
       "lat": 48.009,
       "lng": 7.551,
       "isNewOnSite": false,
-      "isNew": true,
+      "isNew": false,
       "source": "slowup",
-      "isSlowup": true
+      "isSlowup": true,
+      "flach": true
     },
     {
       "id": "slowup-hochrhein__2027-06-20",
@@ -1844,9 +1958,10 @@
       "lat": 47.55,
       "lng": 7.783,
       "isNewOnSite": false,
-      "isNew": true,
+      "isNew": false,
       "source": "slowup",
-      "isSlowup": true
+      "isSlowup": true,
+      "flach": true
     },
     {
       "id": "slowup-jura__2027-06-27",
@@ -1860,9 +1975,10 @@
       "lat": 47.362,
       "lng": 7.355,
       "isNewOnSite": false,
-      "isNew": true,
+      "isNew": false,
       "source": "slowup",
-      "isSlowup": true
+      "isSlowup": true,
+      "flach": true
     },
     {
       "id": "slowup-valleedejoux__2027-07-04",
@@ -1876,9 +1992,10 @@
       "lat": 46.606,
       "lng": 6.231,
       "isNewOnSite": false,
-      "isNew": true,
+      "isNew": false,
       "source": "slowup",
-      "isSlowup": true
+      "isSlowup": true,
+      "flach": true
     },
     {
       "id": "slowup-broye__2027-07-25",
@@ -1892,9 +2009,10 @@
       "lat": 46.821,
       "lng": 6.939,
       "isNewOnSite": false,
-      "isNew": true,
+      "isNew": false,
       "source": "slowup",
-      "isSlowup": true
+      "isSlowup": true,
+      "flach": true
     },
     {
       "id": "slowup-brugg-regio__2027-08-08",
@@ -1908,9 +2026,10 @@
       "lat": 47.481,
       "lng": 8.209,
       "isNewOnSite": false,
-      "isNew": true,
+      "isNew": false,
       "source": "slowup",
-      "isSlowup": true
+      "isSlowup": true,
+      "flach": true
     },
     {
       "id": "slowup-sempachersee__2027-08-22",
@@ -1924,9 +2043,10 @@
       "lat": 47.135,
       "lng": 8.192,
       "isNewOnSite": false,
-      "isNew": true,
+      "isNew": false,
       "source": "slowup",
-      "isSlowup": true
+      "isSlowup": true,
+      "flach": true
     },
     {
       "id": "slowup-schwyz__2028-06-18",
@@ -1940,9 +2060,10 @@
       "lat": 47.057,
       "lng": 8.722,
       "isNewOnSite": false,
-      "isNew": true,
+      "isNew": false,
       "source": "slowup",
-      "isSlowup": true
+      "isSlowup": true,
+      "flach": true
     },
     {
       "id": "slowup-seetal__2028-08-20",
@@ -1956,9 +2077,10 @@
       "lat": 47.282,
       "lng": 8.216,
       "isNewOnSite": false,
-      "isNew": true,
+      "isNew": false,
       "source": "slowup",
-      "isSlowup": true
+      "isSlowup": true,
+      "flach": true
     }
   ]
 }

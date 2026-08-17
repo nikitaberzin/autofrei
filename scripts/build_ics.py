@@ -83,7 +83,7 @@ def build_ics(events, stamp_iso):
         # Ardeche, Ventoux und einen Pyrenaeen-Pass (Tourmalet).
         "X-WR-CALDESC:" + escape_text(
             "Autofreie Passtage in Italien, Österreich, Frankreich und der "
-            "Schweiz. Quelle: " + QUELLE_URL
+            "Schweiz. Quellen: " + QUELLE_URL + " und https://www.slowup.ch/"
         ),
         "SOURCE;VALUE=URI:" + QUELLE_URL,
         "REFRESH-INTERVAL;VALUE=DURATION:P1W",
@@ -105,9 +105,15 @@ def build_ics(events, stamp_iso):
         summary = "\U0001f6b2 %s (%s)" % (ev["name"], land)
 
         beschreibung = "Autofreier Tag"
+        merkmale = []
+        if ev.get("flach"):
+            merkmale.append("flach, kindergerecht")
         if ev.get("isSlowup"):
-            beschreibung += " (slowUp)"
-        beschreibung += "\nQuelle: " + QUELLE_URL
+            merkmale.append("slowUp")
+        if merkmale:
+            beschreibung += " (" + ", ".join(merkmale) + ")"
+        beschreibung += "\nQuelle: " + (
+            "https://www.slowup.ch/" if ev.get("source") == "slowup" else QUELLE_URL)
         if ev.get("url"):
             beschreibung += "\n" + ev["url"]
 

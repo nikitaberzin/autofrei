@@ -22,6 +22,8 @@ OUT_PATH = os.path.join(BASE, "data", "artifact.html")
 PAGES_BASE = "https://nikitaberzin.github.io/autofrei"
 QUELLE_URL = "https://freipass.ch/"
 QUELLE_NAME = "freipass.ch"
+QUELLE2_URL = "https://www.slowup.ch/"
+QUELLE2_NAME = "slowup.ch"
 
 
 LAND_NAME = {"it": "Italien", "at": "Österreich", "fr": "Frankreich", "ch": "Schweiz"}
@@ -98,13 +100,14 @@ def render_event(ev, gruppen_monat=None):
     slow = '<span class="su">slowUp</span>' if ev.get("isSlowup") else ""
 
     return (
-        '<li class="ev" data-c="%s">'
+        '<li class="ev" data-c="%s" data-f="%s">'
         '<div class="d"><span class="wd">%s</span>'
         '<span class="dm">%s</span></div>'
         '<div class="b">%s<div class="m">'
         '<span class="c c-%s">%s</span>%s%s</div></div>'
         "</li>"
-    ) % (land, wd, esc(datum_in_gruppe(ev, gruppen_monat)), titel, land,
+    ) % (land, "1" if ev.get("flach") else "0", wd,
+         esc(datum_in_gruppe(ev, gruppen_monat)), titel, land,
          esc(LAND_NAME.get(land, land)), slow, neu)
 
 
@@ -188,11 +191,12 @@ def build_minimap(events, breite=760, hoehe=380, rand=8):
         x, y = px(e["lng"], e["lat"])
         kommend = bool(e["dateStart"] and e["dateStart"] >= heute)
         kreise.append(
-            '<circle class="pt %s%s" data-c="%s" cx="%.1f" cy="%.1f" r="%s">'
+            '<circle class="pt %s%s" data-c="%s" data-f="%s" cx="%.1f" cy="%.1f" r="%s">'
             "<title>%s</title></circle>"
             % ("kommend" if kommend else "vorbei",
-               " su" if e.get("isSlowup") else "",
-               e["country"], x, y, "4.2" if kommend else "3",
+               " su" if e.get("flach") else "",
+               e["country"], "1" if e.get("flach") else "0",
+               x, y, "4.2" if kommend else "3",
                esc("%s — %s" % (e["name"], datum_kurz(e))))
         )
 
@@ -325,7 +329,7 @@ h1 { margin:0; font-size:1.45rem; line-height:1.2; letter-spacing:-.015em;
 .mini .pt[data-c="at"] { fill:var(--at); }
 .mini .pt[data-c="fr"] { fill:var(--fr); }
 .mini .pt[data-c="ch"] { fill:var(--ch); }
-/* slowUps hohl statt gefuellt - so sind sie ohne Legende unterscheidbar. */
+/* Hohl = flache, kindergerechte Strecke. */
 .mini .pt.su { fill:var(--surface); stroke-width:2; }
 .mini .pt.su[data-c="it"] { stroke:var(--it); }
 .mini .pt.su[data-c="at"] { stroke:var(--at); }
@@ -336,7 +340,8 @@ h1 { margin:0; font-size:1.45rem; line-height:1.2; letter-spacing:-.015em;
   display:block; padding:.35rem .3rem .5rem; text-align:right;
   font-family:var(--mono); font-size:.72rem; color:var(--accent);
 }
-.fil { display:flex; flex-wrap:wrap; gap:.4rem; margin-bottom:1.6rem; }
+.fil { display:flex; flex-wrap:wrap; gap:.4rem; margin-bottom:.5rem; }
+.fil2 { margin-bottom:1.6rem; }
 .fil button {
   font:inherit; font-family:var(--mono); font-size:.76rem; letter-spacing:.02em;
   padding:.34rem .68rem; border-radius:99px; cursor:pointer;
@@ -441,8 +446,10 @@ a.n:hover { color:var(--accent); text-decoration:underline;
 <div class="wrap">
   <header class="hd">
     <h1>Autofreie Bike-Tage $spanne</h1>
-    <p class="sub">$total Termine &middot; Stand $stand &middot; Quelle
+    <p class="sub">$total Termine &middot; Stand $stand &middot; Quellen
       <a href="$quelle_url" target="_blank" rel="noopener noreferrer">$quelle_name</a>
+      &middot;
+      <a href="$quelle2_url" target="_blank" rel="noopener noreferrer">$quelle2_name</a>
     </p>
   </header>
 
@@ -452,6 +459,12 @@ a.n:hover { color:var(--accent); text-decoration:underline;
 
   <nav class="fil" id="fil" aria-label="Nach Land filtern">
     $filter_buttons
+  </nav>
+
+  <nav class="fil fil2" id="fil2" aria-label="Nach Streckenart filtern">
+    <button type="button" data-ter="all" aria-pressed="true">Alle Strecken</button>
+    <button type="button" data-ter="flach">Flach &middot; kindergerecht $flach_n</button>
+    <button type="button" data-ter="berg">Pässe $berg_n</button>
   </nav>
 
   <main id="upcoming">
@@ -477,36 +490,36 @@ a.n:hover { color:var(--accent); text-decoration:underline;
 <script>
 (function () {
   var fil = document.getElementById('fil');
+  var fil2 = document.getElementById('fil2');
   var empty = document.getElementById('empty');
 
-  fil.addEventListener('click', function (e) {
-    var btn = e.target.closest('button');
-    if (!btn) { return; }
-    var land = btn.dataset.land;
+  // Zwei unabhaengige Filter: Land und Streckenart. Beide werden zugleich
+  // angewendet - "Schweiz + flach" muss moeglich sein.
+  var land = 'all';
+  var terrain = 'all';
 
-    fil.querySelectorAll('button').forEach(function (b) {
-      b.setAttribute('aria-pressed', String(b === btn));
-    });
+  function passt(el) {
+    var okLand = land === 'all' || el.dataset.c === land;
+    var okTer = terrain === 'all' ||
+                (terrain === 'flach' ? el.dataset.f === '1' : el.dataset.f !== '1');
+    return okLand && okTer;
+  }
 
+  function anwenden() {
     document.querySelectorAll('.ev').forEach(function (ev) {
-      ev.classList.toggle('hide', land !== 'all' && ev.dataset.c !== land);
+      ev.classList.toggle('hide', !passt(ev));
     });
-
-    // Kartenpunkte demselben Filter unterwerfen
     document.querySelectorAll('.mini .pt').forEach(function (pt) {
-      pt.classList.toggle('hide', land !== 'all' && pt.dataset.c !== land);
+      pt.classList.toggle('hide', !passt(pt));
     });
 
-    // Monatsgruppen ohne sichtbare Eintraege ausblenden.
     document.querySelectorAll('.mo').forEach(function (mo) {
-      var sichtbar = mo.querySelectorAll('.ev:not(.hide)').length;
-      mo.classList.toggle('hide', sichtbar === 0);
-      var n = mo.querySelector('.mo-n');
-      if (n) { n.textContent = sichtbar; }
+      var n = mo.querySelectorAll('.ev:not(.hide)').length;
+      mo.classList.toggle('hide', n === 0);
+      var z = mo.querySelector('.mo-n');
+      if (z) { z.textContent = n; }
     });
 
-    // Zaehler im Aufklapper mitfuehren - sonst behauptet er weiter
-    // "75 vergangene", obwohl nur die des gewaehlten Landes sichtbar sind.
     var pn = document.getElementById('pn');
     if (pn) {
       pn.textContent = document.querySelectorAll('.past .ev:not(.hide)').length;
@@ -514,7 +527,22 @@ a.n:hover { color:var(--accent); text-decoration:underline;
 
     var offen = document.querySelectorAll('#upcoming .ev:not(.hide)').length;
     empty.classList.toggle('hide', offen > 0);
-  });
+  }
+
+  function verdrahten(nav, setzen) {
+    nav.addEventListener('click', function (e) {
+      var btn = e.target.closest('button');
+      if (!btn) { return; }
+      nav.querySelectorAll('button').forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b === btn));
+      });
+      setzen(btn);
+      anwenden();
+    });
+  }
+
+  verdrahten(fil, function (b) { land = b.dataset.land; });
+  verdrahten(fil2, function (b) { terrain = b.dataset.ter; });
 
   // Countdown erst im Browser rechnen - die Seite kann Tage nach der
   // Generierung geoeffnet werden.
@@ -594,11 +622,15 @@ def build_html(data):
         spanne=spanne,
         quelle_url=QUELLE_URL,
         quelle_name=QUELLE_NAME,
+        quelle2_url=QUELLE2_URL,
+        quelle2_name=QUELLE2_NAME,
         season=data["season"],
         total=len(events),
         stand=data["fetchedAt"],
         next_block=next_block,
         filter_buttons="\n    ".join(knoepfe),
+        flach_n=sum(1 for e in kommend if e.get("flach")),
+        berg_n=sum(1 for e in kommend if not e.get("flach")),
         upcoming=render_gruppen(gruppiere_nach_monat(kommend)) or
                  '<p class="empty">Keine kommenden Termine.</p>',
         minimap=build_minimap(events),
@@ -676,7 +708,9 @@ INDEX = Template("""<!DOCTYPE html>
 
   <footer>
     Daten von <a href="$quelle_url" target="_blank"
-    rel="noopener noreferrer">$quelle_name</a>. Wöchentlich automatisch
+    rel="noopener noreferrer">$quelle_name</a> und
+    <a href="$quelle2_url" target="_blank"
+    rel="noopener noreferrer">$quelle2_name</a>. Wöchentlich automatisch
     aktualisiert.
   </footer>
 </div>
@@ -688,6 +722,7 @@ INDEX = Template("""<!DOCTYPE html>
 def build_index(data):
     return INDEX.substitute(
         quelle_url=QUELLE_URL, quelle_name=QUELLE_NAME,
+        quelle2_url=QUELLE2_URL, quelle2_name=QUELLE2_NAME,
         season=data["season"], total=len(data["events"]),
         stand=data["fetchedAt"], pages=PAGES_BASE,
     )
