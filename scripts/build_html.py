@@ -100,14 +100,18 @@ def render_event(ev, gruppen_monat=None):
     slow = '<span class="su">slowUp</span>' if ev.get("isSlowup") else ""
 
     return (
-        '<li class="ev" data-c="%s" data-f="%s" data-y="%s">'
+        '<li class="ev" data-id="%s" data-c="%s" data-f="%s" data-y="%s">'
+        '<button type="button" class="mk" data-mk="%s" aria-pressed="false" '
+        'title="Für mich vormerken">'
+        '<span class="mk-i" aria-hidden="true"></span>'
+        '<span class="vh">Für mich vormerken</span></button>'
         '<div class="d"><span class="wd">%s</span>'
         '<span class="dm">%s</span></div>'
         '<div class="b">%s<div class="m">'
         '<span class="c c-%s">%s</span>%s%s</div></div>'
         "</li>"
-    ) % (land, "1" if ev.get("flach") else "0",
-         (ev["dateStart"] or "")[:4], wd,
+    ) % (esc(ev["id"]), land, "1" if ev.get("flach") else "0",
+         (ev["dateStart"] or "")[:4], esc(ev["id"]), wd,
          esc(datum_in_gruppe(ev, gruppen_monat)), titel, land,
          esc(LAND_NAME.get(land, land)), slow, neu)
 
@@ -192,11 +196,12 @@ def build_minimap(events, breite=760, hoehe=380, rand=8):
         x, y = px(e["lng"], e["lat"])
         kommend = bool(e["dateStart"] and e["dateStart"] >= heute)
         kreise.append(
-            '<circle class="pt %s%s" data-c="%s" data-f="%s" data-y="%s" cx="%.1f" cy="%.1f" r="%s">'
+            '<circle class="pt %s%s" data-id="%s" data-c="%s" data-f="%s" '
+            'data-y="%s" cx="%.1f" cy="%.1f" r="%s">'
             "<title>%s</title></circle>"
             % ("kommend" if kommend else "vorbei",
                " su" if e.get("flach") else "",
-               e["country"], "1" if e.get("flach") else "0",
+               esc(e["id"]), e["country"], "1" if e.get("flach") else "0",
                (e["dateStart"] or "")[:4], x, y, "4.2" if kommend else "3",
                esc("%s — %s" % (e["name"], datum_kurz(e))))
         )
@@ -211,6 +216,34 @@ def build_minimap(events, breite=760, hoehe=380, rand=8):
         % (PAGES_BASE, breite, hoehe, "".join(pfade), "".join(kreise),
            "".join(labels))
     )
+
+
+def events_json(events):
+    """Kompakte Termindaten fuer die Kalenderansicht im Browser.
+
+    Kurze Schluessel, weil die Nutzlast im Artifact mitgeliefert wird.
+    Landet in <script type="application/json">: dort beendet erst
+    "</script>" den Block, deshalb wird "<" maskiert. Die URLs sind schon
+    durch sichere_url gegangen, hier steht also nichts Ausfuehrbares.
+    """
+    schlank = []
+    for e in events:
+        if not e["dateStart"]:
+            continue
+        schlank.append({
+            "id": e["id"],
+            "n": e["name"],
+            "c": e["country"],
+            "s": e["dateStart"],
+            "e": e["dateEnd"] or e["dateStart"],
+            "y": e["dateStart"][:4],
+            "r": datum_kurz(e),
+            "u": sichere_url(e.get("url")) or "",
+            "fl": bool(e.get("flach")),
+            "su": bool(e.get("isSlowup")),
+        })
+    roh = json.dumps(schlank, ensure_ascii=False, separators=(",", ":"))
+    return roh.replace("<", "\\u003c").replace(">", "\\u003e").replace("&", "\\u0026")
 
 
 def gruppiere_nach_monat(events):
@@ -248,6 +281,7 @@ PAGE = Template("""<title>Autofreie Bike-Tage $spanne</title>
   --bg:#f2f5f4; --surface:#ffffff; --ink:#16211f; --ink2:#5d6f6c;
   --line:#dde4e3; --accent:#0e6e6b; --accent-soft:#e0efee; --accent-ink:#0a5350;
   --it:#00803f; --at:#c96a00; --fr:#0055a4; --ch:#c8241a;
+  --wkend:#e8edec;
   --r:10px;
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
@@ -257,17 +291,20 @@ PAGE = Template("""<title>Autofreie Bike-Tage $spanne</title>
     --bg:#0f1514; --surface:#18211f; --ink:#e7edec; --ink2:#8fa39f;
     --line:#26322f; --accent:#4fd1c7; --accent-soft:#123230; --accent-ink:#7fe3db;
     --it:#2bb673; --at:#f0a03c; --fr:#5f9de8; --ch:#f2594c;
+    --wkend:#141c1b;
   }
 }
 :root[data-theme="light"] {
   --bg:#f2f5f4; --surface:#ffffff; --ink:#16211f; --ink2:#5d6f6c;
   --line:#dde4e3; --accent:#0e6e6b; --accent-soft:#e0efee; --accent-ink:#0a5350;
   --it:#00803f; --at:#c96a00; --fr:#0055a4; --ch:#c8241a;
+  --wkend:#e8edec;
 }
 :root[data-theme="dark"] {
   --bg:#0f1514; --surface:#18211f; --ink:#e7edec; --ink2:#8fa39f;
   --line:#26322f; --accent:#4fd1c7; --accent-soft:#123230; --accent-ink:#7fe3db;
   --it:#2bb673; --at:#f0a03c; --fr:#5f9de8; --ch:#f2594c;
+  --wkend:#141c1b;
 }
 
 * { box-sizing:border-box; }
@@ -360,6 +397,125 @@ h1 { margin:0; font-size:1.45rem; line-height:1.2; letter-spacing:-.015em;
 .fil button:focus-visible, .lnk:focus-visible, .n:focus-visible,
 summary:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
 
+.vh { position:absolute; width:1px; height:1px; margin:-1px; padding:0;
+      overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
+
+/* --- Ansichtsumschalter Liste / Kalender --- */
+.views { display:flex; align-items:center; gap:.5rem; flex-wrap:wrap;
+         margin:0 0 1rem; }
+.seg { display:inline-flex; padding:2px; gap:2px; border-radius:99px;
+       border:1px solid var(--line); background:var(--surface); }
+.seg button {
+  font:inherit; font-family:var(--mono); font-size:.74rem; letter-spacing:.02em;
+  padding:.34rem .8rem; border-radius:99px; cursor:pointer;
+  background:transparent; color:var(--ink2); border:0; transition:.14s;
+}
+.seg button:hover { color:var(--ink); }
+.seg button[aria-pressed="true"] { background:var(--accent-soft);
+                                   color:var(--accent-ink); }
+.seg button:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+.mine {
+  font:inherit; font-family:var(--mono); font-size:.74rem;
+  padding:.36rem .7rem; border-radius:99px; cursor:pointer;
+  background:transparent; color:var(--ink2); border:1px solid var(--line);
+  transition:.14s; font-variant-numeric:tabular-nums;
+}
+.mine:hover { color:var(--ink); border-color:var(--ink2); }
+.mine[aria-pressed="true"] { background:var(--accent-soft);
+  color:var(--accent-ink); border-color:var(--accent); }
+.mine:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+.mine .mk-i { vertical-align:-1px; margin-right:.35rem; }
+
+/* --- Merken --- */
+.mk {
+  border:0; background:none; padding:.15rem; margin:0; cursor:pointer;
+  display:flex; align-items:center; justify-content:center; align-self:start;
+  border-radius:6px; line-height:0;
+}
+.mk-i {
+  display:inline-block; width:13px; height:13px; border-radius:4px;
+  border:1.5px solid var(--line); background:transparent;
+  transition:.14s; position:relative;
+}
+.mk:hover .mk-i { border-color:var(--accent); }
+.mk[aria-pressed="true"] .mk-i,
+.mine[aria-pressed="true"] .mk-i {
+  background:var(--accent); border-color:var(--accent);
+}
+.mk[aria-pressed="true"] .mk-i::after,
+.mine[aria-pressed="true"] .mk-i::after {
+  content:""; position:absolute; left:3.5px; top:.5px;
+  width:3.5px; height:7px; border:solid var(--surface);
+  border-width:0 1.8px 1.8px 0; transform:rotate(42deg);
+}
+.mk:focus-visible { outline:2px solid var(--accent); outline-offset:1px; }
+.ev.marked { background:var(--accent-soft); }
+.ev.marked .n { color:var(--accent-ink); }
+
+/* --- Kalenderansicht --- */
+#cal { margin-bottom:1.5rem; }
+.cal-g { display:grid; gap:1.4rem 1.5rem;
+         grid-template-columns:repeat(auto-fill,minmax(15.5rem,1fr)); }
+.cmo { min-width:0; }
+.cmo-h {
+  margin:0 0 .5rem; font-family:var(--mono); font-weight:500;
+  font-size:.7rem; text-transform:uppercase; letter-spacing:.16em;
+  color:var(--ink2); display:flex; align-items:center; gap:.5rem;
+  padding-bottom:.35rem; border-bottom:1px solid var(--line);
+}
+.cmo-n { margin-left:auto; font-variant-numeric:tabular-nums; opacity:.75; }
+.cgrid { display:grid; grid-template-columns:repeat(7,1fr); gap:2px; }
+.cwd {
+  font-family:var(--mono); font-size:.6rem; text-transform:uppercase;
+  letter-spacing:.08em; color:var(--ink2); text-align:center;
+  padding:.2rem 0 .3rem; opacity:.8;
+}
+.cd { aspect-ratio:1; }
+/* Wochenende leicht getoent: fast alle Sperrungen liegen dort, und im
+   Raster sieht man dann sofort, ob ein Termin unter der Woche liegt. */
+.cwd:nth-child(6), .cwd:nth-child(7) { color:var(--accent); opacity:1; }
+/* Vor den Tageszellen stehen genau 7 .cwd-Koepfe, deshalb faellt Samstag
+   auf 7n+6 und Sonntag auf 7n+7. */
+.cd:nth-child(7n+6), .cd:nth-child(7n+7) { background:var(--wkend);
+                                           border-radius:7px; }
+.cd-b {
+  width:100%; height:100%; border:1px solid transparent; background:transparent;
+  border-radius:7px; padding:.15rem 0 0; cursor:default; font:inherit;
+  display:flex; flex-direction:column; align-items:center; gap:2px;
+  color:var(--ink2); transition:.14s;
+}
+.cd-n { font-family:var(--mono); font-size:.72rem; line-height:1.1;
+        font-variant-numeric:tabular-nums; }
+.cd-dots { display:flex; gap:2px; flex-wrap:wrap; justify-content:center;
+           min-height:5px; }
+.cd-dots i { width:5px; height:5px; border-radius:50%; display:block; }
+.cd-dots i.d-it { background:var(--it); } .cd-dots i.d-at { background:var(--at); }
+.cd-dots i.d-fr { background:var(--fr); } .cd-dots i.d-ch { background:var(--ch); }
+.cd.has .cd-b { cursor:pointer; color:var(--ink); background:var(--surface);
+                border-color:var(--line); font-weight:600; }
+.cd.has .cd-b:hover { border-color:var(--accent); }
+.cd.has .cd-b:focus-visible { outline:2px solid var(--accent); outline-offset:1px; }
+.cd.marked .cd-b { background:var(--accent-soft); color:var(--accent-ink);
+                   border-color:var(--accent); box-shadow:inset 0 0 0 1px var(--accent); }
+.cd.marked .cd-n { font-weight:700; }
+.cd.sel .cd-b { border-color:var(--accent); box-shadow:0 0 0 2px var(--accent-soft); }
+.cd.today .cd-n { text-decoration:underline; text-underline-offset:2px;
+                  text-decoration-thickness:2px;
+                  text-decoration-color:var(--accent); }
+.cd.past-d .cd-b { opacity:.42; }
+.cd-e { visibility:hidden; }
+
+.cdet {
+  margin-top:1.2rem; background:var(--surface); border:1px solid var(--line);
+  border-radius:var(--r); padding:.9rem 1rem;
+}
+.cdet-h { font-family:var(--mono); font-size:.68rem; text-transform:uppercase;
+          letter-spacing:.14em; color:var(--accent); margin-bottom:.5rem; }
+.cdet .lst { gap:.1rem; }
+.cdet .ev { grid-template-columns:1.2rem 1fr; }
+.cdet .ev:hover { background:var(--bg); }
+.cdet-p { font-family:var(--mono); font-size:.8rem; color:var(--ink2); margin:0; }
+
 .mo { margin-bottom:1.7rem; }
 .mo-h {
   margin:0 0 .55rem; font-family:var(--mono); font-weight:500;
@@ -372,7 +528,7 @@ summary:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
 .lst { list-style:none; margin:0; padding:0; display:flex;
        flex-direction:column; gap:.15rem; }
 .ev {
-  display:grid; grid-template-columns:3.7rem 1fr; gap:.15rem .8rem;
+  display:grid; grid-template-columns:1.2rem 3.7rem 1fr; gap:.15rem .7rem;
   padding:.6rem .7rem; border-radius:8px; align-items:baseline;
 }
 .ev:hover { background:var(--surface); }
@@ -443,13 +599,19 @@ a.n:hover { color:var(--accent); text-decoration:underline;
   .fil3 { margin-bottom:1.2rem; }
 }
 @media (max-width:29rem) {
-  .ev { grid-template-columns:1fr; gap:.15rem; padding:.55rem .5rem; }
+  .ev { grid-template-columns:1.2rem 1fr; gap:.15rem .7rem;
+        padding:.55rem .5rem; }
+  .ev .b { grid-column:2; }
   .d { flex-direction:row; gap:.45rem; align-items:baseline; }
+  .cal-g { grid-template-columns:1fr; }
 }
 /* Touch-Ziele >= 44px. pointer:coarse trifft Finger-Bedienung, nicht bloss
    schmale Fenster - ein kleines Desktop-Fenster braucht das nicht. */
 @media (pointer: coarse) {
   .fil button { min-height:44px; padding:.6rem .9rem; }
+  .seg button, .mine { min-height:44px; padding:.6rem 1rem; }
+  .mk { min-width:34px; min-height:34px; margin:-.35rem 0 0 -.6rem; }
+  .cd-b { border-radius:8px; }
   .past summary { min-height:44px; display:flex; align-items:center; }
   .ft { gap:.9rem; }
   .ft .lnk { display:inline-block; padding:.32rem 0; }
@@ -489,6 +651,24 @@ a.n:hover { color:var(--accent); text-decoration:underline;
     $jahr_buttons
   </nav>
 
+  <div class="views">
+    <div class="seg" id="seg" role="group" aria-label="Ansicht wählen">
+      <button type="button" data-view="list" aria-pressed="true">Liste</button>
+      <button type="button" data-view="cal" aria-pressed="false">Kalender</button>
+    </div>
+    <button type="button" class="mine" id="mine" aria-pressed="false">
+      <span class="mk-i" aria-hidden="true"></span>Nur vorgemerkte
+      <span class="cnt" id="mine-n">0</span></button>
+  </div>
+
+  <section id="cal" class="hide" aria-label="Kalenderansicht">
+    <div class="cal-g" id="cal-g"></div>
+    <div class="cdet" id="cdet">
+      <p class="cdet-p">Einen hervorgehobenen Tag antippen, um seine Termine
+        zu sehen und vorzumerken.</p>
+    </div>
+  </section>
+
   <main id="upcoming">
     $upcoming
   </main>
@@ -498,6 +678,9 @@ a.n:hover { color:var(--accent); text-decoration:underline;
   $past_block
 
   <footer class="ft">
+    <span id="ft-mine">Vorgemerkte Termine bleiben in diesem Browser
+      gespeichert &mdash; sie überstehen die wöchentliche Aktualisierung,
+      wandern aber nicht auf andere Geräte.</span>
     <span>Kalender abonnieren:
       <a class="lnk" href="$pages/autofrei.ics">autofrei.ics</a>
       &mdash; in Outlook, Google oder Apple Kalender als URL hinzufügen
@@ -509,20 +692,41 @@ a.n:hover { color:var(--accent); text-decoration:underline;
   </footer>
 </div>
 
+<script type="application/json" id="evd">$events_json</script>
+
 <script>
 (function () {
   var empty = document.getElementById('empty');
   var alleEv = [].slice.call(document.querySelectorAll('.ev'));
 
-  // Drei unabhaengige Filter, gleichzeitig angewendet:
-  // "Schweiz + flach + 2026" muss moeglich sein.
-  var f = { land: 'all', ter: 'all', jahr: '$default_jahr' };
+  // --- Vorgemerkte Termine ---------------------------------------------
+  // Bewusst localStorage und nicht im HTML: das Artifact wird woechentlich
+  // neu generiert und ueberschrieben. Im Markup gespeicherte Haken waeren
+  // jeden Montag weg, der Browser-Speicher ueberlebt die Neuveroeffentlichung.
+  // Schluessel ist die Event-ID (marker + dateStart), die stabil bleibt.
+  var MK_KEY = 'autofrei.marks.v1';
+  var marks = {};
+  try {
+    marks = JSON.parse(localStorage.getItem(MK_KEY) || '{}') || {};
+  } catch (e) { marks = {}; }
+
+  function marksSpeichern() {
+    // Privater Modus, volles Kontingent, blockierte Site-Daten: alles
+    // moeglich. Die Seite muss trotzdem funktionieren, nur ohne Gedaechtnis.
+    try { localStorage.setItem(MK_KEY, JSON.stringify(marks)); } catch (e) {}
+  }
+
+  // --- Filter ------------------------------------------------------------
+  // Vier unabhaengige Filter, gleichzeitig angewendet:
+  // "Schweiz + flach + 2026 + nur vorgemerkte" muss moeglich sein.
+  var f = { land: 'all', ter: 'all', jahr: '$default_jahr', mine: false };
 
   function trifftZu(el, ausser) {
     return (ausser === 'land' || f.land === 'all' || el.dataset.c === f.land)
         && (ausser === 'ter'  || f.ter === 'all'
             || (f.ter === 'flach' ? el.dataset.f === '1' : el.dataset.f !== '1'))
-        && (ausser === 'jahr' || f.jahr === 'all' || el.dataset.y === f.jahr);
+        && (ausser === 'jahr' || f.jahr === 'all' || el.dataset.y === f.jahr)
+        && (!f.mine || !el.dataset.id || !!marks[el.dataset.id]);
   }
 
   // Zaehler jeder Schaltflaeche gegen die JEWEILS ANDEREN Filter rechnen -
@@ -572,7 +776,10 @@ a.n:hover { color:var(--accent); text-decoration:underline;
     zaehlerSetzen(document.getElementById('fil3'), 'jahr', 'jahr');
 
     var offen = document.querySelectorAll('#upcoming .ev:not(.hide)').length;
-    empty.classList.toggle('hide', offen > 0);
+    empty.classList.toggle('hide', offen > 0 || ansicht === 'cal');
+
+    hakenZeichnen();
+    if (ansicht === 'cal') { kalenderZeichnen(); }
   }
 
   [['fil', 'land'], ['fil2', 'ter'], ['fil3', 'jahr']].forEach(function (paar) {
@@ -586,6 +793,252 @@ a.n:hover { color:var(--accent); text-decoration:underline;
       f[paar[1]] = btn.dataset[paar[1]];
       anwenden();
     });
+  });
+
+  // --- Haken setzen ------------------------------------------------------
+  var mineBtn = document.getElementById('mine');
+  var mineN = document.getElementById('mine-n');
+
+  function hakenZeichnen() {
+    var n = 0;
+    for (var k in marks) { if (marks[k]) { n++; } }
+    mineN.textContent = n;
+    mineBtn.disabled = n === 0 && !f.mine;
+    mineBtn.style.opacity = mineBtn.disabled ? '.5' : '';
+
+    document.querySelectorAll('[data-mk]').forEach(function (b) {
+      var an = !!marks[b.dataset.mk];
+      b.setAttribute('aria-pressed', String(an));
+      b.title = an ? 'Vormerkung entfernen' : 'Für mich vormerken';
+      var li = b.closest('.ev');
+      if (li) { li.classList.toggle('marked', an); }
+    });
+  }
+
+  // Delegiert, damit auch die im Kalender nachgerenderten Knoepfe wirken.
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-mk]');
+    if (!b) { return; }
+    e.preventDefault();
+    var id = b.dataset.mk;
+    if (marks[id]) { delete marks[id]; } else { marks[id] = 1; }
+    marksSpeichern();
+    anwenden();
+    if (tagOffen) { detailZeichnen(tagOffen); }
+  });
+
+  mineBtn.addEventListener('click', function () {
+    f.mine = !f.mine;
+    mineBtn.setAttribute('aria-pressed', String(f.mine));
+    anwenden();
+  });
+
+  // --- Kalenderansicht ---------------------------------------------------
+  var MONAT = ['', 'Januar', 'Februar', 'März', 'April', 'Mai', 'Juni',
+               'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+  var WD = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So'];
+  var LAND = { it: 'Italien', at: 'Österreich', fr: 'Frankreich', ch: 'Schweiz' };
+
+  var daten = [];
+  try {
+    daten = JSON.parse(document.getElementById('evd').textContent) || [];
+  } catch (e) { daten = []; }
+
+  var calSec = document.getElementById('cal');
+  var calG = document.getElementById('cal-g');
+  var cdet = document.getElementById('cdet');
+  var ansicht = 'list';
+  var tagOffen = null;
+  var heuteIso = (function () {
+    var d = new Date();
+    return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2)
+         + '-' + ('0' + d.getDate()).slice(-2);
+  })();
+
+  function sichtbar(e) {
+    return (f.land === 'all' || e.c === f.land)
+        && (f.ter === 'all' || (f.ter === 'flach' ? e.fl : !e.fl))
+        && (f.jahr === 'all' || e.y === f.jahr)
+        && (!f.mine || !!marks[e.id]);
+  }
+
+  function esc(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  // Termin -> alle betroffenen Tage. Mehrtaegige Sperrungen sollen im
+  // Raster ueber ihre ganze Dauer erscheinen, nicht nur am Starttag.
+  function tageVon(e) {
+    var out = [];
+    if (!e.s) { return out; }
+    var d = new Date(e.s + 'T00:00:00Z');
+    var bis = new Date((e.e || e.s) + 'T00:00:00Z');
+    if (isNaN(d) || isNaN(bis) || bis < d) { return [e.s]; }
+    var schutz = 0;
+    while (d <= bis && schutz++ < 400) {
+      out.push(d.toISOString().slice(0, 10));
+      d.setUTCDate(d.getUTCDate() + 1);
+    }
+    return out;
+  }
+
+  function kalenderZeichnen() {
+    var proTag = {};
+    daten.filter(sichtbar).forEach(function (e) {
+      tageVon(e).forEach(function (t) {
+        (proTag[t] = proTag[t] || []).push(e);
+      });
+    });
+
+    var tage = Object.keys(proTag).sort();
+    if (!tage.length) {
+      calG.innerHTML = '<p class="empty">Keine Termine für diese Auswahl.</p>';
+      tagOffen = null;
+      detailZeichnen(null);
+      return;
+    }
+
+    // Von erstem bis letztem Termin durchgehend - Monate ohne Termine
+    // bleiben stehen, damit die Luecken im Jahr sichtbar werden.
+    var von = tage[0], bis = tage[tage.length - 1];
+    var y = +von.slice(0, 4), m = +von.slice(5, 7);
+    var yEnd = +bis.slice(0, 4), mEnd = +bis.slice(5, 7);
+    var teile = [];
+    var schutz = 0;
+
+    while ((y < yEnd || (y === yEnd && m <= mEnd)) && schutz++ < 120) {
+      teile.push(monatHtml(y, m, proTag));
+      m++;
+      if (m > 12) { m = 1; y++; }
+    }
+    calG.innerHTML = teile.join('');
+
+    if (tagOffen && !proTag[tagOffen]) { tagOffen = null; }
+    detailZeichnen(tagOffen);
+  }
+
+  function monatHtml(y, m, proTag) {
+    var erster = new Date(Date.UTC(y, m - 1, 1));
+    var vorlauf = (erster.getUTCDay() + 6) % 7;      // Montag = 0
+    var tage = new Date(Date.UTC(y, m, 0)).getUTCDate();
+
+    var zellen = [];
+    for (var i = 0; i < vorlauf; i++) {
+      zellen.push('<div class="cd cd-e"></div>');
+    }
+
+    // Gezaehlt werden Termine, die in diesem Monat BEGINNEN - so steht in
+    // der Kopfzeile dieselbe Zahl wie in der Listenansicht. Tage zu zaehlen
+    // wuerde mehrtaegige Sperrungen mehrfach mitnehmen.
+    var anzahl = 0;
+    var praefix = y + '-' + ('0' + m).slice(-2);
+    daten.forEach(function (e) {
+      if (sichtbar(e) && e.s.slice(0, 7) === praefix) { anzahl++; }
+    });
+
+    for (var t = 1; t <= tage; t++) {
+      var iso = praefix + '-' + ('0' + t).slice(-2);
+      var evs = proTag[iso] || [];
+
+      var laender = [];
+      evs.forEach(function (e) {
+        if (laender.indexOf(e.c) === -1) { laender.push(e.c); }
+      });
+      var punkte = laender.slice(0, 4).map(function (c) {
+        return '<i class="d-' + c + '"></i>';
+      }).join('');
+
+      var kl = ['cd'];
+      if (evs.length) { kl.push('has'); }
+      if (iso < heuteIso) { kl.push('past-d'); }
+      if (iso === heuteIso) { kl.push('today'); }
+      if (iso === tagOffen) { kl.push('sel'); }
+      if (evs.some(function (e) { return marks[e.id]; })) { kl.push('marked'); }
+
+      var innen = '<span class="cd-n">' + t + '</span>'
+        + '<span class="cd-dots">' + punkte + '</span>';
+
+      // Tage ohne Termine sind kein Bedienelement - sonst laeuft man beim
+      // Tabben durch 30 tote Schaltflaechen pro Monat.
+      zellen.push(
+        '<div class="' + kl.join(' ') + '">'
+        + (evs.length
+            ? '<button type="button" class="cd-b" data-day="' + iso + '" '
+              + 'aria-label="' + t + '. ' + MONAT[m] + ' ' + y + ', '
+              + evs.length + (evs.length === 1 ? ' Termin' : ' Termine') + '">'
+              + innen + '</button>'
+            : '<div class="cd-b">' + innen + '</div>')
+        + '</div>'
+      );
+    }
+
+    return '<section class="cmo"><h3 class="cmo-h">' + MONAT[m] + ' ' + y
+      + '<span class="cmo-n">' + anzahl + '</span></h3>'
+      + '<div class="cgrid" role="grid">'
+      + WD.map(function (w) { return '<div class="cwd">' + w + '</div>'; }).join('')
+      + zellen.join('') + '</div></section>';
+  }
+
+  function evLi(e) {
+    var titel = e.u
+      ? '<a class="n" href="' + esc(e.u) + '" target="_blank" '
+        + 'rel="noopener noreferrer">' + esc(e.n) + '</a>'
+      : '<span class="n">' + esc(e.n) + '</span>';
+    // Mehrtaegiges laeuft ueber den gewaehlten Tag hinaus - dann gehoert
+    // der Zeitraum dazu, sonst waere er schon in der Kopfzeile doppelt.
+    var spanne = e.e !== e.s ? '<span class="dm">' + esc(e.r) + '</span>' : '';
+    return '<li class="ev' + (marks[e.id] ? ' marked' : '') + '">'
+      + '<button type="button" class="mk" data-mk="' + esc(e.id) + '" '
+      + 'aria-pressed="' + (marks[e.id] ? 'true' : 'false') + '">'
+      + '<span class="mk-i" aria-hidden="true"></span>'
+      + '<span class="vh">Für mich vormerken</span></button>'
+      + '<div class="b">' + titel + '<div class="m">'
+      + '<span class="c c-' + e.c + '">' + esc(LAND[e.c] || e.c) + '</span>'
+      + (e.su ? '<span class="su">slowUp</span>' : '') + spanne + '</div></div></li>';
+  }
+
+  function detailZeichnen(iso) {
+    if (!iso) {
+      cdet.innerHTML = '<p class="cdet-p">Einen hervorgehobenen Tag antippen, '
+        + 'um seine Termine zu sehen und vorzumerken.</p>';
+      return;
+    }
+    var evs = daten.filter(function (e) {
+      return sichtbar(e) && tageVon(e).indexOf(iso) !== -1;
+    });
+    var d = new Date(iso + 'T00:00:00Z');
+    var kopf = WD[(d.getUTCDay() + 6) % 7] + ', ' + d.getUTCDate() + '. '
+      + MONAT[d.getUTCMonth() + 1] + ' ' + d.getUTCFullYear();
+    cdet.innerHTML = '<div class="cdet-h">' + kopf + '</div>'
+      + '<ul class="lst">' + evs.map(evLi).join('') + '</ul>';
+  }
+
+  calG.addEventListener('click', function (e) {
+    var b = e.target.closest('.cd-b[data-day]');
+    if (!b || !b.closest('.cd').classList.contains('has')) { return; }
+    tagOffen = b.dataset.day === tagOffen ? null : b.dataset.day;
+    calG.querySelectorAll('.cd.sel').forEach(function (c) {
+      c.classList.remove('sel');
+    });
+    if (tagOffen) { b.closest('.cd').classList.add('sel'); }
+    detailZeichnen(tagOffen);
+    if (tagOffen) { cdet.scrollIntoView({ block: 'nearest' }); }
+  });
+
+  var seg = document.getElementById('seg');
+  seg.addEventListener('click', function (e) {
+    var btn = e.target.closest('button');
+    if (!btn) { return; }
+    ansicht = btn.dataset.view;
+    seg.querySelectorAll('button').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b === btn));
+    });
+    calSec.classList.toggle('hide', ansicht !== 'cal');
+    document.getElementById('upcoming').classList.toggle('hide', ansicht === 'cal');
+    var past = document.querySelector('.past');
+    if (past) { past.classList.toggle('hide', ansicht === 'cal'); }
+    anwenden();
   });
 
   anwenden();
@@ -700,6 +1153,7 @@ def build_html(data):
                  '<p class="empty">Keine kommenden Termine.</p>',
         minimap=build_minimap(events),
         past_block=past_block,
+        events_json=events_json(events),
         pages=PAGES_BASE,
     )
 
