@@ -139,3 +139,8 @@ Der Feed ist ein reines Abo und lädt niemanden ein.
 **Bei Parser-Fehlern nichts erfinden.** Lieber Exit 1 und die bestehenden
 Dateien unangetastet lassen, als geratene Daten zu schreiben. Ein Umbau der
 Quellseite darf den Kalender nicht löschen.
+
+## Entscheide von Nikita
+
+Als FB-Marker in `SPEC.md` an der betroffenen Stelle (globale Regel in
+`~/.claude/CLAUDE.md`), nicht nur im Chat.
